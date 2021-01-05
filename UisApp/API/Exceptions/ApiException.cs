@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace UisApp.API.Exceptions
 {
-    class ApiException
+    class ApiException : Exception
     {
+        public override string Message
+        {
+            get;
+        }
+
+        public ApiException(string message)
+        {
+            this.Message = message;
+        }
     }
 }

@@ -9,14 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using UisApp.API.Interfaces;
 using UisApp.API.Resources;
-using UisApp.Models.Interfaces;
 using System.Web;
+using UisApp.MVP;
+using UisApp.API.Core;
 
 namespace UisApp.API
 {
-    class ApiProvider : IApiProvider, IDisposable
+    class RealApiProvider : ApiProviderBase, IApiProvider, IDisposable
     {
-        private static ApiProvider _instance;
+        /// <summary>
+        /// Получить экземпляр провайдера
+        /// </summary>
+        /// <returns></returns>
+        public static IApiProvider MakeInstance(string sHost)
+        {
+            if (_instance == null)
+            {
+                _instance = new RealApiProvider(sHost);
+            }
+
+            return _instance;
+        }
 
         /// <summary>
         /// Экземпляр подключения
@@ -26,8 +39,10 @@ namespace UisApp.API
         /// <summary>
         /// Конструктор
         /// </summary>
-        private ApiProvider(string sHost)
+        private RealApiProvider(string sHost)
         {
+            Host = sHost;
+
             connection = new HttpClient();
             connection.BaseAddress = new Uri(sHost);
             connection.DefaultRequestHeaders.Accept.Clear();
@@ -45,16 +60,12 @@ namespace UisApp.API
         }
 
         /// <summary>
-        /// Получить экземпляр провайдера
+        /// Хост
         /// </summary>
-        /// <returns></returns>
-        public static ApiProvider GetInstance(string sHost)
+        public string Host
         {
-            if (_instance == null)
-            {
-                _instance = new ApiProvider(sHost);
-            }
-            return _instance;
+            get;
+            set;
         }
 
         /// <summary>
@@ -78,7 +89,7 @@ namespace UisApp.API
 
             var result = response.Content.ReadAsStringAsync().Result;
             ApiResponse data = JsonConvert.DeserializeObject<ApiResponse>(result);
-            if(data.status)
+            if (data.status)
             {
                 this.sToken = data.token;
             }
@@ -86,58 +97,14 @@ namespace UisApp.API
             return data;
         }
 
-        /// <summary>
-        /// Put запрос
-        /// </summary>
-        /// <param name="uri">Адрес запроса</param>
-        /// <param name="model">Модель</param>
-        /// <param name="values">Параметры</param>
-        /// <returns>JSON</returns>
-        public string Put(string uri, IModel model, Dictionary<string, string> values)
-        {
-            return null;
-        }
 
-        /// <summary>
-        /// Get запрос
-        /// </summary>
-        /// <param name="uri">Адрес запроса</param>
-        /// <param name="model">Модель</param>
-        /// <returns>JSON</returns>
-        public string Get(string uri, IModel model)
-        {
-            return null;
-        }
-
-        /// <summary>
-        /// Delete запрос
-        /// </summary>
-        /// <param name="uri">Адрес запроса</param>
-        /// <param name="model">Модель</param>
-        /// <returns>JSON</returns>
-        public string Delete(string uri, IModel model)
-        {
-            return null;
-        }
-
-        /// <summary>
-        /// Post запрос
-        /// </summary>
-        /// <param name="uri">Адрес запроса</param>
-        /// <param name="model">Модель</param>
-        /// <param name="values">Параметры</param>
-        /// <returns>JSON</returns>
-        public string Post(string uri, IModel model, Dictionary<string, string> values)
-        {
-            return null;
-        }
 
         /// <summary>
         /// Отключиться
         /// </summary>
         public void Disconnect()
         {
-            
+
         }
 
         /// <summary>
@@ -172,34 +139,4 @@ namespace UisApp.API
             return sb.ToString();
         }
     }
-
-    class ApiResponse : IApiResponse
-    {
-        public bool status
-        {
-            get;
-            set;
-        }
-
-        public string error
-        {
-            get;
-            set;
-        }
-
-        public string token
-        {
-            get;
-            set;
-        }
-
-        public IModel data
-        {
-            get;
-            set;
-        }
-
-        public ApiResponse() { }
-    }
-
 }

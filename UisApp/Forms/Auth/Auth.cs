@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UisApp.API;
 using UisApp.API.Interfaces;
+using UisApp.Forms;
+using UisApp.Helpers;
 
 namespace UisApp
 {
@@ -22,22 +24,41 @@ namespace UisApp
 
         private void AuthButtonClick(object sender, EventArgs e)
         {
-            ApiProvider apiProvider = ApiProvider.GetInstance("http://localhost:3000");
+            IApiProvider apiProvider = FakeApiProvider.MakeInstance("http://localhost:3000");
             IApiResponse response = null;
 
             try
             {
                 Task.Run(() =>
                 {
-                    response = apiProvider.Connect("aksenova_ksenia", "doigjohjaerohah");
+                    response = apiProvider.Connect(
+                        loginTextBox.Text, passwordTextBox.Text);
                 });
             }
-#pragma warning disable CS0168 // Переменная "ex" объявлена, но ни разу не использована.
+#pragma warning disable CS0168 
             catch(Exception ex)
-#pragma warning restore CS0168 // Переменная "ex" объявлена, но ни разу не использована.
+#pragma warning restore CS0168
             {
                 MessageBox.Show("Ошибка подключения");
                 return;
+            }
+
+            MainForm main = new MainForm();
+            main.Show();
+
+            this.Hide();
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void UpperBorder_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                FormDragLogic.Move(Handle);
             }
         }
     }

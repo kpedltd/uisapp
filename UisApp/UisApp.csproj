@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\ApiProvider.cs" />
+    <Compile Include="API\Core\ApiResponse.cs" />
+    <Compile Include="API\RealApiProvider.cs" />
+    <Compile Include="API\Core\ApiProviderBase.cs" />
     <Compile Include="API\Exceptions\ApiException.cs" />
     <Compile Include="API\FakeApiProvider.cs" />
     <Compile Include="API\Interfaces\IApiModel.cs" />
@@ -64,13 +66,26 @@
       <DependentUpon>UriResource.resx</DependentUpon>
     </Compile>
     <Compile Include="Components\Profile\ProfileModel.cs" />
-    <Compile Include="Forms\Auth.cs">
+    <Compile Include="Forms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Auth.Designer.cs">
+    <Compile Include="Forms\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Auth\Auth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Auth\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Main\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\DateTimeConverters.cs" />
+    <Compile Include="Helpers\FormDragLogic.cs" />
     <Compile Include="Models\IAttendanceLogModel.cs" />
     <Compile Include="Models\IDepartmentModel.cs" />
     <Compile Include="Models\IEduProgramModel.cs" />
@@ -92,17 +107,23 @@
     <Compile Include="MVP\Support\PresenterEvent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Resource1.Designer.cs">
+    <Compile Include="Resources\Images.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resource1.resx</DependentUpon>
+      <DependentUpon>Images.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="API\Resources\UriResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UriResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Auth.resx">
+    <EmbeddedResource Include="Forms\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Auth\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Main\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -112,10 +133,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Resources\Resource1.resx">
+    <EmbeddedResource Include="Resources\Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -135,7 +157,13 @@
     <Folder Include="Presenters\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Images\icon.ico" />
+    <None Include="Resources\Images\icons8_close_pane_50px_1.png" />
+    <None Include="Resources\Images\result.png" />
+    <None Include="Resources\Images\task.png" />
+    <None Include="Resources\Images\rating.png" />
+    <None Include="Resources\Images\attendance.png" />
+    <None Include="Resources\Images\icons8_schedule_50px.png" />
+    <Content Include="Resources\Images\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

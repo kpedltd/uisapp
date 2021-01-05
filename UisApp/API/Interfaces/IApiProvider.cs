@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UisApp.Models.Interfaces;
+using UisApp.MVP;
 
 namespace UisApp.API.Interfaces
 {
@@ -40,12 +40,22 @@ namespace UisApp.API.Interfaces
     interface IApiProvider
     {
         /// <summary>
+        /// Хост
+        /// </summary>
+        string Host
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Токен сессии клиента на стороне сервера для идентификации
         /// </summary>
         string sToken
         {
             get;
         }
+
 
         /// <summary>
         /// Подключиться
