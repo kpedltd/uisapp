@@ -1,18 +1,20 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UisApp.Models.Interfaces;
+using UisApp.MVP;
 
 namespace UisApp.Models
 {
-    class DepartmentModel : IModel
+    interface IDepartmentModel : IModel
     {
         /// <summary>
         /// Название
         /// </summary>
-        public string name
+        [JsonProperty("name")]
+        string Name
         {
             get;
             set;
@@ -21,15 +23,11 @@ namespace UisApp.Models
         /// <summary>
         /// Номер факультета
         /// </summary>
-        public int facultyId
+        [JsonProperty("facultyId")]
+        int FacultyId
         {
             get;
             set;
-        }
-
-        public void Update()
-        {
-            throw new NotImplementedException();
         }
     }
 }

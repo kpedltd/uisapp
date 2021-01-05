@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UisApp.Helpers;
+using UisApp.MVP;
 
 namespace UisApp.Models
 {
@@ -26,48 +27,55 @@ namespace UisApp.Models
         autumn
     }
 
-    class ScheduleModel
+    interface IScheduleModel : IModel
     {
+        [JsonProperty("dayOfWeek")]
         [JsonConverter(typeof(StringEnumConverter))]
-        public ScheduleDayOfWeek dayOfWeek
+        ScheduleDayOfWeek DayOfWeek
         {
             get;
             set;
         }
 
+        [JsonProperty("time")]
         [JsonConverter(typeof(CustomTimeConverter))]
-        public DateTime time
+        DateTime Time
         {
             get;
             set;
         }
 
-        public string Location
+        [JsonProperty("location")]
+        string Location
         {
             get;
             set;
         }
 
-        public int year
+        [JsonProperty("year")]
+        int Year
         {
             get;
             set;
         }
 
+        [JsonProperty("semester")]
         [JsonConverter(typeof(CustomDateConverter))]
-        public ScheduleSemester semester
+        ScheduleSemester Semester
         {
             get;
             set;
         }
 
-        public int subjectId
+        [JsonProperty("subjectId")]
+        int SubjectId
         {
             get;
             set;
         }
 
-        public int  groupId
+        [JsonProperty("groupId")]
+        int GroupId
         {
             get;
             set;

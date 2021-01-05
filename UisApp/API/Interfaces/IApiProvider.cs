@@ -54,40 +54,6 @@ namespace UisApp.API.Interfaces
         IApiResponse Connect(string login, string password);
 
         /// <summary>
-        /// Put запрос
-        /// </summary>
-        /// <param name="uri">Адрес запроса</param>
-        /// <param name="model">Модель</param>
-        /// <param name="values">Параметры</param>
-        /// <returns>JSON</returns>
-        string Put(string uri, IModel model, Dictionary<string, string> values);
-
-        /// <summary>
-        /// Get запрос
-        /// </summary>
-        /// <param name="uri">Адрес запроса</param>
-        /// <param name="model">Модель</param>
-        /// <returns>JSON</returns>
-        string Get(string uri, IModel model);
-
-        /// <summary>
-        /// Delete запрос
-        /// </summary>
-        /// <param name="uri">Адрес запроса</param>
-        /// <param name="model">Модель</param>
-        /// <returns>JSON</returns>
-        string Delete(string uri, IModel model);
-
-        /// <summary>
-        /// Post запрос
-        /// </summary>
-        /// <param name="uri">Адрес запроса</param>
-        /// <param name="model">Модель</param>
-        /// <param name="values">Параметры</param>
-        /// <returns>JSON</returns>
-        string Post(string uri, IModel model, Dictionary<string, string> values);
-
-        /// <summary>
         /// Отключиться
         /// </summary>
         void Disconnect();

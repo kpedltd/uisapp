@@ -55,6 +55,7 @@
     <Compile Include="API\ApiProvider.cs" />
     <Compile Include="API\Exceptions\ApiException.cs" />
     <Compile Include="API\FakeApiProvider.cs" />
+    <Compile Include="API\Interfaces\IApiModel.cs" />
     <Compile Include="API\Interfaces\IApiProvider.cs" />
     <Compile Include="API\Providers\LecturerProvider.cs" />
     <Compile Include="API\Resources\UriResource.Designer.cs">
@@ -62,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UriResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Profile\ProfileModel.cs" />
     <Compile Include="Forms\Auth.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,20 +71,20 @@
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DateTimeConverters.cs" />
-    <Compile Include="Models\AttendanceLogModel.cs" />
-    <Compile Include="Models\DepartmentModel.cs" />
-    <Compile Include="Models\EduProgramModel.cs" />
-    <Compile Include="Models\FacultyModel.cs" />
-    <Compile Include="Models\GroupModel.cs" />
-    <Compile Include="Models\Interfaces\IModel.cs" />
-    <Compile Include="Models\LecturerModel.cs" />
-    <Compile Include="Models\RatingLogModel.cs" />
-    <Compile Include="Models\ScheduleModel.cs" />
-    <Compile Include="Models\StudentMetricsModel.cs" />
-    <Compile Include="Models\StudentModel.cs" />
-    <Compile Include="Models\SubjectModel.cs" />
-    <Compile Include="Models\TaskModel.cs" />
-    <Compile Include="Models\TaskResultModel.cs" />
+    <Compile Include="Models\IAttendanceLogModel.cs" />
+    <Compile Include="Models\IDepartmentModel.cs" />
+    <Compile Include="Models\IEduProgramModel.cs" />
+    <Compile Include="Models\IFacultyModel.cs" />
+    <Compile Include="Models\IGroupModel.cs" />
+    <Compile Include="MVP\IModel.cs" />
+    <Compile Include="Models\ILecturerModel.cs" />
+    <Compile Include="Models\IRatingLogModel.cs" />
+    <Compile Include="Models\IScheduleModel.cs" />
+    <Compile Include="Models\IStudentMetricsModel.cs" />
+    <Compile Include="Models\IStudentModel.cs" />
+    <Compile Include="Models\ISubjectModel.cs" />
+    <Compile Include="Models\ITaskModel.cs" />
+    <Compile Include="Models\ITaskResultModel.cs" />
     <Compile Include="MVP\Core\IPresenter.cs" />
     <Compile Include="MVP\Core\IView.cs" />
     <Compile Include="MVP\Support\IViewManager.cs" />
@@ -129,7 +131,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presenters\" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images\icon.ico" />
   </ItemGroup>

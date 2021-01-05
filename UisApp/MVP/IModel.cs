@@ -1,13 +1,13 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UisApp.Models.Interfaces
+namespace UisApp.MVP
 {
     interface IModel
     {
-        void Update();
     }
 }

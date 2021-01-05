@@ -5,19 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UisApp.Helpers;
+using UisApp.MVP;
 
 namespace UisApp.Models
 {
-    class StudentMetricsModel
+    interface IStudentMetricsModel : IModel
     {
+        [JsonProperty("date")]
         [JsonConverter(typeof(CustomDateTimeConverter))]
-        public DateTime date
+        DateTime Date
         {
             get;
             set;
         }
 
-        public int studentId
+        [JsonProperty("studentId")]
+        int StudentId
         {
             get;
             set;

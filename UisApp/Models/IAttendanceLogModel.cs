@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UisApp.Helpers;
-using UisApp.Models.Interfaces;
+using UisApp.MVP;
 
 namespace UisApp.Models
 {
@@ -23,13 +23,14 @@ namespace UisApp.Models
         skiped
     }
 
-    class AttendanceLogModel : IModel
+    interface IAttendanceLogModel : IModel
     {
         /// <summary>
         /// Состояние (Посещено/Пропущено)
         /// </summary>
+        [JsonProperty("state")]
         [JsonConverter(typeof(StringEnumConverter))]
-        public AttendanceLogState state
+        AttendanceLogState State
         {
             get;
             set;
@@ -38,8 +39,9 @@ namespace UisApp.Models
         /// <summary>
         /// Дата предмета
         /// </summary>
+        [JsonProperty("date")]
         [JsonConverter(typeof(CustomDateConverter))]
-        public DateTime date
+        DateTime Date
         {
             get;
             set;
@@ -48,7 +50,8 @@ namespace UisApp.Models
         /// <summary>
         /// Номер записи в расписании
         /// </summary>
-        public int scheduleId
+        [JsonProperty("scheduleId")]
+        int ScheduleId
         {
             get;
             set;
@@ -57,16 +60,11 @@ namespace UisApp.Models
         /// <summary>
         /// Номер студента
         /// </summary>
-        public int studentId
+        [JsonProperty("studentId")]
+        int StudentId
         {
             get;
             set;
-        }
-        
-
-        public void Update()
-        {
-            throw new NotImplementedException();
         }
     }
 }

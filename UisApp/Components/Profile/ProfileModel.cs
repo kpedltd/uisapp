@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UisApp.Models
+namespace UisApp.Components.Profile
 {
-    class FacultyModel
+    class ProfileModel
     {
-        public string name
-        {
-            get;
-            set;
-        }
     }
 }

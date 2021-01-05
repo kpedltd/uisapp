@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UisApp.Models.Interfaces;
+using UisApp.MVP;
 
 namespace UisApp.Models
 {
@@ -22,12 +22,13 @@ namespace UisApp.Models
         parttime
     }
 
-    class EduProgramModel : IModel
+    interface IEduProgramModel : IModel
     {
         /// <summary>
         /// Название
         /// </summary>
-        public string name
+        [JsonProperty("name")]
+        string Name
         {
             get;
             set;
@@ -36,22 +37,22 @@ namespace UisApp.Models
         /// <summary>
         /// Код программы
         /// </summary>
-        public string code
+        [JsonProperty("code")]
+        string Code
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// Тип обучения
+        /// </summary>
+        [JsonProperty("type")]
         [JsonConverter(typeof(StringEnumConverter))]
-        public EduProgramType type
+        EduProgramType Type
         {
             get;
             set;
-        }
-
-        public void Update()
-        {
-            throw new NotImplementedException();
         }
     }
 }
