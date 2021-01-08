@@ -9,7 +9,7 @@ using UisApp.MVP;
 
 namespace UisApp.Models
 {
-    interface ILecturerModel : IModel
+    public interface ILecturerModel : IModel
     {
         /// <summary>
         /// Имя
@@ -73,40 +73,20 @@ namespace UisApp.Models
         }
 
         /// <summary>
-        /// ИД кафедры
+        /// Имя кафедры
         /// </summary>
-        [JsonProperty("departmentId")]
-        int DepartmentId
+        [JsonProperty("department")]
+        string DepartmentName
         {
             get;
             set;
         }
 
         /// <summary>
-        /// ИД кафедры, если зав. кафедры
+        /// Имя факультета
         /// </summary>
-        [JsonProperty("headId")]
-        int HeadId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// ИД группы, если кураторы
-        /// </summary>
-        [JsonProperty("curatorId")]
-        int CuratorId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// ИД факультета, если декан
-        /// </summary>
-        [JsonProperty("deanId")]
-        int DeanId
+        [JsonProperty("faculty")]
+        string FacultyName
         {
             get;
             set;

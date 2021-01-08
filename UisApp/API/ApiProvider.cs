@@ -15,7 +15,7 @@ using UisApp.API.Core;
 
 namespace UisApp.API
 {
-    class RealApiProvider : ApiProviderBase, IApiProvider, IDisposable
+    class ApiProvider : ApiProviderBase, IApiProvider, IDisposable
     {
         /// <summary>
         /// Получить экземпляр провайдера
@@ -25,7 +25,7 @@ namespace UisApp.API
         {
             if (_instance == null)
             {
-                _instance = new RealApiProvider(sHost);
+                _instance = new ApiProvider(sHost);
             }
 
             return _instance;
@@ -34,12 +34,16 @@ namespace UisApp.API
         /// <summary>
         /// Экземпляр подключения
         /// </summary>
-        private HttpClient connection;
+        public HttpClient connection
+        {
+            get;
+            private set;
+        }
 
         /// <summary>
         /// Конструктор
         /// </summary>
-        private RealApiProvider(string sHost)
+        private ApiProvider(string sHost)
         {
             Host = sHost;
 
@@ -72,7 +76,7 @@ namespace UisApp.API
         /// Подключиться
         /// </summary>
         /// <param name="sHost"></param>
-        public IApiResponse Connect(string login, string password)
+        public IApiResponse<IModel> Connect(string login, string password)
         {
             var queryParams = new NameValueCollection()
             {
@@ -88,7 +92,7 @@ namespace UisApp.API
             response.EnsureSuccessStatusCode();
 
             var result = response.Content.ReadAsStringAsync().Result;
-            ApiResponse data = JsonConvert.DeserializeObject<ApiResponse>(result);
+            ApiResponse<IModel> data = JsonConvert.DeserializeObject<ApiResponse<IModel>>(result);
             if (data.status)
             {
                 this.sToken = data.token;
@@ -104,7 +108,24 @@ namespace UisApp.API
         /// </summary>
         public void Disconnect()
         {
+            var queryParams = new NameValueCollection()
+            {
+                { "secret_token", sToken }
+            };
 
+            string query = UriResource.logout + ToQueryString(queryParams);
+
+            HttpResponseMessage response = connection.PostAsync(
+                query, null).GetAwaiter().GetResult();
+
+            response.EnsureSuccessStatusCode();
+
+            var result = response.Content.ReadAsStringAsync().Result;
+            ApiResponse<IModel> data = JsonConvert.DeserializeObject<ApiResponse<IModel>>(result);
+            if (data.status)
+            {
+                this.sToken = data.token;
+            }
         }
 
         /// <summary>
@@ -115,7 +136,7 @@ namespace UisApp.API
             this.Disconnect();
         }
 
-        public string ToQueryString(NameValueCollection nvc)
+        public static string ToQueryString(NameValueCollection nvc)
         {
             StringBuilder sb = new StringBuilder("?");
 
@@ -137,6 +158,45 @@ namespace UisApp.API
             }
 
             return sb.ToString();
+        }
+
+        public IApiResponse<T> GetRequest<T>(string uri)
+            where T : IModel
+        {
+            var queryParams = new NameValueCollection()
+            {
+                { "secret_token", sToken }
+            };
+
+            string query = uri + ToQueryString(queryParams);
+
+            HttpResponseMessage response = connection.GetAsync(
+                query).GetAwaiter().GetResult();
+
+            response.EnsureSuccessStatusCode();
+
+            var result = response.Content.ReadAsStringAsync().Result;
+            ApiResponse<T> data = JsonConvert.DeserializeObject<ApiResponse<T>>(result);
+
+            return data;
+        }
+
+        public IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc)
+                where T : IModel
+        {
+            nvc.Add("secret_token", sToken);
+
+            string query = uri + ToQueryString(nvc);
+
+            HttpResponseMessage response = connection.PostAsync(
+                query, null).GetAwaiter().GetResult();
+
+            response.EnsureSuccessStatusCode();
+
+            var result = response.Content.ReadAsStringAsync().Result;
+            ApiResponse<T> data = JsonConvert.DeserializeObject<ApiResponse<T>>(result);
+
+            return data;
         }
     }
 }

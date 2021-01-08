@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UisApp.MVP
 {
-    interface IModel
+    public interface IModel
     {
     }
 }

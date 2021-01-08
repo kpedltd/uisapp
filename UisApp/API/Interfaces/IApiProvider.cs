@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using UisApp.MVP;
 
 namespace UisApp.API.Interfaces
 {
-    interface IApiResponse
+    interface IApiResponse<T>
+        where T : IModel
     {
         bool status
         {
@@ -27,7 +30,7 @@ namespace UisApp.API.Interfaces
             set;
         }
 
-        IModel data
+        T data
         {
             get;
             set;
@@ -61,11 +64,28 @@ namespace UisApp.API.Interfaces
         /// Подключиться
         /// </summary>
         /// <param name="sHost"></param>
-        IApiResponse Connect(string login, string password);
+        IApiResponse<IModel> Connect(string login, string password);
 
         /// <summary>
         /// Отключиться
         /// </summary>
         void Disconnect();
+
+        /// <summary>
+        /// Get Запрос
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns></returns>
+        IApiResponse<T> GetRequest<T>(string uri)
+            where T : IModel;
+
+        /// <summary>
+        /// Post запрос
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <param name="nvc"></param>
+        /// <returns></returns>
+        IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc)
+            where T : IModel;
     }
 }

@@ -12,6 +12,7 @@ using UisApp.API;
 using UisApp.API.Interfaces;
 using UisApp.Forms;
 using UisApp.Helpers;
+using UisApp.MVP;
 
 namespace UisApp
 {
@@ -24,16 +25,13 @@ namespace UisApp
 
         private void AuthButtonClick(object sender, EventArgs e)
         {
-            IApiProvider apiProvider = FakeApiProvider.MakeInstance("http://localhost:3000");
-            IApiResponse response = null;
+            IApiProvider apiProvider = ApiProvider.MakeInstance("http://localhost:3000");
+            IApiResponse<IModel> response = null;
 
             try
             {
-                Task.Run(() =>
-                {
-                    response = apiProvider.Connect(
+                response = apiProvider.Connect(
                         loginTextBox.Text, passwordTextBox.Text);
-                });
             }
 #pragma warning disable CS0168 
             catch(Exception ex)

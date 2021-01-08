@@ -123,4 +123,7 @@
   <data name="getme" xml:space="preserve">
     <value>/lecturer/getme</value>
   </data>
+  <data name="logout" xml:space="preserve">
+    <value>/lecturer/logout</value>
+  </data>
 </root>

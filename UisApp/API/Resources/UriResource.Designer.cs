@@ -77,5 +77,14 @@ namespace UisApp.API.Resources {
                 return ResourceManager.GetString("getme", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на /lecturer/logout.
+        /// </summary>
+        internal static string logout {
+            get {
+                return ResourceManager.GetString("logout", resourceCulture);
+            }
+        }
     }
 }

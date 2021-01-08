@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UisApp.API.Core;
 using UisApp.API.Interfaces;
+using UisApp.MVP;
 
 namespace UisApp.API
 {
@@ -42,12 +44,25 @@ namespace UisApp.API
             return;
         }
 
-        public IApiResponse Connect(string login, string password)
+        public IApiResponse<IModel> Connect(string login, string password)
         {
-            ApiResponse apiResponse = new ApiResponse();
+            ApiResponse<IModel> apiResponse = new ApiResponse<IModel>();
             apiResponse.status = true;
 
             return apiResponse;
+        }
+
+
+        public IApiResponse<T> GetRequest<T>(string uri) 
+            where T : IModel
+        {
+            throw new NotImplementedException();
+        }
+
+        public IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc) 
+            where T : IModel
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -8,7 +8,8 @@ using UisApp.MVP;
 
 namespace UisApp.API.Core
 {
-    class ApiResponse : IApiResponse
+    class ApiResponse<T> : IApiResponse<T>
+        where T : IModel
     {
         public bool status
         {
@@ -28,7 +29,7 @@ namespace UisApp.API.Core
             set;
         }
 
-        public IModel data
+        public T data
         {
             get;
             set;

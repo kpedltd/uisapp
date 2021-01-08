@@ -53,11 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\Core\ApiResponse.cs" />
-    <Compile Include="API\RealApiProvider.cs" />
+    <Compile Include="API\ApiProvider.cs" />
     <Compile Include="API\Core\ApiProviderBase.cs" />
     <Compile Include="API\Exceptions\ApiException.cs" />
     <Compile Include="API\FakeApiProvider.cs" />
-    <Compile Include="API\Interfaces\IApiModel.cs" />
     <Compile Include="API\Interfaces\IApiProvider.cs" />
     <Compile Include="API\Providers\LecturerProvider.cs" />
     <Compile Include="API\Resources\UriResource.Designer.cs">
@@ -65,7 +64,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UriResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Components\IUisComponent.cs" />
+    <Compile Include="Components\Profile\Interfaces\IProfileModel.cs" />
+    <Compile Include="Components\Profile\Interfaces\IProfilePresenter.cs" />
+    <Compile Include="Components\Profile\Interfaces\IProfileView.cs" />
     <Compile Include="Components\Profile\ProfileModel.cs" />
+    <Compile Include="Components\Profile\ProfilePresenter.cs" />
+    <Compile Include="Components\Profile\ProfileView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Profile\ProfileView.Designer.cs">
+      <DependentUpon>ProfileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UisComponentsContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\AboutBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +96,12 @@
     </Compile>
     <Compile Include="Forms\Main\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Main\MainFormComponents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Main\MainFormPanel.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Helpers\DateTimeConverters.cs" />
     <Compile Include="Helpers\FormDragLogic.cs" />
@@ -115,6 +134,9 @@
     <EmbeddedResource Include="API\Resources\UriResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UriResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Profile\ProfileView.resx">
+      <DependentUpon>ProfileView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
@@ -163,6 +185,7 @@
     <None Include="Resources\Images\rating.png" />
     <None Include="Resources\Images\attendance.png" />
     <None Include="Resources\Images\icons8_schedule_50px.png" />
+    <None Include="Resources\Images\customer.png" />
     <Content Include="Resources\Images\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
