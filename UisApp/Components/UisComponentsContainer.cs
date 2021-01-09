@@ -34,6 +34,8 @@ namespace UisApp.Components
         {
             component.Parent = this;
             component.Dock = DockStyle.Fill;
+            component.Hide();
+
             components.Add(component);
         }
 

@@ -351,6 +351,7 @@
             this.scheduleButton.Size = new System.Drawing.Size(50, 50);
             this.scheduleButton.TabIndex = 4;
             this.scheduleButton.UseVisualStyleBackColor = true;
+            this.scheduleButton.Click += new System.EventHandler(this.ScheduleButton_Click);
             // 
             // panel5
             // 
@@ -392,6 +393,7 @@
             // 
             // compContainer
             // 
+            this.compContainer.AutoSize = true;
             this.compContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.compContainer.Location = new System.Drawing.Point(220, 34);
             this.compContainer.Name = "compContainer";
@@ -429,6 +431,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

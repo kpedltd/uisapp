@@ -84,13 +84,13 @@ namespace UisApp.Components.Profile
             get
             {
                 var result = new DateTime();
-                DateTime.TryParseExact(dateValue.Text, "yyyy-MM-dd", null,
+                DateTime.TryParseExact(dateValue.Text, "dd.MM.yyyy", null,
                                    DateTimeStyles.None, out result);
                 return result;
             }
             set
             {
-                dateValue.Text = value.ToString("yyyy-MM-dd");
+                dateValue.Text = value.ToString("dd.MM.yyyy");
             }
         }
 
@@ -236,5 +236,6 @@ namespace UisApp.Components.Profile
             DepartmentName = lecturerModel.DepartmentName;
             FacultyName = lecturerModel.FacultyName;
         }
+
     }
 }

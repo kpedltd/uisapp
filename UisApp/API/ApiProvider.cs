@@ -1,15 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 using UisApp.API.Interfaces;
 using UisApp.API.Resources;
-using System.Web;
 using UisApp.MVP;
 using UisApp.API.Core;
 
@@ -141,7 +137,6 @@ namespace UisApp.API
             StringBuilder sb = new StringBuilder("?");
 
             bool first = true;
-
             foreach (string key in nvc.AllKeys)
             {
                 foreach (string value in nvc.GetValues(key))
@@ -152,7 +147,6 @@ namespace UisApp.API
                     }
 
                     sb.AppendFormat("{0}={1}", Uri.EscapeDataString(key), Uri.EscapeDataString(value));
-
                     first = false;
                 }
             }

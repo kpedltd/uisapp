@@ -19,7 +19,7 @@ namespace UisApp.Helpers
     {
         public CustomTimeConverter()
         {
-            base.DateTimeFormat = "HH:mm";
+            base.DateTimeFormat = "HH:mm:ss";
         }
     }
 

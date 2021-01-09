@@ -10,33 +10,28 @@ using UisApp.MVP;
 
 namespace UisApp.Models
 {
-    enum ScheduleDayOfWeek
+    public enum ScheduleDayOfWeek
     {
-        Friday,
         Monday,
-        Saturday,
-        Sunday,
-        Thursday,
         Tuesday,
-        Wedndesday
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Count
     }
 
-    enum ScheduleSemester
+    public enum ScheduleSemester
     {
         spring,
         autumn
     }
 
-    interface IScheduleModel : IModel
+    public interface IScheduleModel : IModel
     {
-        [JsonProperty("dayOfWeek")]
-        [JsonConverter(typeof(StringEnumConverter))]
-        ScheduleDayOfWeek DayOfWeek
-        {
-            get;
-            set;
-        }
-
+        /// <summary>
+        /// Время
+        /// </summary>
         [JsonProperty("time")]
         [JsonConverter(typeof(CustomTimeConverter))]
         DateTime Time
@@ -45,6 +40,9 @@ namespace UisApp.Models
             set;
         }
 
+        /// <summary>
+        /// Место проведения
+        /// </summary>
         [JsonProperty("location")]
         string Location
         {
@@ -52,30 +50,21 @@ namespace UisApp.Models
             set;
         }
 
-        [JsonProperty("year")]
-        int Year
+        /// <summary>
+        /// Предмет
+        /// </summary>
+        [JsonProperty("subjectName")]
+        string SubjectName
         {
             get;
             set;
         }
 
-        [JsonProperty("semester")]
-        [JsonConverter(typeof(CustomDateConverter))]
-        ScheduleSemester Semester
-        {
-            get;
-            set;
-        }
-
-        [JsonProperty("subjectId")]
-        int SubjectId
-        {
-            get;
-            set;
-        }
-
-        [JsonProperty("groupId")]
-        int GroupId
+        /// <summary>
+        /// Имя группы
+        /// </summary>
+        [JsonProperty("groupName")]
+        string GroupName
         {
             get;
             set;

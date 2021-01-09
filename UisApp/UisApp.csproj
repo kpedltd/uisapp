@@ -58,7 +58,9 @@
     <Compile Include="API\Exceptions\ApiException.cs" />
     <Compile Include="API\FakeApiProvider.cs" />
     <Compile Include="API\Interfaces\IApiProvider.cs" />
+    <Compile Include="API\Interfaces\IModelProvider.cs" />
     <Compile Include="API\Providers\LecturerProvider.cs" />
+    <Compile Include="API\Providers\ScheduleTableProvider.cs" />
     <Compile Include="API\Resources\UriResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +77,27 @@
     </Compile>
     <Compile Include="Components\Profile\ProfileView.Designer.cs">
       <DependentUpon>ProfileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ScheduleTable\Interfaces\IScheduleDayModel.cs" />
+    <Compile Include="Components\ScheduleTable\Interfaces\IScheduleTablePresenter.cs" />
+    <Compile Include="Components\ScheduleTable\Interfaces\IScheduleRecordModel.cs" />
+    <Compile Include="Components\ScheduleTable\Interfaces\IScheduleTableModel.cs" />
+    <Compile Include="Components\ScheduleTable\Interfaces\IScheduleTableView.cs" />
+    <Compile Include="Components\ScheduleTable\ScheduleDayModel.cs" />
+    <Compile Include="Components\ScheduleTable\ScheduleRecordModel.cs" />
+    <Compile Include="Components\ScheduleTable\ScheduleTableItemView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ScheduleTable\ScheduleTableItemView.Designer.cs">
+      <DependentUpon>ScheduleTableItemView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\ScheduleTable\ScheduleTableModel.cs" />
+    <Compile Include="Components\ScheduleTable\ScheduleTablePresenter.cs" />
+    <Compile Include="Components\ScheduleTable\ScheduleTableView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\ScheduleTable\ScheduleTableView.Designer.cs">
+      <DependentUpon>ScheduleTableView.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\UisComponentsContainer.cs">
       <SubType>Component</SubType>
@@ -105,6 +128,7 @@
     </Compile>
     <Compile Include="Helpers\DateTimeConverters.cs" />
     <Compile Include="Helpers\FormDragLogic.cs" />
+    <Compile Include="Helpers\FormSizeableLogic.cs" />
     <Compile Include="Models\IAttendanceLogModel.cs" />
     <Compile Include="Models\IDepartmentModel.cs" />
     <Compile Include="Models\IEduProgramModel.cs" />
@@ -137,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Profile\ProfileView.resx">
       <DependentUpon>ProfileView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ScheduleTable\ScheduleTableItemView.resx">
+      <DependentUpon>ScheduleTableItemView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ScheduleTable\ScheduleTableView.resx">
+      <DependentUpon>ScheduleTableView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>

@@ -15,6 +15,9 @@ namespace UisApp
             InitializeComponent();
             InitializeItemsPanel();
             InitializeInternalComponents();
+
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
         private void ProfileButton_Click(object sender, EventArgs e)
@@ -54,6 +57,25 @@ namespace UisApp
             {
                 FormDragLogic.Move(Handle);
             }
+        }
+
+        private void ScheduleButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            var targerView = (IUisComponent)button.Tag;
+
+            compContainer.SwitchTo(targerView);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            FormSizeableLogic.OnPaintLogic(this, e);
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            FormSizeableLogic.WndProcLogic(this, ref m);
+            base.WndProc(ref m);
         }
     }
 }

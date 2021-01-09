@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using UisApp.API.Providers;
 using UisApp.Components;
 using UisApp.Components.Profile;
+using UisApp.Components.ScheduleTable;
 
 namespace UisApp
 {
@@ -15,6 +16,7 @@ namespace UisApp
         private void InitializeInternalComponents()
         {
             InitializeProfile();
+            InitializeScheduleTable();
         }
 
         private void InitializeProfile()
@@ -28,6 +30,19 @@ namespace UisApp
             profileView.AttachToPresenter(presenter, true);
 
             profileButton.Tag = profileView;
+        }
+
+        private void InitializeScheduleTable()
+        {
+            var scheduleModel = ScheduleTableProvider.GetLecturerSchedule();
+            ScheduleTablePresenter presenter = new ScheduleTablePresenter(scheduleModel);
+
+            var scheduleView = new ScheduleTableView();
+            compContainer.AttachView(scheduleView);
+
+            scheduleView.AttachToPresenter(presenter, true);
+
+            scheduleButton.Tag = scheduleView;
         }
     }
 }

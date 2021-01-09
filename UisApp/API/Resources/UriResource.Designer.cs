@@ -79,6 +79,15 @@ namespace UisApp.API.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на /schedule/lecturer.
+        /// </summary>
+        internal static string lecturer_schedule {
+            get {
+                return ResourceManager.GetString("lecturer_schedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /lecturer/logout.
         /// </summary>
         internal static string logout {
