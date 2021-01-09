@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UisApp.API.Exceptions
 {
-    class ApiException : Exception
+    internal class ApiException : Exception
     {
         public override string Message
         {

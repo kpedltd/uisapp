@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UisApp.Components.Profile.Interfaces;
-using UisApp.MVP.Core;
 using UisApp.MVP.Support;
 
 namespace UisApp.Components.Profile
 {
-    class ProfilePresenter : PresenterBase<IProfilePresenter, IProfileView>, IProfilePresenter
+    internal class ProfilePresenter : PresenterBase<IProfilePresenter, IProfileView>, IProfilePresenter
     {
-        IProfileModel Model;
+        private IProfileModel Model;
 
         public ProfilePresenter(IProfileModel model)
         {

@@ -40,7 +40,6 @@ namespace UisApp
             timer.Start();
         }
 
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             compContainer.SwitchFirst();

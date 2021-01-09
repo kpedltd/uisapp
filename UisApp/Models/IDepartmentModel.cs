@@ -1,14 +1,9 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UisApp.MVP;
 
 namespace UisApp.Models
 {
-    interface IDepartmentModel : IModel
+    internal interface IDepartmentModel : IModel
     {
         /// <summary>
         /// Название

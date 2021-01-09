@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace UisApp.Components
 {
-    class UisComponentsContainer : Panel
+    internal class UisComponentsContainer : Panel
     {
         /// <summary>
         /// Список представлений
@@ -44,8 +40,8 @@ namespace UisApp.Components
         /// </summary>
         /// <param name="component"></param>
         public void SwitchTo(IUisComponent component)
-        {            
-            if(component != currentVisible)
+        {
+            if (component != currentVisible)
             {
                 component.Show();
                 component.BringToFront();
@@ -60,7 +56,7 @@ namespace UisApp.Components
         /// </summary>
         public void SwitchFirst()
         {
-            if(components.Count != 0)
+            if (components.Count != 0)
             {
                 currentVisible = components[0];
                 currentVisible.Show();

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UisApp.API.Interfaces;
+﻿using UisApp.API.Interfaces;
 using UisApp.MVP;
 
 namespace UisApp.API.Core
 {
-    class ApiResponse<T> : IApiResponse<T>
+    internal class ApiResponse<T> : IApiResponse<T>
         where T : IModel
     {
         public bool status
@@ -35,6 +30,8 @@ namespace UisApp.API.Core
             set;
         }
 
-        public ApiResponse() { }
+        public ApiResponse()
+        {
+        }
     }
 }

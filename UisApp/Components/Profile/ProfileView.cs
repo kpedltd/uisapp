@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using UisApp.Models;
 using System.Globalization;
-using UisApp.Helpers;
-using UisApp.API.Providers;
+using System.Windows.Forms;
 using UisApp.Components.Profile.Interfaces;
+using UisApp.Models;
 
 namespace UisApp.Components.Profile
 {
@@ -186,7 +177,6 @@ namespace UisApp.Components.Profile
 
         private void Photo_Click(object sender, EventArgs e)
         {
-
         }
 
         /// <summary>
@@ -236,6 +226,5 @@ namespace UisApp.Components.Profile
             DepartmentName = lecturerModel.DepartmentName;
             FacultyName = lecturerModel.FacultyName;
         }
-
     }
 }

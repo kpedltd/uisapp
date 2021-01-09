@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UisApp.API.Core;
 using UisApp.API.Interfaces;
 using UisApp.API.Resources;
@@ -14,7 +11,7 @@ using UisApp.MVP;
 
 namespace UisApp.API
 {
-    class FakeApiProvider : ApiProviderBase, IApiProvider
+    internal class FakeApiProvider : ApiProviderBase, IApiProvider
     {
         /// <summary>
         /// Получить экземпляр провайдера
@@ -66,8 +63,7 @@ namespace UisApp.API
             return apiResponse;
         }
 
-
-        public IApiResponse<T> GetRequest<T>(string uri) 
+        public IApiResponse<T> GetRequest<T>(string uri)
             where T : IModel
         {
             IApiResponse<T> response = new ApiResponse<T>();
@@ -76,12 +72,12 @@ namespace UisApp.API
             return response;
         }
 
-        public IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc) 
+        public IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc)
             where T : IModel
         {
             throw new NotImplementedException();
         }
-    
+
         private static IModel CreateFakeProfile()
         {
             ProfileModel profile = new ProfileModel();
@@ -101,7 +97,7 @@ namespace UisApp.API
         {
             ScheduleTableModel schedule = new ScheduleTableModel();
             schedule.Records = new List<ScheduleDayModel>();
-            for(int i = 0;i < 6;i++)
+            for (int i = 0; i < 6; i++)
             {
                 ScheduleDayModel day = new ScheduleDayModel();
                 day.DayOfWeek = ((ScheduleDayOfWeek)i);

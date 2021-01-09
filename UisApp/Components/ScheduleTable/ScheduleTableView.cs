@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UisApp.Components.ScheduleTable.Interfaces;
 using UisApp.Models;
@@ -130,7 +124,7 @@ namespace UisApp.Components.ScheduleTable
             {
                 entry.Value.Controls.Clear();
 
-                for(int i = 0;i < TimeMapping.Count;i++)
+                for (int i = 0; i < TimeMapping.Count; i++)
                 {
                     entry.Value.Controls.Add(new ScheduleTableItemView());
                 }
@@ -139,7 +133,7 @@ namespace UisApp.Components.ScheduleTable
             for (int i = 0; i < __records.Count; i++)
             {
                 var currentColumn = DayColumns[__records[i].DayOfWeek];
-                for (int j = 0;j < __records[i].Records.Count;j++)
+                for (int j = 0; j < __records[i].Records.Count; j++)
                 {
                     ScheduleTableItemView item = currentColumn.Controls[TimeMapping[__records[i].Records[j].Time]] as ScheduleTableItemView;
 

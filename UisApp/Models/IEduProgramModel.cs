@@ -1,15 +1,10 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UisApp.MVP;
 
 namespace UisApp.Models
 {
-    enum EduProgramType
+    internal enum EduProgramType
     {
         /// <summary>
         /// Очная
@@ -22,7 +17,7 @@ namespace UisApp.Models
         parttime
     }
 
-    interface IEduProgramModel : IModel
+    internal interface IEduProgramModel : IModel
     {
         /// <summary>
         /// Название

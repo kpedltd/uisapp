@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Specialized;
 using UisApp.MVP;
 
 namespace UisApp.API.Interfaces
 {
-    interface IApiResponse<T>
+    internal interface IApiResponse<T>
         where T : IModel
     {
         bool status
@@ -40,7 +34,7 @@ namespace UisApp.API.Interfaces
     /// <summary>
     /// Интерфейса обеспечения взаимодействия с сервером
     /// </summary>
-    interface IApiProvider
+    internal interface IApiProvider
     {
         /// <summary>
         /// Хост
@@ -58,7 +52,6 @@ namespace UisApp.API.Interfaces
         {
             get;
         }
-
 
         /// <summary>
         /// Подключиться

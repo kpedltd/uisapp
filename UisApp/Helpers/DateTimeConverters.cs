@@ -1,13 +1,8 @@
 ﻿using Newtonsoft.Json.Converters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UisApp.Helpers
 {
-    class CustomDateConverter : IsoDateTimeConverter
+    internal class CustomDateConverter : IsoDateTimeConverter
     {
         public CustomDateConverter()
         {
@@ -15,7 +10,7 @@ namespace UisApp.Helpers
         }
     }
 
-    class CustomTimeConverter : IsoDateTimeConverter
+    internal class CustomTimeConverter : IsoDateTimeConverter
     {
         public CustomTimeConverter()
         {
@@ -23,7 +18,7 @@ namespace UisApp.Helpers
         }
     }
 
-    class CustomDateTimeConverter : IsoDateTimeConverter
+    internal class CustomDateTimeConverter : IsoDateTimeConverter
     {
         public CustomDateTimeConverter()
         {

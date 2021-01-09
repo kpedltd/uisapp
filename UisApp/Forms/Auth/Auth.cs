@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UisApp.API;
 using UisApp.API.Interfaces;
-using UisApp.Forms;
 using UisApp.Helpers;
 using UisApp.MVP;
 
@@ -33,8 +24,8 @@ namespace UisApp
                 response = apiProvider.Connect(
                         loginTextBox.Text, passwordTextBox.Text);
             }
-#pragma warning disable CS0168 
-            catch(Exception ex)
+#pragma warning disable CS0168
+            catch (Exception ex)
 #pragma warning restore CS0168
             {
                 MessageBox.Show("Ошибка подключения");
@@ -54,7 +45,7 @@ namespace UisApp
 
         private void UpperBorder_MouseMove(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 FormDragLogic.Move(Handle);
             }

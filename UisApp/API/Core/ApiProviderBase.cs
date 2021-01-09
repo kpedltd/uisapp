@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UisApp.API.Exceptions;
+﻿using UisApp.API.Exceptions;
 using UisApp.API.Interfaces;
 
 namespace UisApp.API.Core
 {
-    abstract class ApiProviderBase
+    internal abstract class ApiProviderBase
     {
         protected static IApiProvider _instance;
 

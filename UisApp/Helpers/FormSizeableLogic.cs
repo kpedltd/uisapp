@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UisApp.Helpers
 {
-    static class FormSizeableLogic
+    internal static class FormSizeableLogic
     {
         private const int HeaderHeight = 32;
         private const int HeightUpperBorder = 5;
@@ -45,12 +41,12 @@ namespace UisApp.Helpers
 
                 if (pos.Y <= HeaderHeight && pos.Y >= HeightUpperBorder)
                 {
-                    m.Result = (IntPtr)2; 
+                    m.Result = (IntPtr)2;
                     return;
                 }
                 if (pos.Y <= HeightUpperBorder)
                 {
-                    m.Result = (IntPtr)12;  
+                    m.Result = (IntPtr)12;
                     return;
                 }
                 if (pos.Y >= form.ClientSize.Height - HeightLowerBorder &&
@@ -62,18 +58,18 @@ namespace UisApp.Helpers
                 if (pos.X >= form.ClientSize.Width - WidthRightBorder &&
                     pos.Y < form.ClientSize.Height - Square)
                 {
-                    m.Result = (IntPtr)11;  
+                    m.Result = (IntPtr)11;
                     return;
                 }
                 if (pos.X <= WidthLeftBorder)
                 {
-                    m.Result = (IntPtr)10;  
+                    m.Result = (IntPtr)10;
                     return;
                 }
                 if (pos.X >= form.ClientSize.Width - Square &&
                     pos.Y >= form.ClientSize.Height - Square)
                 {
-                    m.Result = (IntPtr)17; 
+                    m.Result = (IntPtr)17;
                     return;
                 }
             }

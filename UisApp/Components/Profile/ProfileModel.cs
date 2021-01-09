@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UisApp.API;
-using UisApp.API.Interfaces;
-using UisApp.API.Providers;
 using UisApp.Components.Profile.Interfaces;
-using UisApp.Models;
 
 namespace UisApp.Components.Profile
 {
-    class ProfileModel : IProfileModel
+    internal class ProfileModel : IProfileModel
     {
         /// <summary>
         /// Имя
@@ -87,7 +79,6 @@ namespace UisApp.Components.Profile
 
         public ProfileModel()
         {
-            
         }
 
         /// <summary>

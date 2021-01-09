@@ -4,14 +4,14 @@ using System.Collections.Specialized;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using UisApp.API.Core;
 using UisApp.API.Interfaces;
 using UisApp.API.Resources;
 using UisApp.MVP;
-using UisApp.API.Core;
 
 namespace UisApp.API
 {
-    class ApiProvider : ApiProviderBase, IApiProvider, IDisposable
+    internal class ApiProvider : ApiProviderBase, IApiProvider, IDisposable
     {
         /// <summary>
         /// Получить экземпляр провайдера
@@ -96,8 +96,6 @@ namespace UisApp.API
 
             return data;
         }
-
-
 
         /// <summary>
         /// Отключиться

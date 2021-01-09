@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UisApp.Components.ScheduleTable.Interfaces;
 using UisApp.MVP.Support;
 
@@ -10,7 +7,7 @@ namespace UisApp.Components.ScheduleTable
 {
     public class ScheduleTablePresenter : PresenterBase<IScheduleTablePresenter, IScheduleTableView>, IScheduleTablePresenter
     {
-        IScheduleTableModel Model;
+        private IScheduleTableModel Model;
 
         protected override IScheduleTablePresenter GetPresenterEndpoint()
         {

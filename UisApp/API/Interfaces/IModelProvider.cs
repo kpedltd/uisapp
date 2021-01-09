@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UisApp.API.Interfaces
+﻿namespace UisApp.API.Interfaces
 {
-    interface IModelProvider
+    internal interface IModelProvider
     {
     }
 }

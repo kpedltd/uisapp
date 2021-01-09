@@ -1,21 +1,16 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UisApp.MVP;
 
 namespace UisApp.Models
 {
-    enum SubjectCertification
+    internal enum SubjectCertification
     {
         exam,
         record,
         coursework
     }
 
-    interface ISubjectModel : IModel
+    internal interface ISubjectModel : IModel
     {
         /// <summary>
         /// Название
