@@ -44,5 +44,14 @@ namespace UisApp.Components.Profile
                 });
             }
         }
+
+        /// <summary>
+        /// Установить фото
+        /// </summary>
+        /// <param name="fileName"></param>
+        public void SetPhoto(string fileName)
+        {
+            Model.SetPhoto(fileName);
+        }
     }
 }

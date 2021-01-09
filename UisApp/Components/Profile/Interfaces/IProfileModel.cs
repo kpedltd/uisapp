@@ -9,5 +9,11 @@ namespace UisApp.Components.Profile.Interfaces
         /// Событие обновления данных
         /// </summary>
         event EventHandler Updated;
+
+        /// <summary>
+        /// Установить фото
+        /// </summary>
+        /// <param name="fileName"></param>
+        void SetPhoto(string fileName);
     }
 }

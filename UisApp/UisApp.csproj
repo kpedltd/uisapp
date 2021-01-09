@@ -66,6 +66,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UriResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Attendance\AttendanceView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Attendance\AttendanceView.Designer.cs">
+      <DependentUpon>AttendanceView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\IUisComponent.cs" />
     <Compile Include="Components\Profile\Interfaces\IProfileModel.cs" />
     <Compile Include="Components\Profile\Interfaces\IProfilePresenter.cs" />
@@ -127,6 +133,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Helpers\DateTimeConverters.cs" />
+    <Compile Include="Helpers\FileBinaryHelper.cs" />
     <Compile Include="Helpers\FormDragLogic.cs" />
     <Compile Include="Helpers\FormSizeableLogic.cs" />
     <Compile Include="Models\IAttendanceLogModel.cs" />
@@ -158,6 +165,9 @@
     <EmbeddedResource Include="API\Resources\UriResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UriResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Attendance\AttendanceView.resx">
+      <DependentUpon>AttendanceView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Profile\ProfileView.resx">
       <DependentUpon>ProfileView.cs</DependentUpon>
@@ -206,6 +216,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Components\Attendance\Interfaces\" />
     <Folder Include="Presenters\" />
   </ItemGroup>
   <ItemGroup>

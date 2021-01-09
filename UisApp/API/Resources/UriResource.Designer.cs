@@ -95,5 +95,14 @@ namespace UisApp.API.Resources {
                 return ResourceManager.GetString("logout", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на /lecturer/update_photo.
+        /// </summary>
+        internal static string update_photo {
+            get {
+                return ResourceManager.GetString("update_photo", resourceCulture);
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Specialized;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -180,6 +181,7 @@ namespace UisApp.API
 
             string query = uri + ToQueryString(nvc);
 
+
             HttpResponseMessage response = connection.PostAsync(
                 query, null).GetAwaiter().GetResult();
 
@@ -189,6 +191,30 @@ namespace UisApp.API
             ApiResponse<T> data = JsonConvert.DeserializeObject<ApiResponse<T>>(result);
 
             return data;
+        }
+
+        /// <summary>
+        /// Отправить файл
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="uri"></param>
+        /// <param name="nvc"></param>
+        /// <param name="paramFileStream"></param>
+        /// <param name="paramFileBytes"></param>
+        public void SendFile(string uri, NameValueCollection nvc, byte[] paramFileBytes)
+        {
+            nvc.Add("secret_token", sToken);
+            string query = uri + ToQueryString(nvc);
+
+            HttpContent bytesContent = new ByteArrayContent(paramFileBytes);
+            using (var formData = new MultipartFormDataContent())
+            {
+                formData.Add(bytesContent, "file", "file");
+
+                var response = connection.PostAsync(query, formData).GetAwaiter().GetResult();
+
+                response.EnsureSuccessStatusCode();
+            }
         }
     }
 }

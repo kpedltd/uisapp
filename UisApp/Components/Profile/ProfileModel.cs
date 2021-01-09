@@ -1,4 +1,5 @@
 ﻿using System;
+using UisApp.API.Providers;
 using UisApp.Components.Profile.Interfaces;
 
 namespace UisApp.Components.Profile
@@ -85,5 +86,17 @@ namespace UisApp.Components.Profile
         /// Событие обновления модели
         /// </summary>
         public event EventHandler Updated;
+
+        /// <summary>
+        /// Установить фото
+        /// </summary>
+        /// <param name="fileName"></param>
+        public void SetPhoto(string fileName)
+        {
+            IProfileModel model = LecturerProvider.SetPhoto(fileName);
+            this.Photo = model.Photo;
+
+            Updated?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

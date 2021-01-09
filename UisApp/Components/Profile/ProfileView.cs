@@ -141,12 +141,12 @@ namespace UisApp.Components.Profile
 
         private string GetFirstName()
         {
-            return fullnameLabel.Text.Split()[0];
+            return fullnameLabel.Text.Split()[1];
         }
 
         private string GetLastName()
         {
-            return fullnameLabel.Text.Split()[1];
+            return fullnameLabel.Text.Split()[0];
         }
 
         private string GetPatronymic()
@@ -154,20 +154,32 @@ namespace UisApp.Components.Profile
             return fullnameLabel.Text.Split()[2];
         }
 
+        /// <summary>
+        /// Установить имя
+        /// </summary>
+        /// <param name="name"></param>
         private void SetFirstName(string name)
-        {
-            var splited = fullnameLabel.Text.Split();
-            splited[0] = name;
-            fullnameLabel.Text = String.Join(" ", splited);
-        }
-
-        private void SetLastName(string name)
         {
             var splited = fullnameLabel.Text.Split();
             splited[1] = name;
             fullnameLabel.Text = String.Join(" ", splited);
         }
 
+        /// <summary>
+        /// Установить фамилию
+        /// </summary>
+        /// <param name="name"></param>
+        private void SetLastName(string name)
+        {
+            var splited = fullnameLabel.Text.Split();
+            splited[0] = name;
+            fullnameLabel.Text = String.Join(" ", splited);
+        }
+
+        /// <summary>
+        /// Установить отчество
+        /// </summary>
+        /// <param name="patr"></param>
         private void SetPatronymic(string patr)
         {
             var splited = fullnameLabel.Text.Split();
@@ -175,8 +187,28 @@ namespace UisApp.Components.Profile
             fullnameLabel.Text = String.Join(" ", splited);
         }
 
+        /// <summary>
+        /// Изменить фото профиля
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Photo_Click(object sender, EventArgs e)
         {
+            if (openPhotoDialog.ShowDialog() == DialogResult.Cancel)
+            {
+                return;
+            }
+
+            string fileName = openPhotoDialog.FileName;
+
+            try
+            {
+                Presenter.SetPhoto(fileName);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         /// <summary>
@@ -225,6 +257,19 @@ namespace UisApp.Components.Profile
             Biography = lecturerModel.Biography;
             DepartmentName = lecturerModel.DepartmentName;
             FacultyName = lecturerModel.FacultyName;
+            Photo = lecturerModel.Photo;
+
+            if(Photo != null)
+            {
+                try
+                {
+                    photo.Load($"http://localhost:3000/{Photo}");
+                }
+                catch(Exception ex)
+                {
+                    return;
+                }
+            }
         }
     }
 }

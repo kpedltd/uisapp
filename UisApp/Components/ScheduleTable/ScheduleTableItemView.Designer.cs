@@ -51,7 +51,7 @@
             this.locationLabel.AutoSize = true;
             this.locationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.locationLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.locationLabel.Location = new System.Drawing.Point(3, 30);
+            this.locationLabel.Location = new System.Drawing.Point(3, 32);
             this.locationLabel.Name = "locationLabel";
             this.locationLabel.Size = new System.Drawing.Size(0, 13);
             this.locationLabel.TabIndex = 2;
@@ -61,7 +61,7 @@
             this.groupNameLabel.AutoSize = true;
             this.groupNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupNameLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.groupNameLabel.Location = new System.Drawing.Point(3, 15);
+            this.groupNameLabel.Location = new System.Drawing.Point(3, 17);
             this.groupNameLabel.Name = "groupNameLabel";
             this.groupNameLabel.Size = new System.Drawing.Size(0, 13);
             this.groupNameLabel.TabIndex = 1;
@@ -71,7 +71,7 @@
             this.subjectNameLabel.AutoSize = true;
             this.subjectNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.subjectNameLabel.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.subjectNameLabel.Location = new System.Drawing.Point(3, 0);
+            this.subjectNameLabel.Location = new System.Drawing.Point(3, 2);
             this.subjectNameLabel.Name = "subjectNameLabel";
             this.subjectNameLabel.Size = new System.Drawing.Size(0, 13);
             this.subjectNameLabel.TabIndex = 0;

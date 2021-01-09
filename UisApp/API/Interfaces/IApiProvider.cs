@@ -1,4 +1,5 @@
 ﻿using System.Collections.Specialized;
+using System.IO;
 using UisApp.MVP;
 
 namespace UisApp.API.Interfaces
@@ -80,5 +81,17 @@ namespace UisApp.API.Interfaces
         /// <returns></returns>
         IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc)
             where T : IModel;
+
+
+
+        /// <summary>
+        /// Отправить файл
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="uri"></param>
+        /// <param name="nvc"></param>
+        /// <param name="paramFileStream"></param>
+        /// <param name="paramFileBytes"></param>
+        void SendFile(string uri, NameValueCollection nvc, byte[] paramFileBytes);
     }
 }

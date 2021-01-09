@@ -116,5 +116,10 @@ namespace UisApp.API
 
             return schedule;
         }
+
+        public void SendFile(string uri, NameValueCollection nvc, byte[] paramFileBytes)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

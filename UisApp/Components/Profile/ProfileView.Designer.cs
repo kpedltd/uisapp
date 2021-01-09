@@ -44,6 +44,7 @@
             this.facultyLabel = new System.Windows.Forms.Label();
             this.facultValue = new System.Windows.Forms.Label();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.openPhotoDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
@@ -221,6 +222,11 @@
             this.flowLayoutPanel6.Size = new System.Drawing.Size(697, 199);
             this.flowLayoutPanel6.TabIndex = 39;
             // 
+            // openPhotoDialog
+            // 
+            this.openPhotoDialog.FileName = "openFileDialog1";
+            this.openPhotoDialog.Filter = "Изображения (*.PNG;*.JPG)|*.PNG;*.JPG";
+            // 
             // ProfileView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,5 +271,6 @@
         private System.Windows.Forms.Label facultyLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.OpenFileDialog openPhotoDialog;
     }
 }
