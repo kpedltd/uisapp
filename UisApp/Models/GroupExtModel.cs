@@ -12,7 +12,7 @@ namespace UisApp.Models
         /// <summary>
         /// ИД
         /// </summary>
-        [JsonProperty("id")]
+        [JsonProperty("groupId")]
         public int Id
         {
             get;

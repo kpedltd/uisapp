@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using UisApp.API.Core;
+using UisApp.API.Exceptions;
 using UisApp.API.Interfaces;
 using UisApp.API.Resources;
 using UisApp.MVP;
@@ -91,10 +92,12 @@ namespace UisApp.API
 
             var result = response.Content.ReadAsStringAsync().Result;
             ApiResponse<IModel> data = JsonConvert.DeserializeObject<ApiResponse<IModel>>(result);
-            if (data.status)
+            if (!data.status)
             {
-                this.sToken = data.token;
+                throw new ApiException(data.error);
             }
+
+            this.sToken = data.token;
 
             return data;
         }
@@ -118,9 +121,9 @@ namespace UisApp.API
 
             var result = response.Content.ReadAsStringAsync().Result;
             ApiResponse<IModel> data = JsonConvert.DeserializeObject<ApiResponse<IModel>>(result);
-            if (data.status)
+            if (!data.status)
             {
-                this.sToken = data.token;
+                throw new ApiException(data.error);
             }
         }
 
@@ -154,14 +157,16 @@ namespace UisApp.API
             return sb.ToString();
         }
 
-        public IApiResponse<T> GetRequest<T>(string uri)
+        public IApiResponse<T> GetRequest<T>(string uri, NameValueCollection nvc)
         {
-            var queryParams = new NameValueCollection()
+            if(nvc == null)
             {
-                { "secret_token", sToken }
-            };
+                nvc = new NameValueCollection();
+            }
 
-            string query = uri + ToQueryString(queryParams);
+            nvc.Add("secret_token", sToken);
+
+            string query = uri + ToQueryString(nvc);
 
             HttpResponseMessage response = connection.GetAsync(
                 query).GetAwaiter().GetResult();
@@ -170,16 +175,24 @@ namespace UisApp.API
 
             var result = response.Content.ReadAsStringAsync().Result;
             ApiResponse<T> data = JsonConvert.DeserializeObject<ApiResponse<T>>(result);
+            if(!data.status)
+            {
+                throw new ApiException(data.error);
+            }
 
             return data;
         }
 
         public IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc)
         {
+            if (nvc == null)
+            {
+                nvc = new NameValueCollection();
+            }
+
             nvc.Add("secret_token", sToken);
 
             string query = uri + ToQueryString(nvc);
-
 
             HttpResponseMessage response = connection.PostAsync(
                 query, null).GetAwaiter().GetResult();
@@ -188,6 +201,10 @@ namespace UisApp.API
 
             var result = response.Content.ReadAsStringAsync().Result;
             ApiResponse<T> data = JsonConvert.DeserializeObject<ApiResponse<T>>(result);
+            if (!data.status)
+            {
+                throw new ApiException(data.error);
+            }
 
             return data;
         }

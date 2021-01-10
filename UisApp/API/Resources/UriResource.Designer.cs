@@ -70,6 +70,15 @@ namespace UisApp.API.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на /schedule/concrete.
+        /// </summary>
+        internal static string concrete_schedule {
+            get {
+                return ResourceManager.GetString("concrete_schedule", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /lecturer/getme.
         /// </summary>
         internal static string getme {
@@ -102,6 +111,15 @@ namespace UisApp.API.Resources {
         internal static string logout {
             get {
                 return ResourceManager.GetString("logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на /attendance/students.
+        /// </summary>
+        internal static string student_attendance {
+            get {
+                return ResourceManager.GetString("student_attendance", resourceCulture);
             }
         }
         

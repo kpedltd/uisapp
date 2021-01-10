@@ -30,7 +30,7 @@ namespace UisApp
 
         private void InitializeScheduleTable()
         {
-            var scheduleModel = ScheduleTableProvider.GetLecturerSchedule();
+            var scheduleModel = ScheduleProvider.GetLecturerSchedule();
             ScheduleTablePresenter presenter = new ScheduleTablePresenter(scheduleModel);
 
             var scheduleView = new ScheduleTableView();

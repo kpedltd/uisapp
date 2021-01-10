@@ -63,7 +63,7 @@ namespace UisApp.API
             return apiResponse;
         }
 
-        public IApiResponse<T> GetRequest<T>(string uri)
+        public IApiResponse<T> GetRequest<T>(string uri, NameValueCollection nvc)
         {
             IApiResponse<T> response = new ApiResponse<T>();
             response.data = (T)FakeResponses[uri];

@@ -26,7 +26,7 @@ namespace UisApp.Models
         /// </summary>
         [JsonProperty("time")]
         [JsonConverter(typeof(CustomTimeConverter))]
-        DateTime Time
+        public DateTime Time
         {
             get;
             set;

@@ -18,7 +18,26 @@ namespace UisApp.Components.Attendance
         /// <summary>
         /// Предметы
         /// </summary>
-        private IList<SubjectExtModel> __subjects;
+        private IList<SubjectExtModel> Subjects;
+
+        /// <summary>
+        /// Группы
+        /// </summary>
+        private IList<GroupExtModel> Groups;
+
+        /// <summary>
+        /// Время занятий
+        /// </summary>
+        private IList<ScheduleExtModel> ScheduleTimes;
+
+        /// <summary>
+        /// Посещаемость студентов
+        /// </summary>
+        public IList<StudentAttendanceModel> StudentsAttendance
+        {
+            get;
+            set;
+        }
 
         /// <summary>
         /// Презентер
@@ -33,6 +52,7 @@ namespace UisApp.Components.Attendance
         {
             InitializeComponent();
             GetSubjects();
+
         }
 
         /// <summary>
@@ -68,20 +88,100 @@ namespace UisApp.Components.Attendance
             }
         }
 
+
         public void Update(IAttendanceModel model)
         {
             throw new NotImplementedException();
         }
 
         
-
+        /// <summary>
+        /// Получить предметы
+        /// </summary>
         private void GetSubjects()
         {
-            __subjects = LecturerProvider.GetSubjects();
-            for(int i = 0;i < __subjects.Count;i++)
+            Subjects = LecturerProvider.GetSubjects();
+            for(int i = 0;i < Subjects.Count;i++)
             {
-                subjectComboBox.Items.Add(__subjects[i].Name);
+                subjectComboBox.Items.Add(Subjects[i].Name);
             }
+
+            if (Subjects.Count > 0)
+            {
+                subjectComboBox.SelectedIndex = 0;
+            }
+        }
+
+        private void SubjectComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+
+            groupComboBox.Items.Clear();
+            timeComboBox.Items.Clear();
+            timeComboBox.SelectedText = "";
+
+            Groups = SubjectProvider.GetGroups(Subjects[comboBox.SelectedIndex].Id);
+            for (int i = 0; i < Groups.Count; i++)
+            {
+                groupComboBox.Items.Add(Groups[i].Name);
+            }
+
+            if(Groups.Count > 0)
+            {
+                groupComboBox.Enabled = true;
+                dateTimePicker.Enabled = false;
+                timeComboBox.Enabled = false;
+
+                groupComboBox.SelectedIndex = 0;
+            }
+        }
+
+        private void GroupComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dateTimePicker.Enabled = true;
+
+            timeComboBox.Items.Clear();
+            timeComboBox.Enabled = false;
+            timeComboBox.SelectedText = "";
+        }
+
+        private void DateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            DateTimePicker dateTimePicker = sender as DateTimePicker;
+
+            if(dateTimePicker.Value.DayOfWeek == DayOfWeek.Sunday)
+            {
+                return;
+            }
+
+            ScheduleDayOfWeek scheduleDayOfWeek = (ScheduleDayOfWeek)((int)(dateTimePicker.Value.DayOfWeek) - 1);
+
+            ScheduleTimes = ScheduleProvider.GetScheduleEntry(
+                Groups[groupComboBox.SelectedIndex].Id,
+                Subjects[subjectComboBox.SelectedIndex].Id,
+                scheduleDayOfWeek);
+
+            for (int i = 0; i < ScheduleTimes.Count; i++)
+            {
+                timeComboBox.Items.Add(ScheduleTimes[i].Time.ToString("HH;mm"));
+            }
+
+            if (ScheduleTimes.Count > 0)
+            {
+                timeComboBox.SelectedIndex = 0;
+
+                timeComboBox.Enabled = true;
+            }
+        }
+
+        private void TimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillStudentAttendance();
+        }
+
+        private void FillStudentAttendance()
+        {
+
         }
     }
 }

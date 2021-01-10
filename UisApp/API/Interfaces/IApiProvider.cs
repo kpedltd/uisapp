@@ -70,7 +70,7 @@ namespace UisApp.API.Interfaces
         /// </summary>
         /// <param name="uri"></param>
         /// <returns></returns>
-        IApiResponse<T> GetRequest<T>(string uri);
+        IApiResponse<T> GetRequest<T>(string uri, NameValueCollection nvc);
 
         /// <summary>
         /// Post запрос

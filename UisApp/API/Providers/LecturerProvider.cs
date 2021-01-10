@@ -16,7 +16,7 @@ namespace UisApp.API.Providers
         public static IProfileModel GetMe()
         {
             var api = ApiProviderBase.GetInstance();
-            IApiResponse<ProfileModel> response = api.GetRequest<ProfileModel>(UriResource.getme);
+            IApiResponse<ProfileModel> response = api.GetRequest<ProfileModel>(UriResource.getme, null);
 
             var result = response.data as ProfileModel;
             return result;
@@ -25,7 +25,7 @@ namespace UisApp.API.Providers
         public static IList<SubjectExtModel> GetSubjects()
         {
             var api = ApiProviderBase.GetInstance();
-            IApiResponse<IList<SubjectExtModel>> response = api.GetRequest<IList<SubjectExtModel>>(UriResource.lecturer_subjects);
+            IApiResponse<IList<SubjectExtModel>> response = api.GetRequest<IList<SubjectExtModel>>(UriResource.lecturer_subjects, null);
 
             var result = response.data as IList<SubjectExtModel>;
             return result;

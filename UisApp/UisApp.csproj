@@ -59,8 +59,9 @@
     <Compile Include="API\FakeApiProvider.cs" />
     <Compile Include="API\Interfaces\IApiProvider.cs" />
     <Compile Include="API\Interfaces\IModelProvider.cs" />
+    <Compile Include="API\Providers\AttendanceProvider.cs" />
     <Compile Include="API\Providers\LecturerProvider.cs" />
-    <Compile Include="API\Providers\ScheduleTableProvider.cs" />
+    <Compile Include="API\Providers\ScheduleProvider.cs" />
     <Compile Include="API\Providers\SubjectProvider.cs" />
     <Compile Include="API\Resources\UriResource.Designer.cs">
       <AutoGen>True</AutoGen>
