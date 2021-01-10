@@ -4,7 +4,6 @@ using UisApp.MVP;
 namespace UisApp.API.Core
 {
     internal class ApiResponse<T> : IApiResponse<T>
-        where T : IModel
     {
         public bool status
         {

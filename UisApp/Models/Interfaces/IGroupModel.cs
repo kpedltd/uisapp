@@ -14,15 +14,5 @@ namespace UisApp.Models
             get;
             set;
         }
-
-        /// <summary>
-        /// Ид образовательной программы
-        /// </summary>
-        [JsonProperty("eduProgramId")]
-        int EduProgramId
-        {
-            get;
-            set;
-        }
     }
 }

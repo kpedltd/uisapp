@@ -318,6 +318,7 @@
             this.attendanceButton.Size = new System.Drawing.Size(50, 50);
             this.attendanceButton.TabIndex = 4;
             this.attendanceButton.UseVisualStyleBackColor = true;
+            this.attendanceButton.Click += new System.EventHandler(this.AttendanceButton_Click);
             // 
             // panel6
             // 

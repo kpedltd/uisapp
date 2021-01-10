@@ -1,4 +1,5 @@
-﻿using System.Collections.Specialized;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using UisApp.API.Core;
 using UisApp.API.Interfaces;
@@ -6,6 +7,7 @@ using UisApp.API.Resources;
 using UisApp.Components.Profile;
 using UisApp.Components.Profile.Interfaces;
 using UisApp.Helpers;
+using UisApp.Models;
 
 namespace UisApp.API.Providers
 {
@@ -17,6 +19,15 @@ namespace UisApp.API.Providers
             IApiResponse<ProfileModel> response = api.GetRequest<ProfileModel>(UriResource.getme);
 
             var result = response.data as ProfileModel;
+            return result;
+        }
+
+        public static IList<SubjectExtModel> GetSubjects()
+        {
+            var api = ApiProviderBase.GetInstance();
+            IApiResponse<IList<SubjectExtModel>> response = api.GetRequest<IList<SubjectExtModel>>(UriResource.lecturer_subjects);
+
+            var result = response.data as IList<SubjectExtModel>;
             return result;
         }
 

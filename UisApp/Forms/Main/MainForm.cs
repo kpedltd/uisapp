@@ -28,6 +28,22 @@ namespace UisApp
             compContainer.SwitchTo(targerView);
         }
 
+        private void ScheduleButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            var targerView = (IUisComponent)button.Tag;
+
+            compContainer.SwitchTo(targerView);
+        }
+
+        private void AttendanceButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            var targerView = (IUisComponent)button.Tag;
+
+            compContainer.SwitchTo(targerView);
+        }
+
         private void AboutButton_Click(object sender, EventArgs e)
         {
             AboutBox aboutBox = new AboutBox();
@@ -58,13 +74,7 @@ namespace UisApp
             }
         }
 
-        private void ScheduleButton_Click(object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            var targerView = (IUisComponent)button.Tag;
-
-            compContainer.SwitchTo(targerView);
-        }
+        
 
         protected override void OnPaint(PaintEventArgs e)
         {

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Net.Http;
@@ -154,7 +155,6 @@ namespace UisApp.API
         }
 
         public IApiResponse<T> GetRequest<T>(string uri)
-            where T : IModel
         {
             var queryParams = new NameValueCollection()
             {
@@ -175,7 +175,6 @@ namespace UisApp.API
         }
 
         public IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc)
-                where T : IModel
         {
             nvc.Add("secret_token", sToken);
 
@@ -199,7 +198,6 @@ namespace UisApp.API
         /// <typeparam name="T"></typeparam>
         /// <param name="uri"></param>
         /// <param name="nvc"></param>
-        /// <param name="paramFileStream"></param>
         /// <param name="paramFileBytes"></param>
         public void SendFile(string uri, NameValueCollection nvc, byte[] paramFileBytes)
         {

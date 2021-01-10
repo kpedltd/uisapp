@@ -6,7 +6,7 @@ using UisApp.MVP;
 
 namespace UisApp.Models
 {
-    internal enum AttendanceLogState
+    public enum AttendanceLogState
     {
         /// <summary>
         /// Посещено
@@ -19,7 +19,7 @@ namespace UisApp.Models
         skiped
     }
 
-    internal interface IAttendanceLogModel : IModel
+    public interface IAttendanceLogModel : IModel
     {
         /// <summary>
         /// Состояние (Посещено/Пропущено)

@@ -1,5 +1,6 @@
 ﻿using System.Windows.Forms;
 using UisApp.API.Providers;
+using UisApp.Components.Attendance;
 using UisApp.Components.Profile;
 using UisApp.Components.ScheduleTable;
 
@@ -11,6 +12,7 @@ namespace UisApp
         {
             InitializeProfile();
             InitializeScheduleTable();
+            InitializeAttendanceLog();
         }
 
         private void InitializeProfile()
@@ -37,6 +39,19 @@ namespace UisApp
             scheduleView.AttachToPresenter(presenter, true);
 
             scheduleButton.Tag = scheduleView;
+        }
+
+        private void InitializeAttendanceLog()
+        {
+            //var scheduleModel = ScheduleTableProvider.GetLecturerSchedule();
+            //ScheduleTablePresenter presenter = new ScheduleTablePresenter(scheduleModel);
+
+            var attendanceView = new AttendanceView();
+            compContainer.AttachView(attendanceView);
+
+            //scheduleView.AttachToPresenter(presenter, true);
+
+            attendanceButton.Tag = attendanceView;
         }
     }
 }

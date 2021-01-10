@@ -265,7 +265,7 @@ namespace UisApp.Components.Profile
                 {
                     photo.Load($"http://localhost:3000/{Photo}");
                 }
-                catch(Exception ex)
+                catch (Exception)
                 {
                     return;
                 }

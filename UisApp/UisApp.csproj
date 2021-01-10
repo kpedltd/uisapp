@@ -61,17 +61,31 @@
     <Compile Include="API\Interfaces\IModelProvider.cs" />
     <Compile Include="API\Providers\LecturerProvider.cs" />
     <Compile Include="API\Providers\ScheduleTableProvider.cs" />
+    <Compile Include="API\Providers\SubjectProvider.cs" />
     <Compile Include="API\Resources\UriResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UriResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Attendance\AttendanceItemView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Attendance\AttendanceItemView.Designer.cs">
+      <DependentUpon>AttendanceItemView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Attendance\AttendanceModel.cs" />
+    <Compile Include="Components\Attendance\AttendancePresenter.cs" />
     <Compile Include="Components\Attendance\AttendanceView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\Attendance\AttendanceView.Designer.cs">
       <DependentUpon>AttendanceView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Attendance\Interfaces\IAttendanceModel.cs" />
+    <Compile Include="Components\Attendance\Interfaces\IAttendancePresenter.cs" />
+    <Compile Include="Components\Attendance\Interfaces\IAttendanceView.cs" />
+    <Compile Include="Components\Attendance\Interfaces\IStudentAttendanceModel.cs" />
+    <Compile Include="Components\Attendance\StudentAttendanceModel.cs" />
     <Compile Include="Components\IUisComponent.cs" />
     <Compile Include="Components\Profile\Interfaces\IProfileModel.cs" />
     <Compile Include="Components\Profile\Interfaces\IProfilePresenter.cs" />
@@ -136,20 +150,24 @@
     <Compile Include="Helpers\FileBinaryHelper.cs" />
     <Compile Include="Helpers\FormDragLogic.cs" />
     <Compile Include="Helpers\FormSizeableLogic.cs" />
-    <Compile Include="Models\IAttendanceLogModel.cs" />
-    <Compile Include="Models\IDepartmentModel.cs" />
-    <Compile Include="Models\IEduProgramModel.cs" />
-    <Compile Include="Models\IFacultyModel.cs" />
-    <Compile Include="Models\IGroupModel.cs" />
+    <Compile Include="Models\GroupExtModel.cs" />
+    <Compile Include="Models\Interfaces\IAttendanceLogModel.cs" />
+    <Compile Include="Models\Interfaces\IDepartmentModel.cs" />
+    <Compile Include="Models\Interfaces\IEduProgramModel.cs" />
+    <Compile Include="Models\Interfaces\IFacultyModel.cs" />
+    <Compile Include="Models\Interfaces\IGroupModel.cs" />
+    <Compile Include="Models\ScheduleExtModel.cs" />
+    <Compile Include="Models\StudentExtModel.cs" />
+    <Compile Include="Models\SubjectExtModel.cs" />
     <Compile Include="MVP\IModel.cs" />
-    <Compile Include="Models\ILecturerModel.cs" />
-    <Compile Include="Models\IRatingLogModel.cs" />
-    <Compile Include="Models\IScheduleModel.cs" />
-    <Compile Include="Models\IStudentMetricsModel.cs" />
-    <Compile Include="Models\IStudentModel.cs" />
-    <Compile Include="Models\ISubjectModel.cs" />
-    <Compile Include="Models\ITaskModel.cs" />
-    <Compile Include="Models\ITaskResultModel.cs" />
+    <Compile Include="Models\Interfaces\ILecturerModel.cs" />
+    <Compile Include="Models\Interfaces\IRatingLogModel.cs" />
+    <Compile Include="Models\Interfaces\IScheduleModel.cs" />
+    <Compile Include="Models\Interfaces\IStudentMetricsModel.cs" />
+    <Compile Include="Models\Interfaces\IStudentModel.cs" />
+    <Compile Include="Models\Interfaces\ISubjectModel.cs" />
+    <Compile Include="Models\Interfaces\ITaskModel.cs" />
+    <Compile Include="Models\Interfaces\ITaskResultModel.cs" />
     <Compile Include="MVP\Core\IPresenter.cs" />
     <Compile Include="MVP\Core\IView.cs" />
     <Compile Include="MVP\Support\IViewManager.cs" />
@@ -165,6 +183,9 @@
     <EmbeddedResource Include="API\Resources\UriResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UriResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Attendance\AttendanceItemView.resx">
+      <DependentUpon>AttendanceItemView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\Attendance\AttendanceView.resx">
       <DependentUpon>AttendanceView.cs</DependentUpon>
@@ -216,7 +237,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Components\Attendance\Interfaces\" />
     <Folder Include="Presenters\" />
   </ItemGroup>
   <ItemGroup>

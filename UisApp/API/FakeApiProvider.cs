@@ -64,7 +64,6 @@ namespace UisApp.API
         }
 
         public IApiResponse<T> GetRequest<T>(string uri)
-            where T : IModel
         {
             IApiResponse<T> response = new ApiResponse<T>();
             response.data = (T)FakeResponses[uri];
@@ -73,7 +72,6 @@ namespace UisApp.API
         }
 
         public IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc)
-            where T : IModel
         {
             throw new NotImplementedException();
         }

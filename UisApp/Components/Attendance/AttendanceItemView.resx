@@ -117,25 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="auth" xml:space="preserve">
-    <value>/lecturer/login</value>
-  </data>
-  <data name="getme" xml:space="preserve">
-    <value>/lecturer/getme</value>
-  </data>
-  <data name="lecturer_schedule" xml:space="preserve">
-    <value>/schedule/lecturer</value>
-  </data>
-  <data name="lecturer_subjects" xml:space="preserve">
-    <value>/lecturer/subjects</value>
-  </data>
-  <data name="logout" xml:space="preserve">
-    <value>/lecturer/logout</value>
-  </data>
-  <data name="subject_groups" xml:space="preserve">
-    <value>/subject/groups</value>
-  </data>
-  <data name="update_photo" xml:space="preserve">
-    <value>/lecturer/update_photo</value>
-  </data>
 </root>

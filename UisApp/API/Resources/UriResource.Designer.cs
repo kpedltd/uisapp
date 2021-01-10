@@ -88,11 +88,29 @@ namespace UisApp.API.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на /lecturer/subjects.
+        /// </summary>
+        internal static string lecturer_subjects {
+            get {
+                return ResourceManager.GetString("lecturer_subjects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /lecturer/logout.
         /// </summary>
         internal static string logout {
             get {
                 return ResourceManager.GetString("logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на /subject/groups.
+        /// </summary>
+        internal static string subject_groups {
+            get {
+                return ResourceManager.GetString("subject_groups", resourceCulture);
             }
         }
         

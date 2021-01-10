@@ -1,11 +1,11 @@
-﻿using System.Collections.Specialized;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using UisApp.MVP;
 
 namespace UisApp.API.Interfaces
 {
     internal interface IApiResponse<T>
-        where T : IModel
     {
         bool status
         {
@@ -70,8 +70,7 @@ namespace UisApp.API.Interfaces
         /// </summary>
         /// <param name="uri"></param>
         /// <returns></returns>
-        IApiResponse<T> GetRequest<T>(string uri)
-            where T : IModel;
+        IApiResponse<T> GetRequest<T>(string uri);
 
         /// <summary>
         /// Post запрос
@@ -79,9 +78,7 @@ namespace UisApp.API.Interfaces
         /// <param name="uri"></param>
         /// <param name="nvc"></param>
         /// <returns></returns>
-        IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc)
-            where T : IModel;
-
+        IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc);
 
 
         /// <summary>
