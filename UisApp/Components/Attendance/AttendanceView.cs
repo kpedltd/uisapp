@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UisApp.Components.Attendance.Interfaces;
 using UisApp.API.Providers;
@@ -51,8 +45,6 @@ namespace UisApp.Components.Attendance
         public AttendanceView()
         {
             InitializeComponent();
-            GetSubjects();
-
         }
 
         /// <summary>
@@ -71,6 +63,8 @@ namespace UisApp.Components.Attendance
 
             Presenter = presenter;
             Presenter.ConnectView(this, requiresInitialState);
+
+            GetSubjects();
         }
 
         /// <summary>
@@ -88,10 +82,20 @@ namespace UisApp.Components.Attendance
             }
         }
 
-
+        /// <summary>
+        /// Обновить
+        /// </summary>
+        /// <param name="model"></param>
         public void Update(IAttendanceModel model)
         {
-            throw new NotImplementedException();
+            if(model.Date == dateTimePicker.Value.Date &&
+                model.Schedule.Id == ScheduleTimes[timeComboBox.SelectedIndex].Id)
+            {
+                StudentsAttendance = model.Students;
+
+                DisposeAttendancePanel();
+                FillAttendance();
+            }
         }
 
         
@@ -109,6 +113,7 @@ namespace UisApp.Components.Attendance
             if (Subjects.Count > 0)
             {
                 subjectComboBox.SelectedIndex = 0;
+                Presenter.SetSubject(Subjects[subjectComboBox.SelectedIndex]);
             }
         }
 
@@ -116,9 +121,13 @@ namespace UisApp.Components.Attendance
         {
             ComboBox comboBox = sender as ComboBox;
 
+            DisposeAttendancePanel();
+
             groupComboBox.Items.Clear();
             timeComboBox.Items.Clear();
-            timeComboBox.SelectedText = "";
+            timeComboBox.Text = "";
+
+            Presenter.SetSubject(Subjects[comboBox.SelectedIndex]);
 
             Groups = SubjectProvider.GetGroups(Subjects[comboBox.SelectedIndex].Id);
             for (int i = 0; i < Groups.Count; i++)
@@ -133,16 +142,23 @@ namespace UisApp.Components.Attendance
                 timeComboBox.Enabled = false;
 
                 groupComboBox.SelectedIndex = 0;
+                Presenter.SetGroup(Groups[groupComboBox.SelectedIndex]);
             }
         }
 
         private void GroupComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ComboBox comboBox = sender as ComboBox;
+
             dateTimePicker.Enabled = true;
+
+            DisposeAttendancePanel();
 
             timeComboBox.Items.Clear();
             timeComboBox.Enabled = false;
-            timeComboBox.SelectedText = "";
+            timeComboBox.Text = "";
+
+            Presenter.SetGroup(Groups[comboBox.SelectedIndex]);
         }
 
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
@@ -156,32 +172,74 @@ namespace UisApp.Components.Attendance
 
             ScheduleDayOfWeek scheduleDayOfWeek = (ScheduleDayOfWeek)((int)(dateTimePicker.Value.DayOfWeek) - 1);
 
+            Presenter.SetDate(dateTimePicker.Value.Date);
+
             ScheduleTimes = ScheduleProvider.GetScheduleEntry(
                 Groups[groupComboBox.SelectedIndex].Id,
                 Subjects[subjectComboBox.SelectedIndex].Id,
                 scheduleDayOfWeek);
 
+            timeComboBox.Enabled = false;
+            timeComboBox.Items.Clear();
+            timeComboBox.Text = "";
             for (int i = 0; i < ScheduleTimes.Count; i++)
             {
                 timeComboBox.Items.Add(ScheduleTimes[i].Time.ToString("HH;mm"));
             }
 
+            DisposeAttendancePanel();
+
             if (ScheduleTimes.Count > 0)
             {
-                timeComboBox.SelectedIndex = 0;
-
                 timeComboBox.Enabled = true;
+
+                timeComboBox.SelectedIndex = 0;
+                Presenter.SetScheduleEntry(ScheduleTimes[timeComboBox.SelectedIndex]);
             }
         }
 
         private void TimeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FillStudentAttendance();
+            ComboBox comboBox = sender as ComboBox;
+
+            Presenter.SetScheduleEntry(ScheduleTimes[comboBox.SelectedIndex]);
+
+            StudentsAttendance = AttendanceProvider.GetAttendance(
+                ScheduleTimes[comboBox.SelectedIndex].Id,
+                dateTimePicker.Value.Date);
+
+            DisposeAttendancePanel();
+
+            Presenter.SetStudents(StudentsAttendance);
         }
 
-        private void FillStudentAttendance()
+        private void FillAttendance()
         {
+            for (int i = 0; i < StudentsAttendance.Count; i++)
+            {
+                var item = new AttendanceItemView();
+                item.Tag = StudentsAttendance[i];
+                item.StateChanged += Item_StateChanged;
+                item.Visible = true;
 
+                item.SetStudentAttendance(StudentsAttendance[i]);
+
+                attendancePanel.Controls.Add(item);
+            }
+        }
+
+        private void DisposeAttendancePanel()
+        {
+            for(int i = 0;i < attendancePanel.Controls.Count;i++)
+            {
+                attendancePanel.Controls[i].Dispose();
+            }
+            attendancePanel.Controls.Clear();
+        }
+
+        private void Item_StateChanged(object sender, EventArgs e)
+        {
+            Presenter.ChangeStudentState(sender as StudentAttendanceModel);
         }
     }
 }

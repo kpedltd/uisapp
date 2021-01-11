@@ -43,13 +43,13 @@ namespace UisApp
 
         private void InitializeAttendanceLog()
         {
-            //var scheduleModel = ScheduleTableProvider.GetLecturerSchedule();
-            //ScheduleTablePresenter presenter = new ScheduleTablePresenter(scheduleModel);
+            var attendanceModel = new AttendanceModel();
+            AttendancePresenter presenter = new AttendancePresenter(attendanceModel);
 
             var attendanceView = new AttendanceView();
             compContainer.AttachView(attendanceView);
 
-            //scheduleView.AttachToPresenter(presenter, true);
+            attendanceView.AttachToPresenter(presenter, true);
 
             attendanceButton.Tag = attendanceView;
         }

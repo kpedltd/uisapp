@@ -27,5 +27,6 @@ namespace UisApp.Components.Attendance
             get;
             set;
         }
+
     }
 }

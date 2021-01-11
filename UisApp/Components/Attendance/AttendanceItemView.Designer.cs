@@ -30,9 +30,11 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.studentName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.visitBox = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,35 +44,48 @@
             this.flowLayoutPanel1.Controls.Add(this.panel2);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(747, 37);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(723, 37);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.studentName);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(572, 34);
             this.panel1.TabIndex = 0;
             // 
+            // studentName
+            // 
+            this.studentName.AutoSize = true;
+            this.studentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.studentName.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.studentName.Location = new System.Drawing.Point(19, 6);
+            this.studentName.Name = "studentName";
+            this.studentName.Size = new System.Drawing.Size(194, 20);
+            this.studentName.TabIndex = 0;
+            this.studentName.Text = "Фамилия Имя Отчество";
+            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.visitBox);
             this.panel2.Location = new System.Drawing.Point(581, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(162, 34);
+            this.panel2.Size = new System.Drawing.Size(135, 34);
             this.panel2.TabIndex = 1;
             // 
-            // checkBox1
+            // visitBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.checkBox1.Location = new System.Drawing.Point(7, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(121, 22);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Присутствует";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.visitBox.AutoSize = true;
+            this.visitBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.visitBox.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.visitBox.Location = new System.Drawing.Point(7, 6);
+            this.visitBox.Name = "visitBox";
+            this.visitBox.Size = new System.Drawing.Size(121, 22);
+            this.visitBox.TabIndex = 0;
+            this.visitBox.Text = "Присутствует";
+            this.visitBox.UseVisualStyleBackColor = true;
+            this.visitBox.CheckedChanged += new System.EventHandler(this.VisitBox_CheckedChanged);
             // 
             // AttendanceItemView
             // 
@@ -79,8 +94,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "AttendanceItemView";
-            this.Size = new System.Drawing.Size(747, 37);
+            this.Size = new System.Drawing.Size(727, 37);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -92,6 +109,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox visitBox;
+        private System.Windows.Forms.Label studentName;
     }
 }

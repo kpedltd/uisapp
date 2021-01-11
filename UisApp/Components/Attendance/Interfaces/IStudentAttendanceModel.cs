@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace UisApp.Components.Attendance.Interfaces
         /// <summary>
         /// Студент
         /// </summary>
+        [JsonProperty("student")]
         StudentExtModel Student
         {
             get;
@@ -22,6 +24,7 @@ namespace UisApp.Components.Attendance.Interfaces
         /// <summary>
         /// Состояние
         /// </summary>
+        [JsonProperty("state")]
         AttendanceLogState State
         {
             get;

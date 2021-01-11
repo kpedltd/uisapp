@@ -38,7 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupComboBox = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.attendancePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +46,7 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanel1.Controls.Add(this.attendancePanel);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -150,12 +150,13 @@
             this.groupComboBox.TabIndex = 0;
             this.groupComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupComboBox_SelectedIndexChanged);
             // 
-            // flowLayoutPanel2
+            // attendancePanel
             // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 69);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(753, 414);
-            this.flowLayoutPanel2.TabIndex = 1;
+            this.attendancePanel.AutoScroll = true;
+            this.attendancePanel.Location = new System.Drawing.Point(3, 69);
+            this.attendancePanel.Name = "attendancePanel";
+            this.attendancePanel.Size = new System.Drawing.Size(753, 414);
+            this.attendancePanel.TabIndex = 1;
             // 
             // AttendanceView
             // 
@@ -176,7 +177,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.FlowLayoutPanel attendancePanel;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.ComboBox groupComboBox;
         private System.Windows.Forms.Label label3;

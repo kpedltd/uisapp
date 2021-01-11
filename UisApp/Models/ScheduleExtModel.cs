@@ -9,7 +9,7 @@ using UisApp.MVP;
 
 namespace UisApp.Models
 {
-    class ScheduleExtModel : IModel
+    public class ScheduleExtModel : IModel
     {
         /// <summary>
         /// ИД

@@ -123,6 +123,9 @@
   <data name="concrete_schedule" xml:space="preserve">
     <value>/schedule/concrete</value>
   </data>
+  <data name="create_attendance_entries" xml:space="preserve">
+    <value>/attendance/create_entries</value>
+  </data>
   <data name="getme" xml:space="preserve">
     <value>/lecturer/getme</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="student_attendance" xml:space="preserve">
     <value>/attendance/students</value>
+  </data>
+  <data name="student_check" xml:space="preserve">
+    <value>/attendance/change_state</value>
   </data>
   <data name="subject_groups" xml:space="preserve">
     <value>/subject/groups</value>

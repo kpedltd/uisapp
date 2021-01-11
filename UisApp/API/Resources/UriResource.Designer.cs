@@ -79,6 +79,15 @@ namespace UisApp.API.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на /attendance/create_entries.
+        /// </summary>
+        internal static string create_attendance_entries {
+            get {
+                return ResourceManager.GetString("create_attendance_entries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /lecturer/getme.
         /// </summary>
         internal static string getme {
@@ -120,6 +129,15 @@ namespace UisApp.API.Resources {
         internal static string student_attendance {
             get {
                 return ResourceManager.GetString("student_attendance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на /attendance/change_state.
+        /// </summary>
+        internal static string student_check {
+            get {
+                return ResourceManager.GetString("student_check", resourceCulture);
             }
         }
         
