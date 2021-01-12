@@ -20,8 +20,8 @@ namespace UisApp.Models
         /// <summary>
         /// Описание
         /// </summary>
-        [JsonProperty("descirption")]
-        string Descirption
+        [JsonProperty("description")]
+        string Description
         {
             get;
             set;

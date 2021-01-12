@@ -10,7 +10,7 @@ namespace UisApp.API.Providers
 {
     static class TaskProvider
     {
-        public static void UploadImage(int taskId, string path)
+        public static TaskExtModel UploadImage(int taskId, string path)
         {
             NameValueCollection param = new NameValueCollection();
             param.Add("photo_ext", Path.GetExtension(path));
@@ -18,13 +18,15 @@ namespace UisApp.API.Providers
 
             var api = ApiProviderBase.GetInstance();
             api.SendFile(UriResource.task_photo, param, File.ReadAllBytes(path));
+
+            return GetById(taskId);
         }
 
         public static int CreateTask(TaskExtModel model, int subjectId, int groupId)
         {
             NameValueCollection param = new NameValueCollection();
             param.Add("title", model.Title);
-            param.Add("descirption", model.Descirption);
+            param.Add("description", model.Description);
             param.Add("begin", model.Begin.ToString("yyyy-MM-dd"));
             param.Add("deadline", model.Deadline.ToString("yyyy-MM-dd"));
             param.Add("subjectId", subjectId.ToString());
@@ -46,6 +48,43 @@ namespace UisApp.API.Providers
             IApiResponse<IList<TaskExtModel>> response = api.GetRequest<IList<TaskExtModel>>(UriResource.task_get, param);
 
             return response.data;
+        }
+
+        public static TaskExtModel GetById(int taskId)
+        {
+            NameValueCollection param = new NameValueCollection();
+            param.Add("id", taskId.ToString());
+
+            var api = ApiProviderBase.GetInstance();
+            IApiResponse<TaskExtModel> response = api.GetRequest<TaskExtModel>(UriResource.task_get_by_id, param);
+
+            return response.data;
+        }
+
+        public static void Delete(int taskId)
+        {
+            NameValueCollection param = new NameValueCollection();
+            param.Add("taskId", taskId.ToString());
+
+            var api = ApiProviderBase.GetInstance();
+            api.PostRequest<object>(UriResource.task_delete, param);
+        }
+
+        public static void Update(TaskExtModel model)
+        {
+            NameValueCollection param = new NameValueCollection();
+            param.Add("taskId", model.Id.ToString());
+            param.Add("title", model.Title.ToString());
+            param.Add("description", model.Description.ToString());
+            param.Add("deadline", model.Deadline.ToString("yyyy-MM-dd"));
+
+            if(model.Photo != null)
+            {
+                param.Add("photo", model.Photo.ToString());
+            }
+           
+            var api = ApiProviderBase.GetInstance();
+            api.PostRequest<object>(UriResource.task_update, param);
         }
     }
 }

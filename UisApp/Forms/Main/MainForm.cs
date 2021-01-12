@@ -90,18 +90,6 @@ namespace UisApp
                 FormDragLogic.Move(Handle);
             }
         }
-
-        
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            FormSizeableLogic.OnPaintLogic(this, e);
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            FormSizeableLogic.WndProcLogic(this, ref m);
-            base.WndProc(ref m);
-        }
+   
     }
 }

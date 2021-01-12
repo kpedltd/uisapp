@@ -9,6 +9,8 @@ namespace UisApp.Components.StudyTask
     {
         public event EventHandler TaskDeleted;
 
+        public event EventHandler TaskEdited;
+
         public TaskItemView()
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace UisApp.Components.StudyTask
 
         private void EditTaskButton_Click(object sender, EventArgs e)
         {
-
+            TaskEdited?.Invoke(this.Tag, EventArgs.Empty);
         }
     }
 }

@@ -33,5 +33,17 @@ namespace UisApp.Components.StudyTask.Interfaces
         /// </summary>
         /// <param name="model"></param>
         void AddTask(TaskExtModel model);
+
+        /// <summary>
+        /// Изменить задачу
+        /// </summary>
+        /// <param name="model"></param>
+        void EditTask(TaskExtModel model);
+
+        /// <summary>
+        /// Удалить модель
+        /// </summary>
+        /// <param name="model"></param>
+        void DeleteTask(TaskExtModel model);
     }
 }

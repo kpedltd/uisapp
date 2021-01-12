@@ -19,7 +19,7 @@ namespace UisApp.Forms.ImageViewer
 
         public void SetUrl(string path)
         {
-            image.Load(path);
+            image.Load($"http://localhost:3000/{path}");
 
             this.Size = image.Image.Size;
         }

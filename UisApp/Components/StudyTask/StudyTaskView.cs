@@ -121,6 +121,8 @@ namespace UisApp.Components.StudyTask
 
             DisposeRatingPanel();
 
+            addTaskButton.Enabled = false;
+            addTestButton.Enabled = false;
             groupComboBox.Items.Clear();
 
             Presenter.SetSubject(Subjects[comboBox.SelectedIndex]);
@@ -155,6 +157,9 @@ namespace UisApp.Components.StudyTask
             DisposeRatingPanel();
 
             Presenter.SetTasks(Tasks);
+
+            addTaskButton.Enabled = true;
+            addTestButton.Enabled = true;
         }
 
         private void FillRating()
@@ -163,8 +168,9 @@ namespace UisApp.Components.StudyTask
             {
                 var item = new TaskItemView();
                 item.Tag = Tasks[i];
-                //item.StateChanged += Item_StateChanged;
                 item.Visible = true;
+                item.TaskDeleted += Item_TaskDeleted;
+                item.TaskEdited += Item_TaskEdited;
 
                 item.SetModel(Tasks[i]);
 
@@ -195,14 +201,35 @@ namespace UisApp.Components.StudyTask
             form.Show();
         }
 
+        private void Item_TaskEdited(object sender, EventArgs e)
+        {
+            TaskCreateForm form = new TaskCreateForm(
+                sender as TaskExtModel,
+                Subjects[subjectComboBox.SelectedIndex].Id,
+                Groups[groupComboBox.SelectedIndex].Id);
+            form.TaskEdited += Form_TaskEdited; ;
+
+            form.Show();
+        }
+
+        private void Item_TaskDeleted(object sender, EventArgs e)
+        {
+            Presenter.DeleteTask(sender as TaskExtModel);
+        }
+
         private void Form_TaskCreated(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Presenter.AddTask(sender as TaskExtModel);
+        }
+
+        private void Form_TaskEdited(object sender, EventArgs e)
+        {
+            Presenter.EditTask(sender as TaskExtModel);
         }
 
         private void AddTestButton_Click(object sender, EventArgs e)
         {
-            Presenter.AddTask(sender as TaskExtModel);
+            //Presenter.AddTask(sender as TaskExtModel);
         }
     }
 }

@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.CancelButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.upperBorder.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +56,7 @@
             this.upperBorder.Name = "upperBorder";
             this.upperBorder.Size = new System.Drawing.Size(453, 34);
             this.upperBorder.TabIndex = 4;
+            this.upperBorder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpperBorder_MouseMove);
             // 
             // CloseButton
             // 
@@ -111,6 +113,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.ImageButton_Click);
             // 
             // picturePath
             // 
@@ -188,9 +191,12 @@
             this.OkButton.Size = new System.Drawing.Size(50, 50);
             this.OkButton.TabIndex = 15;
             this.OkButton.UseVisualStyleBackColor = true;
-            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
-            // TaskCreate
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "Изображения (*.PNG;*.JPG)|*.PNG;*.JPG";
+            // 
+            // TaskCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -209,7 +215,7 @@
             this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.upperBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "TaskCreate";
+            this.Name = "TaskCreateForm";
             this.Text = "TaskCreate";
             this.upperBorder.ResumeLayout(false);
             this.upperBorder.PerformLayout();
@@ -234,5 +240,6 @@
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.TextBox picturePath;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }

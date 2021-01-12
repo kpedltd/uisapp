@@ -69,6 +69,24 @@ namespace UisApp.Components.StudyTask
             Model.AddTask(model);
         }
 
+        /// <summary>
+        /// Обновить модель
+        /// </summary>
+        /// <param name="model"></param>
+        public void EditTask(TaskExtModel model)
+        {
+            Model.EditTask(model);
+        }
+
+        /// <summary>
+        /// Удалить модель
+        /// </summary>
+        /// <param name="model"></param>
+        public void DeleteTask(TaskExtModel model)
+        {
+            Model.DeleteTask(model);
+        }
+
         private void Model_TasksUpdated(object sender, EventArgs e)
         {
             Model = sender as IStudyTaskModel;

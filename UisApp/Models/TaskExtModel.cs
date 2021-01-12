@@ -31,7 +31,7 @@ namespace UisApp.Models
         /// <summary>
         /// Описание
         /// </summary>
-        public string Descirption
+        public string Description
         {
             get;
             set;

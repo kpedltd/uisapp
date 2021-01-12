@@ -159,11 +159,20 @@
   <data name="task_create" xml:space="preserve">
     <value>/task/create</value>
   </data>
+  <data name="task_delete" xml:space="preserve">
+    <value>/task/remove</value>
+  </data>
   <data name="task_get" xml:space="preserve">
     <value>/task/get_lecturer</value>
   </data>
+  <data name="task_get_by_id" xml:space="preserve">
+    <value>/task/id</value>
+  </data>
   <data name="task_photo" xml:space="preserve">
     <value>/task/upload_photo</value>
+  </data>
+  <data name="task_update" xml:space="preserve">
+    <value>/task/update</value>
   </data>
   <data name="update_photo" xml:space="preserve">
     <value>/lecturer/update_photo</value>

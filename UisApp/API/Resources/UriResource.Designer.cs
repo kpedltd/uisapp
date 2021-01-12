@@ -187,6 +187,15 @@ namespace UisApp.API.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на /task/remove.
+        /// </summary>
+        internal static string task_delete {
+            get {
+                return ResourceManager.GetString("task_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /task/get_lecturer.
         /// </summary>
         internal static string task_get {
@@ -196,11 +205,29 @@ namespace UisApp.API.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на /task/id.
+        /// </summary>
+        internal static string task_get_by_id {
+            get {
+                return ResourceManager.GetString("task_get_by_id", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /task/upload_photo.
         /// </summary>
         internal static string task_photo {
             get {
                 return ResourceManager.GetString("task_photo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на /task/update.
+        /// </summary>
+        internal static string task_update {
+            get {
+                return ResourceManager.GetString("task_update", resourceCulture);
             }
         }
         
