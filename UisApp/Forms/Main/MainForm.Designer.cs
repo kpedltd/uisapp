@@ -285,6 +285,7 @@
             this.ratingButton.Size = new System.Drawing.Size(50, 50);
             this.ratingButton.TabIndex = 4;
             this.ratingButton.UseVisualStyleBackColor = true;
+            this.ratingButton.Click += new System.EventHandler(this.ratingButton_Click);
             // 
             // panel7
             // 

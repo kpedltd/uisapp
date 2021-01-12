@@ -2,6 +2,7 @@
 using UisApp.API.Providers;
 using UisApp.Components.Attendance;
 using UisApp.Components.Profile;
+using UisApp.Components.Rating;
 using UisApp.Components.ScheduleTable;
 
 namespace UisApp
@@ -13,6 +14,7 @@ namespace UisApp
             InitializeProfile();
             InitializeScheduleTable();
             InitializeAttendanceLog();
+            InitializeRatingLog();
         }
 
         private void InitializeProfile()
@@ -52,6 +54,19 @@ namespace UisApp
             attendanceView.AttachToPresenter(presenter, true);
 
             attendanceButton.Tag = attendanceView;
+        }
+
+        private void InitializeRatingLog()
+        {
+            var ratingLogModel = new RatingModel();
+            RatingPresenter presenter = new RatingPresenter(ratingLogModel);
+
+            var ratingView = new RatingView();
+            compContainer.AttachView(ratingView);
+
+            ratingView.AttachToPresenter(presenter, true);
+
+            ratingButton.Tag = ratingView;
         }
     }
 }

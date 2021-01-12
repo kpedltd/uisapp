@@ -31,6 +31,13 @@ namespace UisApp.API.Providers
             return result;
         }
 
+        /// <summary>
+        /// Создать записи посещаемости
+        /// </summary>
+        /// <param name="groupId"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="date"></param>
+        /// <returns></returns>
         public static IList<StudentAttendanceModel> CreateEntries(int groupId, int scheduleId, DateTime date)
         {
             NameValueCollection nvc = new NameValueCollection();
@@ -45,6 +52,13 @@ namespace UisApp.API.Providers
             return result;
         }
 
+        /// <summary>
+        /// Установить отметку о посещении занятия студентом
+        /// </summary>
+        /// <param name="studentId"></param>
+        /// <param name="scheduleId"></param>
+        /// <param name="date"></param>
+        /// <param name="state"></param>
         public static void ChangeState(int studentId, int scheduleId, DateTime date, AttendanceLogState state)
         {
             NameValueCollection nvc = new NameValueCollection();

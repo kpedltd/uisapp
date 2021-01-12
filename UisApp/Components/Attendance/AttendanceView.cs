@@ -105,6 +105,11 @@ namespace UisApp.Components.Attendance
         private void GetSubjects()
         {
             Subjects = LecturerProvider.GetSubjects();
+            if(Subjects.Count == 0)
+            {
+                return;
+            }
+
             for(int i = 0;i < Subjects.Count;i++)
             {
                 subjectComboBox.Items.Add(Subjects[i].Name);

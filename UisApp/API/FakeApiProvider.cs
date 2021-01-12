@@ -38,14 +38,15 @@ namespace UisApp.API
             Host = sHost;
         }
 
-        private static Dictionary<string, IModel> FakeResponses;
+        private static Dictionary<string, object> FakeResponses;
 
         static FakeApiProvider()
         {
-            FakeResponses = new Dictionary<string, IModel>();
+            FakeResponses = new Dictionary<string, object>();
 
             FakeResponses.Add(UriResource.getme, CreateFakeProfile());
             FakeResponses.Add(UriResource.lecturer_schedule, CreateFakeSchedule());
+            FakeResponses.Add(UriResource.lecturer_subjects, new List<SubjectExtModel>());
         }
 
         public string sToken => "fake";
@@ -66,14 +67,31 @@ namespace UisApp.API
         public IApiResponse<T> GetRequest<T>(string uri, NameValueCollection nvc)
         {
             IApiResponse<T> response = new ApiResponse<T>();
-            response.data = (T)FakeResponses[uri];
+            if (FakeResponses.ContainsKey(uri))
+            {
+                response.data = (T)FakeResponses[uri];
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
 
             return response;
         }
 
         public IApiResponse<T> PostRequest<T>(string uri, NameValueCollection nvc)
         {
-            throw new NotImplementedException();
+            IApiResponse<T> response = new ApiResponse<T>();
+            if (FakeResponses.ContainsKey(uri))
+            {
+                response.data = (T)FakeResponses[uri];
+            }
+            else
+            {
+                throw new NotImplementedException();
+            }
+
+            return response;
         }
 
         private static IModel CreateFakeProfile()
