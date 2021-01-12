@@ -30,7 +30,12 @@ namespace UisApp.Components
         {
             component.Parent = this;
             component.Dock = DockStyle.Fill;
-            component.Hide();
+
+            if (component != null)
+            {
+                component.Hide();
+                component.Visible = false;
+            }
 
             components.Add(component);
         }
@@ -46,7 +51,12 @@ namespace UisApp.Components
                 component.Show();
                 component.BringToFront();
 
-                currentVisible?.Hide();
+                if (currentVisible != null)
+                {
+                    currentVisible.Hide();
+                    currentVisible.Visible = false;
+                }
+                
                 currentVisible = component;
             }
         }
@@ -59,7 +69,10 @@ namespace UisApp.Components
             if (components.Count != 0)
             {
                 currentVisible = components[0];
+
                 currentVisible.Show();
+                currentVisible.Visible = true;
+
                 currentVisible.BringToFront();
             }
         }

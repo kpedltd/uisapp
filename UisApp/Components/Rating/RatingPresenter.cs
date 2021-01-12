@@ -16,6 +16,8 @@ namespace UisApp.Components.Rating
         public RatingPresenter(IRatingModel model)
         {
             Model = model;
+
+            Model.StudentsUpdated += Model_StudentsUpdated;
         }
 
         /// <summary>
@@ -60,12 +62,25 @@ namespace UisApp.Components.Rating
             {
                 throw new ArgumentNullException(nameof(viewInstance));
             }
-
         }
 
         protected override IRatingPresenter GetPresenterEndpoint()
         {
             return this;
+        }
+
+        private void Model_StudentsUpdated(object sender, EventArgs e)
+        {
+            Model = sender as IRatingModel;
+            lock (views)
+            {
+                views
+                .ToList()
+                .ForEach((x) =>
+                {
+                    x.Update(Model);
+                });
+            }
         }
     }
 }

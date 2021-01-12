@@ -4,6 +4,7 @@ using UisApp.Components.Attendance;
 using UisApp.Components.Profile;
 using UisApp.Components.Rating;
 using UisApp.Components.ScheduleTable;
+using UisApp.Components.StudyTask;
 
 namespace UisApp
 {
@@ -15,6 +16,7 @@ namespace UisApp
             InitializeScheduleTable();
             InitializeAttendanceLog();
             InitializeRatingLog();
+            InitializeStudyTask();
         }
 
         private void InitializeProfile()
@@ -67,6 +69,19 @@ namespace UisApp
             ratingView.AttachToPresenter(presenter, true);
 
             ratingButton.Tag = ratingView;
+        }
+
+        private void InitializeStudyTask()
+        {
+            var studyTaskModel = new StudyTaskModel();
+            StudyTaskPresenter presenter = new StudyTaskPresenter(studyTaskModel);
+
+            var studyTaskView = new StudyTaskView();
+            compContainer.AttachView(studyTaskView);
+
+            studyTaskView.AttachToPresenter(presenter, true);
+
+            taskButton.Tag = studyTaskView;
         }
     }
 }

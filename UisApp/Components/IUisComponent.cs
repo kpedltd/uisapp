@@ -16,6 +16,18 @@ namespace UisApp.Components
             set;
         }
 
+        bool Visible
+        {
+            get;
+            set;
+        }
+
+        bool Enabled
+        {
+            get;
+            set;
+        }
+
         void BringToFront();
 
         void Show();

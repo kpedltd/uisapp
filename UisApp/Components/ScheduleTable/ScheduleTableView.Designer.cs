@@ -254,7 +254,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(88, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(626, 520);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(626, 524);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // flowLayoutPanel8
@@ -400,7 +400,7 @@
             this.flowLayoutPanel2.Controls.Add(this.SaturdayColumn);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 51);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1239, 444);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1239, 400);
             this.flowLayoutPanel2.TabIndex = 7;
             // 
             // MondayColumn
@@ -408,42 +408,42 @@
             this.MondayColumn.AutoScroll = true;
             this.MondayColumn.Location = new System.Drawing.Point(3, 3);
             this.MondayColumn.Name = "MondayColumn";
-            this.MondayColumn.Size = new System.Drawing.Size(200, 441);
+            this.MondayColumn.Size = new System.Drawing.Size(200, 391);
             this.MondayColumn.TabIndex = 0;
             // 
             // TuesdayColumn
             // 
             this.TuesdayColumn.Location = new System.Drawing.Point(209, 3);
             this.TuesdayColumn.Name = "TuesdayColumn";
-            this.TuesdayColumn.Size = new System.Drawing.Size(200, 441);
+            this.TuesdayColumn.Size = new System.Drawing.Size(200, 391);
             this.TuesdayColumn.TabIndex = 1;
             // 
             // WednesdayColumn
             // 
             this.WednesdayColumn.Location = new System.Drawing.Point(415, 3);
             this.WednesdayColumn.Name = "WednesdayColumn";
-            this.WednesdayColumn.Size = new System.Drawing.Size(200, 441);
+            this.WednesdayColumn.Size = new System.Drawing.Size(200, 391);
             this.WednesdayColumn.TabIndex = 2;
             // 
             // ThursdayColumn
             // 
             this.ThursdayColumn.Location = new System.Drawing.Point(621, 3);
             this.ThursdayColumn.Name = "ThursdayColumn";
-            this.ThursdayColumn.Size = new System.Drawing.Size(200, 441);
+            this.ThursdayColumn.Size = new System.Drawing.Size(200, 391);
             this.ThursdayColumn.TabIndex = 3;
             // 
             // FridayColumn
             // 
             this.FridayColumn.Location = new System.Drawing.Point(827, 3);
             this.FridayColumn.Name = "FridayColumn";
-            this.FridayColumn.Size = new System.Drawing.Size(200, 441);
+            this.FridayColumn.Size = new System.Drawing.Size(200, 391);
             this.FridayColumn.TabIndex = 4;
             // 
             // SaturdayColumn
             // 
             this.SaturdayColumn.Location = new System.Drawing.Point(1033, 3);
             this.SaturdayColumn.Name = "SaturdayColumn";
-            this.SaturdayColumn.Size = new System.Drawing.Size(200, 441);
+            this.SaturdayColumn.Size = new System.Drawing.Size(200, 391);
             this.SaturdayColumn.TabIndex = 5;
             // 
             // ScheduleTableView
@@ -454,7 +454,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel7);
             this.Name = "ScheduleTableView";
-            this.Size = new System.Drawing.Size(725, 523);
+            this.Size = new System.Drawing.Size(725, 537);
             this.flowLayoutPanel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();

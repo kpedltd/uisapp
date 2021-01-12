@@ -65,6 +65,7 @@
     <Compile Include="API\Providers\RatingProvider.cs" />
     <Compile Include="API\Providers\ScheduleProvider.cs" />
     <Compile Include="API\Providers\SubjectProvider.cs" />
+    <Compile Include="API\Providers\TaskProvider.cs" />
     <Compile Include="API\Resources\UriResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -141,6 +142,23 @@
     <Compile Include="Components\ScheduleTable\ScheduleTableView.Designer.cs">
       <DependentUpon>ScheduleTableView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\StudyTask\Interfaces\IStudyTaskModel.cs" />
+    <Compile Include="Components\StudyTask\Interfaces\IStudyTaskPresenter.cs" />
+    <Compile Include="Components\StudyTask\Interfaces\IStudyTaskView.cs" />
+    <Compile Include="Components\StudyTask\StudyTaskModel.cs" />
+    <Compile Include="Components\StudyTask\StudyTaskPresenter.cs" />
+    <Compile Include="Components\StudyTask\StudyTaskView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\StudyTask\StudyTaskView.Designer.cs">
+      <DependentUpon>StudyTaskView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StudyTask\TaskItemView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\StudyTask\TaskItemView.Designer.cs">
+      <DependentUpon>TaskItemView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\UisComponentsContainer.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -156,6 +174,12 @@
     <Compile Include="Forms\Auth\Auth.Designer.cs">
       <DependentUpon>Auth.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ImageViewer\ImageViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ImageViewer\ImageViewer.Designer.cs">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +191,12 @@
     </Compile>
     <Compile Include="Forms\Main\MainFormPanel.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskCreate\TaskCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TaskCreate\TaskCreateForm.Designer.cs">
+      <DependentUpon>TaskCreateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\DateTimeConverters.cs" />
     <Compile Include="Helpers\FileBinaryHelper.cs" />
@@ -181,6 +211,7 @@
     <Compile Include="Models\ScheduleExtModel.cs" />
     <Compile Include="Models\StudentExtModel.cs" />
     <Compile Include="Models\SubjectExtModel.cs" />
+    <Compile Include="Models\TaskExtModel.cs" />
     <Compile Include="MVP\IModel.cs" />
     <Compile Include="Models\Interfaces\ILecturerModel.cs" />
     <Compile Include="Models\Interfaces\IRatingLogModel.cs" />
@@ -227,14 +258,26 @@
     <EmbeddedResource Include="Components\ScheduleTable\ScheduleTableView.resx">
       <DependentUpon>ScheduleTableView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\StudyTask\StudyTaskView.resx">
+      <DependentUpon>StudyTaskView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\StudyTask\TaskItemView.resx">
+      <DependentUpon>TaskItemView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Auth\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageViewer\ImageViewer.resx">
+      <DependentUpon>ImageViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TaskCreate\TaskCreateForm.resx">
+      <DependentUpon>TaskCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -265,8 +308,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Components\StudyTask\" />
-    <Folder Include="Presenters\" />
+    <Folder Include="Forms\TestCreate\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\icons8_close_pane_50px_1.png" />
@@ -276,6 +318,12 @@
     <None Include="Resources\Images\attendance.png" />
     <None Include="Resources\Images\icons8_schedule_50px.png" />
     <None Include="Resources\Images\customer.png" />
+    <None Include="Resources\Images\icons8_survey_50px.png" />
+    <None Include="Resources\Images\icons8_approval_50px.png" />
+    <None Include="Resources\Images\icons8_delete_50px.png" />
+    <None Include="Resources\Images\icons8_image_50px.png" />
+    <None Include="Resources\Images\icons8_delete_bin_50px.png" />
+    <None Include="Resources\Images\icons8_create_50px.png" />
     <Content Include="Resources\Images\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

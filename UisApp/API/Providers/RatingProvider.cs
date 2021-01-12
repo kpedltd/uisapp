@@ -27,7 +27,7 @@ namespace UisApp.API.Providers
 
             var api = ApiProviderBase.GetInstance();
             IApiResponse<IList<StudentRatingModel>> response =
-                api.GetRequest<IList<StudentRatingModel>>(UriResource.student_attendance, nvc);
+                api.GetRequest<IList<StudentRatingModel>>(UriResource.student_rating, nvc);
 
             var result = response.data as IList<StudentRatingModel>;
             return result;
@@ -47,7 +47,7 @@ namespace UisApp.API.Providers
 
             var api = ApiProviderBase.GetInstance();
             IApiResponse<IList<StudentRatingModel>> response =
-                api.PostRequest<IList<StudentRatingModel>>(UriResource.create_attendance_entries, nvc);
+                api.PostRequest<IList<StudentRatingModel>>(UriResource.create_rating_entries, nvc);
             var result = response.data as IList<StudentRatingModel>;
             return result;
         }

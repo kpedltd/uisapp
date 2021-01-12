@@ -20,8 +20,6 @@ namespace UisApp.Components.ScheduleTable
             {
                 throw new ArgumentNullException(nameof(viewInstance));
             }
-
-            viewInstance.Update(Model);
         }
 
         public ScheduleTablePresenter(IScheduleTableModel model)

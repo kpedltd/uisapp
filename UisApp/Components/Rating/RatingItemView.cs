@@ -6,9 +6,13 @@ namespace UisApp.Components.Rating
 {
     public partial class RatingItemView : UserControl
     {
+        private bool NoiseStart;
+
         public RatingItemView()
         {
             InitializeComponent();
+
+            NoiseStart = true;
         }
 
         public event EventHandler StateChanged;
@@ -20,6 +24,10 @@ namespace UisApp.Components.Rating
             {
                 gradeSelector.Text = model.Grade.ToString();
             }
+            else
+            {
+                NoiseStart = false;
+            }
         }
 
         public void SetGrade(int grade)
@@ -30,6 +38,12 @@ namespace UisApp.Components.Rating
 
         private void gradeSelector_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(NoiseStart)
+            {
+                NoiseStart = false;
+                return;
+            }
+
             CheckBox checkBox = sender as CheckBox;
             StudentRatingModel model = this.Tag as StudentRatingModel;
 

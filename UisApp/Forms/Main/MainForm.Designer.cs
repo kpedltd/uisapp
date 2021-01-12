@@ -252,6 +252,7 @@
             this.taskButton.Size = new System.Drawing.Size(50, 50);
             this.taskButton.TabIndex = 4;
             this.taskButton.UseVisualStyleBackColor = true;
+            this.taskButton.Click += new System.EventHandler(this.TaskButton_Click);
             // 
             // panel8
             // 

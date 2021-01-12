@@ -117,55 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="auth" xml:space="preserve">
-    <value>/lecturer/login</value>
-  </data>
-  <data name="concrete_schedule" xml:space="preserve">
-    <value>/schedule/concrete</value>
-  </data>
-  <data name="create_attendance_entries" xml:space="preserve">
-    <value>/attendance/create_entries</value>
-  </data>
-  <data name="create_rating_entries" xml:space="preserve">
-    <value>/rating/create_entries</value>
-  </data>
-  <data name="getme" xml:space="preserve">
-    <value>/lecturer/getme</value>
-  </data>
-  <data name="lecturer_schedule" xml:space="preserve">
-    <value>/schedule/lecturer</value>
-  </data>
-  <data name="lecturer_subjects" xml:space="preserve">
-    <value>/lecturer/subjects</value>
-  </data>
-  <data name="logout" xml:space="preserve">
-    <value>/lecturer/logout</value>
-  </data>
-  <data name="student_attendance" xml:space="preserve">
-    <value>/attendance/students</value>
-  </data>
-  <data name="student_check" xml:space="preserve">
-    <value>/attendance/change_state</value>
-  </data>
-  <data name="student_rate" xml:space="preserve">
-    <value>/rating/student_rate</value>
-  </data>
-  <data name="student_rating" xml:space="preserve">
-    <value>/rating/students</value>
-  </data>
-  <data name="subject_groups" xml:space="preserve">
-    <value>/subject/groups</value>
-  </data>
-  <data name="task_create" xml:space="preserve">
-    <value>/task/create</value>
-  </data>
-  <data name="task_get" xml:space="preserve">
-    <value>/task/get_lecturer</value>
-  </data>
-  <data name="task_photo" xml:space="preserve">
-    <value>/task/upload_photo</value>
-  </data>
-  <data name="update_photo" xml:space="preserve">
-    <value>/lecturer/update_photo</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="CloseButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAOpJREFUOE/V
+        kMtKw1AURdOqv1QnIuLXOdQ6ExzqxNcPKnGtug9NaOolmXXBgtzz2PS0Oy36vr/CszybOOtOnmNoXOI3
+        vjiY8lGcwdfsbFLeQ3GFDygfeJHWAfYyI3cpH0KzGWotPbnHVVrTOICToX6nJu2wwkGs0Hc0aFlY4QJW
+        6Cd+/X0uCCtcxEdTwhaXhQnLwzNld37a83ARK8zT/XUyP9QFHIZ5us4PdRBHYWnVf1qhb/h/qAM4GVZY
+        w3aoDfQUmQwr7OEw9DytPRRv8QefcJ3yUZzB5+zcpDyGxrWDeTZx1p08T4Ku+wVzwMOXU7CpfgAAAABJ
+        RU5ErkJggg==
+</value>
   </data>
 </root>

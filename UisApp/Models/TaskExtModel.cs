@@ -1,17 +1,28 @@
 ﻿using Newtonsoft.Json;
 using System;
-using UisApp.Helpers;
-using UisApp.MVP;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace UisApp.Models
 {
-    internal interface ITaskModel : IModel
+    public class TaskExtModel : ITaskModel
     {
+        /// <summary>
+        /// ИД
+        /// </summary>
+        [JsonProperty("id")]
+        public int Id
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// Название
         /// </summary>
-        [JsonProperty("title")]
-        string Title
+        public string Title
         {
             get;
             set;
@@ -20,8 +31,7 @@ namespace UisApp.Models
         /// <summary>
         /// Описание
         /// </summary>
-        [JsonProperty("descirption")]
-        string Descirption
+        public string Descirption
         {
             get;
             set;
@@ -30,8 +40,7 @@ namespace UisApp.Models
         /// <summary>
         /// Фото
         /// </summary>
-        [JsonProperty("photo")]
-        string Photo
+        public string Photo
         {
             get;
             set;
@@ -40,8 +49,7 @@ namespace UisApp.Models
         /// <summary>
         /// Ссылка на тест
         /// </summary>
-        [JsonProperty("test")]
-        string Test
+        public string Test
         {
             get;
             set;
@@ -50,9 +58,7 @@ namespace UisApp.Models
         /// <summary>
         /// Дата начала
         /// </summary>
-        [JsonProperty("begin")]
-        [JsonConverter(typeof(CustomDateConverter))]
-        DateTime Begin
+        public DateTime Begin
         {
             get;
             set;
@@ -61,9 +67,7 @@ namespace UisApp.Models
         /// <summary>
         /// Дедлайн
         /// </summary>
-        [JsonProperty("deadline")]
-        [JsonConverter(typeof(CustomDateConverter))]
-        DateTime Deadline
+        public DateTime Deadline
         {
             get;
             set;
