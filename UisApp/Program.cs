@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using UisApp.Forms.TestCreate;
 
 namespace UisApp
 {
@@ -13,7 +14,8 @@ namespace UisApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AuthForm());
+            //Application.Run(new AuthForm());
+            Application.Run(new TestCreateForm());
         }
     }
 }

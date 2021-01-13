@@ -117,59 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8_image_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_image_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_close_pane_50px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_close_pane_50px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_survey_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_survey_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_add_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_add_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_schedule_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_schedule_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_delete_bin_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_delete_bin_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="result" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\result.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="rating" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\rating.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_create_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_create_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\task.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_delete_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_delete_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="task1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\task.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="attendance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\attendance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_approval_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_approval_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="multiply_24px_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\multiply_24px_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="CloseButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAOpJREFUOE/V
+        kMtKw1AURdOqv1QnIuLXOdQ6ExzqxNcPKnGtug9NaOolmXXBgtzz2PS0Oy36vr/CszybOOtOnmNoXOI3
+        vjiY8lGcwdfsbFLeQ3GFDygfeJHWAfYyI3cpH0KzGWotPbnHVVrTOICToX6nJu2wwkGs0Hc0aFlY4QJW
+        6Cd+/X0uCCtcxEdTwhaXhQnLwzNld37a83ARK8zT/XUyP9QFHIZ5us4PdRBHYWnVf1qhb/h/qAM4GVZY
+        w3aoDfQUmQwr7OEw9DytPRRv8QefcJ3yUZzB5+zcpDyGxrWDeTZx1p08T4Ku+wVzwMOXU7CpfgAAAABJ
+        RU5ErkJggg==
+</value>
   </data>
 </root>

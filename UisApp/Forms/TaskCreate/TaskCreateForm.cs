@@ -62,7 +62,7 @@ namespace UisApp.Forms.TaskCreate
 
         private void EditOkButton_Click(object sender, EventArgs e)
         {
-            if (!Validate())
+            if (!ValidateFields())
             {
                 return;
             }
@@ -95,7 +95,7 @@ namespace UisApp.Forms.TaskCreate
 
         private void CreateOkButton_Click(object sender, EventArgs e)
         {
-            if(!Validate())
+            if(!ValidateFields())
             {
                 return;
             }
@@ -145,7 +145,7 @@ namespace UisApp.Forms.TaskCreate
             }
         }
 
-        private bool Validate()
+        private bool ValidateFields()
         {
             if (dateTimePicker.Value.Date <= DateTime.Now)
             {

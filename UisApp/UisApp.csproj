@@ -198,6 +198,24 @@
     <Compile Include="Forms\TaskCreate\TaskCreateForm.Designer.cs">
       <DependentUpon>TaskCreateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TestCreate\AnswerBlockView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TestCreate\AnswerBlockView.Designer.cs">
+      <DependentUpon>AnswerBlockView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestCreate\QuestionBlockView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TestCreate\QuestionBlockView.Designer.cs">
+      <DependentUpon>QuestionBlockView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestCreate\TestCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestCreate\TestCreateForm.Designer.cs">
+      <DependentUpon>TestCreateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\DateTimeConverters.cs" />
     <Compile Include="Helpers\FileBinaryHelper.cs" />
     <Compile Include="Helpers\FormDragLogic.cs" />
@@ -228,6 +246,11 @@
     <Compile Include="MVP\Support\PresenterEvent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Images.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -279,16 +302,20 @@
     <EmbeddedResource Include="Forms\TaskCreate\TaskCreateForm.resx">
       <DependentUpon>TaskCreateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestCreate\AnswerBlockView.resx">
+      <DependentUpon>AnswerBlockView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestCreate\QuestionBlockView.resx">
+      <DependentUpon>QuestionBlockView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestCreate\TestCreateForm.resx">
+      <DependentUpon>TestCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Resources\Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Images.Designer.cs</LastGenOutput>
@@ -307,9 +334,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\TestCreate\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Images\icons8_close_pane_50px_1.png" />
     <None Include="Resources\Images\result.png" />
@@ -324,6 +349,8 @@
     <None Include="Resources\Images\icons8_image_50px.png" />
     <None Include="Resources\Images\icons8_delete_bin_50px.png" />
     <None Include="Resources\Images\icons8_create_50px.png" />
+    <None Include="Resources\Images\icons8_add_50px.png" />
+    <None Include="Resources\Images\multiply_24px_4.png" />
     <Content Include="Resources\Images\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

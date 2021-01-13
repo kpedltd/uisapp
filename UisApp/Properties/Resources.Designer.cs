@@ -83,6 +83,16 @@ namespace UisApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_add_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_approval_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_approval_50px", resourceCulture);
@@ -156,6 +166,16 @@ namespace UisApp.Properties {
         internal static System.Drawing.Bitmap icons8_survey_50px {
             get {
                 object obj = ResourceManager.GetObject("icons8_survey_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap multiply_24px_4 {
+            get {
+                object obj = ResourceManager.GetObject("multiply_24px_4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

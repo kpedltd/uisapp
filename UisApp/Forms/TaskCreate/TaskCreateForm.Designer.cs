@@ -41,7 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.CancelButton = new System.Windows.Forms.Button();
+            this.CanceldButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.upperBorder.SuspendLayout();
@@ -169,16 +169,16 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_delete_50px;
-            this.CancelButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CancelButton.FlatAppearance.BorderSize = 0;
-            this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CancelButton.Location = new System.Drawing.Point(309, 318);
-            this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(50, 50);
-            this.CancelButton.TabIndex = 16;
-            this.CancelButton.UseVisualStyleBackColor = true;
-            this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.CanceldButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_delete_50px;
+            this.CanceldButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CanceldButton.FlatAppearance.BorderSize = 0;
+            this.CanceldButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CanceldButton.Location = new System.Drawing.Point(309, 318);
+            this.CanceldButton.Name = "CancelButton";
+            this.CanceldButton.Size = new System.Drawing.Size(50, 50);
+            this.CanceldButton.TabIndex = 16;
+            this.CanceldButton.UseVisualStyleBackColor = true;
+            this.CanceldButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // OkButton
             // 
@@ -202,7 +202,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.ClientSize = new System.Drawing.Size(453, 381);
-            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.CanceldButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -238,7 +238,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button OkButton;
-        private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.Button CanceldButton;
         private System.Windows.Forms.TextBox picturePath;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
