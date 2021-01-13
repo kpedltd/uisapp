@@ -229,7 +229,7 @@ namespace UisApp.Components.StudyTask
 
         private void AddTestButton_Click(object sender, EventArgs e)
         {
-            //Presenter.AddTask(sender as TaskExtModel);
+            
         }
     }
 }

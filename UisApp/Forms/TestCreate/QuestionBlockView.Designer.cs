@@ -31,7 +31,7 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
             this.answersPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.titleTextBox);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(558, 50);
@@ -74,13 +74,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Вопрос";
             // 
-            // textBox1
+            // titleTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 15);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(431, 20);
-            this.textBox1.TabIndex = 0;
+            this.titleTextBox.Location = new System.Drawing.Point(107, 15);
+            this.titleTextBox.Multiline = true;
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(431, 20);
+            this.titleTextBox.TabIndex = 0;
             // 
             // answersPanel
             // 
@@ -113,7 +113,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Добавить варинат ответа";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button2_Click);
+            this.button1.Click += new System.EventHandler(this.Button_Click);
             // 
             // QuestionBlockView
             // 
@@ -140,7 +140,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.FlowLayoutPanel answersPanel;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button1;

@@ -16,7 +16,7 @@ namespace UisApp.Forms.TestCreate
             CurrentChecked = -1;
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void Button_Click(object sender, EventArgs e)
         {
             if(answersPanel.Controls.Count <= 8)
             {
@@ -42,6 +42,11 @@ namespace UisApp.Forms.TestCreate
                     CurrentChecked = i;
                 }
             }
+        }
+
+        public void SetTitle(string title)
+        {
+            titleTextBox.Text = title;
         }
     }
 }

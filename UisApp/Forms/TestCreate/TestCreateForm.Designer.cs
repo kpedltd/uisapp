@@ -33,7 +33,8 @@
             this.CloseButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.questionPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.treeView = new System.Windows.Forms.TreeView();
+            this.addQuestuion = new System.Windows.Forms.Button();
             this.upperBorder.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.upperBorder.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperBorder.Location = new System.Drawing.Point(0, 0);
             this.upperBorder.Name = "upperBorder";
-            this.upperBorder.Size = new System.Drawing.Size(803, 34);
+            this.upperBorder.Size = new System.Drawing.Size(795, 34);
             this.upperBorder.TabIndex = 5;
             this.upperBorder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpperBorder_MouseMove);
             // 
@@ -54,7 +55,7 @@
             this.CloseButton.FlatAppearance.BorderSize = 0;
             this.CloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseButton.Image = ((System.Drawing.Image)(resources.GetObject("CloseButton.Image")));
-            this.CloseButton.Location = new System.Drawing.Point(769, 0);
+            this.CloseButton.Location = new System.Drawing.Point(761, 0);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(34, 34);
             this.CloseButton.TabIndex = 1;
@@ -82,21 +83,37 @@
             this.questionPanel.Size = new System.Drawing.Size(609, 476);
             this.questionPanel.TabIndex = 6;
             // 
-            // treeView1
+            // treeView
             // 
-            this.treeView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.treeView1.Location = new System.Drawing.Point(0, 32);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(176, 476);
-            this.treeView1.TabIndex = 17;
+            this.treeView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.treeView.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.treeView.Location = new System.Drawing.Point(0, 32);
+            this.treeView.Name = "treeView";
+            this.treeView.Size = new System.Drawing.Size(176, 476);
+            this.treeView.TabIndex = 17;
+            this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeView_AfterSelect);
+            // 
+            // addQuestuion
+            // 
+            this.addQuestuion.BackgroundImage = global::UisApp.Properties.Resources.icons8_add_50px1;
+            this.addQuestuion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.addQuestuion.FlatAppearance.BorderSize = 0;
+            this.addQuestuion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addQuestuion.Location = new System.Drawing.Point(11, 514);
+            this.addQuestuion.Name = "addQuestuion";
+            this.addQuestuion.Size = new System.Drawing.Size(50, 50);
+            this.addQuestuion.TabIndex = 18;
+            this.addQuestuion.UseVisualStyleBackColor = true;
+            this.addQuestuion.Click += new System.EventHandler(this.AddQuestuion_Click);
             // 
             // TestCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
-            this.ClientSize = new System.Drawing.Size(803, 570);
-            this.Controls.Add(this.treeView1);
+            this.ClientSize = new System.Drawing.Size(795, 570);
+            this.Controls.Add(this.addQuestuion);
+            this.Controls.Add(this.treeView);
             this.Controls.Add(this.questionPanel);
             this.Controls.Add(this.upperBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -114,6 +131,7 @@
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel questionPanel;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView treeView;
+        private System.Windows.Forms.Button addQuestuion;
     }
 }
