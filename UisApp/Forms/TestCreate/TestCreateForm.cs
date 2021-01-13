@@ -13,6 +13,7 @@ namespace UisApp.Forms.TestCreate
 {
     public partial class TestCreateForm : Form
     {
+        private QuestionBlockView CurrentQuestionView;
 
         public TestCreateForm()
         {
@@ -20,11 +21,14 @@ namespace UisApp.Forms.TestCreate
 
             var view = new QuestionBlockView();
             questionPanel.Controls.Add(view);
-            view.SetTitle("Вопрос номер 1");
 
             treeView.Nodes.Add("Вопрос номер 1");
             treeView.Nodes[0].Tag = view;
             view.Tag = treeView.Nodes[0];
+
+            view.SetTitle("Вопрос номер 1");
+
+            CurrentQuestionView = view;
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -47,13 +51,24 @@ namespace UisApp.Forms.TestCreate
 
             treeView.Nodes.Add("Новый вопрос");
             treeView.Nodes[treeView.Nodes.Count - 1].Tag = view;
-            view.Tag = treeView.Nodes[0];
+            view.Tag = treeView.Nodes[treeView.Nodes.Count - 1];
             view.Visible = false;
         }
 
         private void TreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            CurrentQuestionView?.Hide();
 
+            CurrentQuestionView = treeView.SelectedNode.Tag as QuestionBlockView;
+            CurrentQuestionView.Show();
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            if(treeView.Nodes.Count > 1)
+            {
+                treeView.Nodes.Remove(treeView.SelectedNode);
+            }
         }
     }
 }

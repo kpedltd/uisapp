@@ -48,5 +48,11 @@ namespace UisApp.Forms.TestCreate
         {
             titleTextBox.Text = title;
         }
+
+        private void titleTextBox_TextChanged(object sender, EventArgs e)
+        {
+            var node = this.Tag as TreeNode;
+            node.Text = titleTextBox.Text;
+        }
     }
 }

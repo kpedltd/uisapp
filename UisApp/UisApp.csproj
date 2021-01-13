@@ -352,6 +352,11 @@
     <None Include="Resources\Images\icons8_create_50px.png" />
     <None Include="Resources\Images\icons8_add_50px.png" />
     <None Include="Resources\Images\multiply_24px_4.png" />
+    <None Include="Resources\Images\icons8_minus_50px.png" />
+    <None Include="Resources\Images\icons8_add_100px.png" />
+    <None Include="Resources\Images\icons8_delete_sign_100px.png" />
+    <None Include="Resources\Images\icons8_cancel_100px.png" />
+    <None Include="Resources\Images\icons8_checked_100px.png" />
     <Content Include="Resources\Images\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

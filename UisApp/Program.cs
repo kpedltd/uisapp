@@ -14,8 +14,8 @@ namespace UisApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AuthForm());
-            //Application.Run(new TestCreateForm());
+            //Application.Run(new AuthForm());
+            Application.Run(new TestCreateForm());
         }
     }
 }
