@@ -224,10 +224,5 @@ namespace UisApp.Components.StudyTask
         {
             Presenter.EditTask(sender as TaskExtModel);
         }
-
-        private void AddTestButton_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }

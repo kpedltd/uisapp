@@ -263,7 +263,7 @@ namespace UisApp.Components.Profile
             {
                 try
                 {
-                    photo.Load($"http://localhost:3000/{Photo}");
+                    photo.Load($"{GlobalConfig.Host}/{Photo}");
                 }
                 catch (Exception)
                 {

@@ -51,6 +51,8 @@ namespace UisApp.API
             connection.DefaultRequestHeaders.Accept.Clear();
             connection.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
+
+            connection.Timeout = TimeSpan.FromSeconds(2);
         }
 
         /// <summary>

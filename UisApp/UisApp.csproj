@@ -237,6 +237,7 @@
       <DependentUpon>TestCreateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TestCreate\TestModel.cs" />
+    <Compile Include="GlobalConfig.cs" />
     <Compile Include="Helpers\DateTimeConverters.cs" />
     <Compile Include="Helpers\FileBinaryHelper.cs" />
     <Compile Include="Helpers\FormDragLogic.cs" />

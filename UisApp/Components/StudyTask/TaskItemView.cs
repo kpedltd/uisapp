@@ -65,9 +65,16 @@ namespace UisApp.Components.StudyTask
 
         private void Form_TestCreated(object sender, EventArgs e)
         {
-            TaskProvider.AddTest(
-                this.Tag as TaskExtModel,
-                sender as TestModel);
+            try
+            {
+                TaskProvider.AddTest(
+                    this.Tag as TaskExtModel,
+                    sender as TestModel);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

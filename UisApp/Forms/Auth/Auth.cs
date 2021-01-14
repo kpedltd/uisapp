@@ -16,7 +16,7 @@ namespace UisApp
 
         private void AuthButtonClick(object sender, EventArgs e)
         {
-            IApiProvider apiProvider = ApiProvider.MakeInstance("http://localhost:3000");
+            IApiProvider apiProvider = ApiProvider.MakeInstance(GlobalConfig.Host);
             IApiResponse<IModel> response = null;
 
             try
