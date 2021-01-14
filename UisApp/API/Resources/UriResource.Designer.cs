@@ -61,6 +61,15 @@ namespace UisApp.API.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на /analytic/charts.
+        /// </summary>
+        internal static string analytic_charts {
+            get {
+                return ResourceManager.GetString("analytic_charts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /lecturer/login.
         /// </summary>
         internal static string auth {

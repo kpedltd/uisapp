@@ -11,11 +11,13 @@ namespace UisApp.Models
         /// <summary>
         /// Посещено
         /// </summary>
+        [EnumToStringAttribute("Посещено")]
         visited,
 
         /// <summary>
         /// Пропущено
         /// </summary>
+        [EnumToStringAttribute("Пропущено")]
         skiped
     }
 

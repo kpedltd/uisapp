@@ -100,5 +100,10 @@ namespace UisApp
 
             compContainer.SwitchTo(targerView);
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -32,48 +32,48 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.upperBorder = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.itemsPanel = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
+            this.hideButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.compContainer = new UisApp.Components.UisComponentsContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.hideButton = new System.Windows.Forms.Button();
             this.analyticButton = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.checkButton = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.taskButton = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.ratingButton = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.attendanceButton = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.scheduleButton = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.profileButton = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.compContainer = new UisApp.Components.UisComponentsContainer();
             this.upperBorder.SuspendLayout();
             this.itemsPanel.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperBorder
@@ -95,6 +95,32 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(585, 445);
             this.panel4.TabIndex = 5;
+            // 
+            // button8
+            // 
+            this.button8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.Location = new System.Drawing.Point(732, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(34, 34);
+            this.button8.TabIndex = 2;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(766, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(34, 34);
+            this.button7.TabIndex = 1;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // label1
             // 
@@ -145,6 +171,19 @@
             this.label17.TabIndex = 5;
             this.label17.Text = "Скрыть";
             // 
+            // hideButton
+            // 
+            this.hideButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_close_pane_50px_1;
+            this.hideButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hideButton.FlatAppearance.BorderSize = 0;
+            this.hideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hideButton.Location = new System.Drawing.Point(4, 6);
+            this.hideButton.Name = "hideButton";
+            this.hideButton.Size = new System.Drawing.Size(50, 50);
+            this.hideButton.TabIndex = 4;
+            this.hideButton.UseVisualStyleBackColor = true;
+            this.hideButton.Click += new System.EventHandler(this.HideButton_Click);
+            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.panel1);
@@ -153,145 +192,6 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(220, 60);
             this.panel11.TabIndex = 35;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.label15);
-            this.panel10.Controls.Add(this.checkButton);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 300);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(220, 60);
-            this.panel10.TabIndex = 34;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label15.Location = new System.Drawing.Point(60, 20);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(153, 24);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Проверка заданий";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.label14);
-            this.panel9.Controls.Add(this.taskButton);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 240);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(220, 60);
-            this.panel9.TabIndex = 33;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label14.Location = new System.Drawing.Point(60, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 24);
-            this.label14.TabIndex = 5;
-            this.label14.Text = "Задания";
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.label13);
-            this.panel8.Controls.Add(this.ratingButton);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 180);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(220, 60);
-            this.panel8.TabIndex = 32;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label13.Location = new System.Drawing.Point(60, 20);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(72, 24);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Рейтинг";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.label12);
-            this.panel7.Controls.Add(this.attendanceButton);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 120);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(220, 60);
-            this.panel7.TabIndex = 31;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label12.Location = new System.Drawing.Point(60, 20);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(125, 24);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Посещаемость";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.scheduleButton);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 60);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(220, 60);
-            this.panel6.TabIndex = 30;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label11.Location = new System.Drawing.Point(60, 20);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 24);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Расписание";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.profileButton);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(220, 60);
-            this.panel5.TabIndex = 29;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label8.Location = new System.Drawing.Point(60, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 24);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Профиль";
-            // 
-            // timer
-            // 
-            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
-            // 
-            // compContainer
-            // 
-            this.compContainer.AutoSize = true;
-            this.compContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.compContainer.Location = new System.Drawing.Point(220, 34);
-            this.compContainer.Name = "compContainer";
-            this.compContainer.Size = new System.Drawing.Size(580, 489);
-            this.compContainer.TabIndex = 27;
             // 
             // panel1
             // 
@@ -314,19 +214,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Аналитика";
             // 
-            // hideButton
-            // 
-            this.hideButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_close_pane_50px_1;
-            this.hideButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hideButton.FlatAppearance.BorderSize = 0;
-            this.hideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hideButton.Location = new System.Drawing.Point(4, 6);
-            this.hideButton.Name = "hideButton";
-            this.hideButton.Size = new System.Drawing.Size(50, 50);
-            this.hideButton.TabIndex = 4;
-            this.hideButton.UseVisualStyleBackColor = true;
-            this.hideButton.Click += new System.EventHandler(this.HideButton_Click);
-            // 
             // analyticButton
             // 
             this.analyticButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_combo_chart_50px;
@@ -339,6 +226,27 @@
             this.analyticButton.TabIndex = 4;
             this.analyticButton.UseVisualStyleBackColor = true;
             this.analyticButton.Click += new System.EventHandler(this.AnalyticButton_Click);
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label15);
+            this.panel10.Controls.Add(this.checkButton);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 300);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(220, 60);
+            this.panel10.TabIndex = 34;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label15.Location = new System.Drawing.Point(60, 20);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(153, 24);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Проверка заданий";
             // 
             // checkButton
             // 
@@ -353,6 +261,27 @@
             this.checkButton.UseVisualStyleBackColor = true;
             this.checkButton.Click += new System.EventHandler(this.CheckButton_Click);
             // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label14);
+            this.panel9.Controls.Add(this.taskButton);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(0, 240);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(220, 60);
+            this.panel9.TabIndex = 33;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label14.Location = new System.Drawing.Point(60, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 24);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Задания";
+            // 
             // taskButton
             // 
             this.taskButton.BackgroundImage = global::UisApp.Properties.Resources.task;
@@ -365,6 +294,27 @@
             this.taskButton.TabIndex = 4;
             this.taskButton.UseVisualStyleBackColor = true;
             this.taskButton.Click += new System.EventHandler(this.TaskButton_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label13);
+            this.panel8.Controls.Add(this.ratingButton);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(0, 180);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(220, 60);
+            this.panel8.TabIndex = 32;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label13.Location = new System.Drawing.Point(60, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(72, 24);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "Рейтинг";
             // 
             // ratingButton
             // 
@@ -379,6 +329,27 @@
             this.ratingButton.UseVisualStyleBackColor = true;
             this.ratingButton.Click += new System.EventHandler(this.ratingButton_Click);
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Controls.Add(this.attendanceButton);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 120);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(220, 60);
+            this.panel7.TabIndex = 31;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label12.Location = new System.Drawing.Point(60, 20);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(125, 24);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Посещаемость";
+            // 
             // attendanceButton
             // 
             this.attendanceButton.BackgroundImage = global::UisApp.Properties.Resources.attendance;
@@ -391,6 +362,27 @@
             this.attendanceButton.TabIndex = 4;
             this.attendanceButton.UseVisualStyleBackColor = true;
             this.attendanceButton.Click += new System.EventHandler(this.AttendanceButton_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.scheduleButton);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 60);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(220, 60);
+            this.panel6.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label11.Location = new System.Drawing.Point(60, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 24);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Расписание";
             // 
             // scheduleButton
             // 
@@ -405,6 +397,27 @@
             this.scheduleButton.UseVisualStyleBackColor = true;
             this.scheduleButton.Click += new System.EventHandler(this.ScheduleButton_Click);
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label8);
+            this.panel5.Controls.Add(this.profileButton);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(220, 60);
+            this.panel5.TabIndex = 29;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label8.Location = new System.Drawing.Point(60, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 24);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Профиль";
+            // 
             // profileButton
             // 
             this.profileButton.BackgroundImage = global::UisApp.Properties.Resources.profile1;
@@ -418,31 +431,18 @@
             this.profileButton.UseVisualStyleBackColor = true;
             this.profileButton.Click += new System.EventHandler(this.ProfileButton_Click);
             // 
-            // button8
+            // timer
             // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.Location = new System.Drawing.Point(732, 0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(34, 34);
-            this.button8.TabIndex = 2;
-            this.button8.UseVisualStyleBackColor = true;
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
-            // button7
+            // compContainer
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(766, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(34, 34);
-            this.button7.TabIndex = 1;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.CloseButton_Click);
+            this.compContainer.AutoSize = true;
+            this.compContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.compContainer.Location = new System.Drawing.Point(220, 34);
+            this.compContainer.Name = "compContainer";
+            this.compContainer.Size = new System.Drawing.Size(580, 489);
+            this.compContainer.TabIndex = 27;
             // 
             // MainForm
             // 
@@ -456,6 +456,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "Main";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.upperBorder.ResumeLayout(false);
             this.upperBorder.PerformLayout();
@@ -463,6 +464,8 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.panel11.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -475,8 +478,6 @@
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

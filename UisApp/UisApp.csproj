@@ -62,6 +62,7 @@
     <Compile Include="API\FakeApiProvider.cs" />
     <Compile Include="API\Interfaces\IApiProvider.cs" />
     <Compile Include="API\Interfaces\IModelProvider.cs" />
+    <Compile Include="API\Providers\AnalyticProvider.cs" />
     <Compile Include="API\Providers\AttendanceProvider.cs" />
     <Compile Include="API\Providers\LecturerProvider.cs" />
     <Compile Include="API\Providers\RatingProvider.cs" />
@@ -74,12 +75,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UriResource.resx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Analytic\AnalyticModel.cs" />
     <Compile Include="Components\Analytic\AnalyticView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\Analytic\AnalyticView.Designer.cs">
       <DependentUpon>AnalyticView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\Analytic\AttendanceAnalyticModel.cs" />
+    <Compile Include="Components\Analytic\Interfaces\IAnalyticModel.cs" />
+    <Compile Include="Components\Analytic\Interfaces\IAttendanceAnalyticModel.cs" />
+    <Compile Include="Components\Analytic\Interfaces\IRatingAnalyticModel.cs" />
+    <Compile Include="Components\Analytic\RatingAnalyticModel.cs" />
     <Compile Include="Components\Attendance\AttendanceItemView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -249,6 +256,7 @@
     <Compile Include="Forms\TestCreate\TestModel.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="Helpers\DateTimeConverters.cs" />
+    <Compile Include="Helpers\EnumToStringAttribute.cs" />
     <Compile Include="Helpers\FileBinaryHelper.cs" />
     <Compile Include="Helpers\FormDragLogic.cs" />
     <Compile Include="Helpers\FormSizeableLogic.cs" />
