@@ -124,17 +124,17 @@
   <data name="icons8_close_pane_50px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\icons8_close_pane_50px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_survey_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_survey_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_delete_sign_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\icons8_delete_sign_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_add_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\icons8_add_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rating" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\rating.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_cancel_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\icons8_cancel_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_schedule_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\icons8_schedule_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,14 +151,14 @@
   <data name="result" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\result.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_delete_sign_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_delete_sign_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rating" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\rating.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_create_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\icons8_create_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_survey_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\icons8_survey_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="task" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\task.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,6 +178,9 @@
   <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_checked_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\icons8_checked_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_add_50px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\icons8_add_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,7 +190,7 @@
   <data name="icons8_minus_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Images\icons8_minus_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_checked_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Images\icons8_checked_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="about" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\about.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UisApp.Forms.TestCreate
 {
-    class TestQuestionModel
+    public class TestQuestionModel
     {
         /// <summary>
         /// Вопрос
@@ -40,13 +40,23 @@ namespace UisApp.Forms.TestCreate
         }
     }
 
-    class TestModel
+    public class TestModel
     {
         /// <summary>
         /// Время на тест
         /// </summary>
         [JsonProperty("testTime")]
         public int TestTime
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Проценты на оценки
+        /// </summary>
+        [JsonProperty("resultRequirements")]
+        public IList<int> ResultRequirements
         {
             get;
             set;

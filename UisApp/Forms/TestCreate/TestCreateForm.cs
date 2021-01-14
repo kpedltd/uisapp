@@ -15,6 +15,8 @@ namespace UisApp.Forms.TestCreate
     {
         private QuestionBlockView CurrentQuestionView;
 
+        public event EventHandler TestCreated;
+
         public TestCreateForm()
         {
             InitializeComponent();
@@ -69,6 +71,29 @@ namespace UisApp.Forms.TestCreate
             {
                 treeView.Nodes.Remove(treeView.SelectedNode);
             }
+        }
+
+        private void CompleteButton_Click(object sender, EventArgs e)
+        {
+            TestModel model = new TestModel();
+            model.Questions = new List<TestQuestionModel>();
+            model.TestTime = (int)testTime.Value;
+            model.ResultRequirements = new List<int>()
+            {
+                (int)mark_threeNumber.Value,
+                (int)mark_fourNumber.Value,
+                (int)mark_fiveNumber.Value
+            };
+
+            for(int i = 0;i < treeView.Nodes.Count;i++)
+            {
+                var questionBlock = treeView.Nodes[i].Tag as QuestionBlockView;
+                var questionModel = questionBlock.GetModel();
+
+                model.Questions.Add(questionModel);
+            }
+
+            TestCreated?.Invoke(model, EventArgs.Empty);
         }
     }
 }

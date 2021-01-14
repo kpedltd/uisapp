@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addTestButton = new System.Windows.Forms.Button();
             this.editTaskButton = new System.Windows.Forms.Button();
             this.deleteTaskButton = new System.Windows.Forms.Button();
             this.dateLabel = new System.Windows.Forms.Label();
@@ -43,6 +44,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.addTestButton);
             this.panel1.Controls.Add(this.editTaskButton);
             this.panel1.Controls.Add(this.deleteTaskButton);
             this.panel1.Controls.Add(this.dateLabel);
@@ -53,6 +55,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(716, 84);
             this.panel1.TabIndex = 0;
+            // 
+            // addTestButton
+            // 
+            this.addTestButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_survey_50px;
+            this.addTestButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.addTestButton.FlatAppearance.BorderSize = 0;
+            this.addTestButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addTestButton.Location = new System.Drawing.Point(540, 15);
+            this.addTestButton.Name = "addTestButton";
+            this.addTestButton.Size = new System.Drawing.Size(50, 50);
+            this.addTestButton.TabIndex = 13;
+            this.addTestButton.UseVisualStyleBackColor = true;
+            this.addTestButton.Click += new System.EventHandler(this.AddTestButton_Click);
             // 
             // editTaskButton
             // 
@@ -118,7 +133,7 @@
             this.showImageButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.showImageButton.FlatAppearance.BorderSize = 0;
             this.showImageButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.showImageButton.Location = new System.Drawing.Point(540, 15);
+            this.showImageButton.Location = new System.Drawing.Point(484, 17);
             this.showImageButton.Name = "showImageButton";
             this.showImageButton.Size = new System.Drawing.Size(50, 50);
             this.showImageButton.TabIndex = 5;
@@ -149,5 +164,6 @@
         private System.Windows.Forms.Button deleteTaskButton;
         private System.Windows.Forms.Button editTaskButton;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button addTestButton;
     }
 }

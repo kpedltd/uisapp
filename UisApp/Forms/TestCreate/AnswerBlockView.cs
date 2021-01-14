@@ -26,12 +26,12 @@ namespace UisApp.Forms.TestCreate
 
         public void UncheckRadioButton()
         {
-            radioButton1.Checked = false;
+            radioButton.Checked = false;
         }
 
         public RadioButton GetRadioButton()
         {
-            return radioButton1;
+            return radioButton;
         }
 
         private void RadioButton_CheckedChanged(object sender, EventArgs e)
@@ -41,6 +41,11 @@ namespace UisApp.Forms.TestCreate
             {
                 Checked?.Invoke(sender, e);
             }
+        }
+
+        public string GetAnswer()
+        {
+            return answerTextBox.Text;
         }
     }
 }

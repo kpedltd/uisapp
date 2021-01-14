@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace UisApp.Forms.TestCreate
@@ -10,8 +11,6 @@ namespace UisApp.Forms.TestCreate
         public QuestionBlockView()
         {
             InitializeComponent();
-
-            var view = new AnswerBlockView();
 
             CurrentChecked = -1;
         }
@@ -53,6 +52,27 @@ namespace UisApp.Forms.TestCreate
         {
             var node = this.Tag as TreeNode;
             node.Text = titleTextBox.Text;
+        }
+
+        public TestQuestionModel GetModel()
+        {
+            if(CurrentChecked == -1)
+            {
+                return null;
+            }
+
+            TestQuestionModel model = new TestQuestionModel();
+            model.Question = titleTextBox.Text;
+            model.CorrectAnswer = CurrentChecked;
+            model.Answers = new List<string>();
+            
+            for(int i = 0;i < answersPanel.Controls.Count - 1;i++)
+            {
+                var block = answersPanel.Controls[i] as AnswerBlockView;
+                model.Answers.Add(block.GetAnswer());
+            }
+
+            return model;
         }
     }
 }

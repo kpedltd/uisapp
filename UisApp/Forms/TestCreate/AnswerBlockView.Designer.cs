@@ -30,8 +30,8 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.deleteButton = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.radioButton = new System.Windows.Forms.RadioButton();
+            this.answerTextBox = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,8 +39,8 @@
             // 
             this.panel3.AutoSize = true;
             this.panel3.Controls.Add(this.deleteButton);
-            this.panel3.Controls.Add(this.radioButton1);
-            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.radioButton);
+            this.panel3.Controls.Add(this.answerTextBox);
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(578, 36);
@@ -59,24 +59,24 @@
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
-            // radioButton1
+            // radioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(13, 10);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(14, 13);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
+            this.radioButton.AutoSize = true;
+            this.radioButton.Location = new System.Drawing.Point(13, 10);
+            this.radioButton.Name = "radioButton";
+            this.radioButton.Size = new System.Drawing.Size(14, 13);
+            this.radioButton.TabIndex = 2;
+            this.radioButton.TabStop = true;
+            this.radioButton.UseVisualStyleBackColor = true;
+            this.radioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
-            // textBox2
+            // answerTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(38, 7);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(503, 20);
-            this.textBox2.TabIndex = 1;
+            this.answerTextBox.Location = new System.Drawing.Point(38, 7);
+            this.answerTextBox.Multiline = true;
+            this.answerTextBox.Name = "answerTextBox";
+            this.answerTextBox.Size = new System.Drawing.Size(503, 20);
+            this.answerTextBox.TabIndex = 1;
             // 
             // AnswerBlockView
             // 
@@ -95,8 +95,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RadioButton radioButton;
+        private System.Windows.Forms.TextBox answerTextBox;
         private System.Windows.Forms.Button deleteButton;
     }
 }

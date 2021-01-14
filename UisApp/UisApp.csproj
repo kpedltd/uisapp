@@ -66,6 +66,7 @@
     <Compile Include="API\Providers\ScheduleProvider.cs" />
     <Compile Include="API\Providers\SubjectProvider.cs" />
     <Compile Include="API\Providers\TaskProvider.cs" />
+    <Compile Include="API\Providers\TaskResultProvider.cs" />
     <Compile Include="API\Resources\UriResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,6 +143,25 @@
     <Compile Include="Components\ScheduleTable\ScheduleTableView.Designer.cs">
       <DependentUpon>ScheduleTableView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\StudentResult\Interfaces\IResultModel.cs" />
+    <Compile Include="Components\StudentResult\Interfaces\IStudentResultPresenter.cs" />
+    <Compile Include="Components\StudentResult\Interfaces\IStudentResultView.cs" />
+    <Compile Include="Components\StudentResult\Interfaces\IStudentResultModel.cs" />
+    <Compile Include="Components\StudentResult\StudentResultItemView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\StudentResult\StudentResultItemView.Designer.cs">
+      <DependentUpon>StudentResultItemView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StudentResult\ResultModel.cs" />
+    <Compile Include="Components\StudentResult\StudentResultPresenter.cs" />
+    <Compile Include="Components\StudentResult\StudentResultView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\StudentResult\StudentResultView.Designer.cs">
+      <DependentUpon>StudentResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StudentResult\StudentResultModel.cs" />
     <Compile Include="Components\StudyTask\Interfaces\IStudyTaskModel.cs" />
     <Compile Include="Components\StudyTask\Interfaces\IStudyTaskPresenter.cs" />
     <Compile Include="Components\StudyTask\Interfaces\IStudyTaskView.cs" />
@@ -282,6 +302,12 @@
     <EmbeddedResource Include="Components\ScheduleTable\ScheduleTableView.resx">
       <DependentUpon>ScheduleTableView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\StudentResult\StudentResultItemView.resx">
+      <DependentUpon>StudentResultItemView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\StudentResult\StudentResultView.resx">
+      <DependentUpon>StudentResultView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\StudyTask\StudyTaskView.resx">
       <DependentUpon>StudyTaskView.cs</DependentUpon>
     </EmbeddedResource>
@@ -357,6 +383,7 @@
     <None Include="Resources\Images\icons8_delete_sign_100px.png" />
     <None Include="Resources\Images\icons8_cancel_100px.png" />
     <None Include="Resources\Images\icons8_checked_100px.png" />
+    <None Include="Resources\Images\about.png" />
     <Content Include="Resources\Images\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

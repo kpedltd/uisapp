@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using UisApp.Models;
 using UisApp.Forms.ImageViewer;
+using UisApp.Forms.TestCreate;
+using UisApp.API.Providers;
 
 namespace UisApp.Components.StudyTask
 {
@@ -18,6 +20,7 @@ namespace UisApp.Components.StudyTask
             toolTip.SetToolTip(this.editTaskButton, "Изменить задачу");
             toolTip.SetToolTip(this.deleteTaskButton, "Удалить задачу");
             toolTip.SetToolTip(this.showImageButton, "Показать изображение");
+            toolTip.SetToolTip(this.addTestButton, "Добавить тест");
         }
 
         public void SetModel(TaskExtModel model)
@@ -50,6 +53,21 @@ namespace UisApp.Components.StudyTask
         private void EditTaskButton_Click(object sender, EventArgs e)
         {
             TaskEdited?.Invoke(this.Tag, EventArgs.Empty);
+        }
+
+        private void AddTestButton_Click(object sender, EventArgs e)
+        {
+            TestCreateForm form = new TestCreateForm();
+            form.TestCreated += Form_TestCreated;
+
+            form.Show();
+        }
+
+        private void Form_TestCreated(object sender, EventArgs e)
+        {
+            TaskProvider.AddTest(
+                this.Tag as TaskExtModel,
+                sender as TestModel);
         }
     }
 }

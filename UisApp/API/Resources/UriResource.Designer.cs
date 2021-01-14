@@ -223,6 +223,15 @@ namespace UisApp.API.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на /task/set_test.
+        /// </summary>
+        internal static string task_set_test {
+            get {
+                return ResourceManager.GetString("task_set_test", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /task/update.
         /// </summary>
         internal static string task_update {

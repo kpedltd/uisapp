@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using UisApp.API.Core;
 using UisApp.API.Interfaces;
 using UisApp.API.Resources;
+using UisApp.Forms.TestCreate;
 using UisApp.Models;
 
 namespace UisApp.API.Providers
@@ -85,6 +87,18 @@ namespace UisApp.API.Providers
            
             var api = ApiProviderBase.GetInstance();
             api.PostRequest<object>(UriResource.task_update, param);
+        }
+
+        public static void AddTest(TaskExtModel task, TestModel test)
+        {
+            string json = JsonConvert.SerializeObject(test);
+
+            NameValueCollection param = new NameValueCollection();
+            param.Add("taskId", task.Id.ToString());
+            param.Add("test", json);
+
+            var api = ApiProviderBase.GetInstance();
+            api.PostRequest<object>(UriResource.task_set_test, param);
         }
     }
 }

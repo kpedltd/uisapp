@@ -1,6 +1,6 @@
-﻿namespace UisApp.Components.StudyTask
+﻿namespace UisApp.Components.StudentResult
 {
-    partial class StudyTaskView
+    partial class StudentResultView
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -30,13 +30,11 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.addTaskButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.subjectComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupComboBox = new System.Windows.Forms.ComboBox();
-            this.taskPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.ratingPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -44,17 +42,15 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.panel1);
-            this.flowLayoutPanel1.Controls.Add(this.taskPanel);
+            this.flowLayoutPanel1.Controls.Add(this.ratingPanel);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(762, 489);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(759, 486);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.addTaskButton);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.subjectComboBox);
             this.panel1.Controls.Add(this.label1);
@@ -62,32 +58,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(753, 60);
-            this.panel1.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label3.Location = new System.Drawing.Point(463, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "+ Задание";
-            // 
-            // addTaskButton
-            // 
-            this.addTaskButton.BackgroundImage = global::UisApp.Properties.Resources.task;
-            this.addTaskButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addTaskButton.Enabled = false;
-            this.addTaskButton.FlatAppearance.BorderSize = 0;
-            this.addTaskButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addTaskButton.Location = new System.Drawing.Point(407, 6);
-            this.addTaskButton.Name = "addTaskButton";
-            this.addTaskButton.Size = new System.Drawing.Size(50, 50);
-            this.addTaskButton.TabIndex = 9;
-            this.addTaskButton.UseVisualStyleBackColor = true;
-            this.addTaskButton.Click += new System.EventHandler(this.AddTaskButton_Click);
+            this.panel1.TabIndex = 0;
             // 
             // label2
             // 
@@ -130,21 +101,21 @@
             this.groupComboBox.TabIndex = 0;
             this.groupComboBox.SelectedIndexChanged += new System.EventHandler(this.GroupComboBox_SelectedIndexChanged);
             // 
-            // taskPanel
+            // ratingPanel
             // 
-            this.taskPanel.AutoScroll = true;
-            this.taskPanel.Location = new System.Drawing.Point(3, 69);
-            this.taskPanel.Name = "taskPanel";
-            this.taskPanel.Size = new System.Drawing.Size(756, 417);
-            this.taskPanel.TabIndex = 1;
+            this.ratingPanel.AutoScroll = true;
+            this.ratingPanel.Location = new System.Drawing.Point(3, 69);
+            this.ratingPanel.Name = "ratingPanel";
+            this.ratingPanel.Size = new System.Drawing.Size(753, 414);
+            this.ratingPanel.TabIndex = 1;
             // 
-            // StudyTaskView
+            // RatingView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "StudyTaskView";
+            this.Name = "RatingView";
             this.Size = new System.Drawing.Size(762, 489);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -156,13 +127,11 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel taskPanel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel ratingPanel;
+        private System.Windows.Forms.ComboBox groupComboBox;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox subjectComboBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox groupComboBox;
-        private System.Windows.Forms.Button addTaskButton;
-        private System.Windows.Forms.Label label3;
     }
 }

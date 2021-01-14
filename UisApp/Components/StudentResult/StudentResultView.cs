@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using UisApp.Models;
-using UisApp.Components.StudyTask.Interfaces;
 using UisApp.API.Providers;
-using UisApp.Forms.TaskCreate;
+using UisApp.Models;
+using UisApp.Components.Attendance;
+using UisApp.Components.Rating.Interfaces;
+using UisApp.Components.StudentResult.Interfaces;
 
-namespace UisApp.Components.StudyTask
+namespace UisApp.Components.StudentResult
 {
-    public partial class StudyTaskView : UserControl, IUisComponent, IStudyTaskView
+    public partial class StudentResultView : UserControl, IUisComponent, IStudentResultView
     {
         /// <summary>
         /// Предметы
@@ -27,22 +22,28 @@ namespace UisApp.Components.StudyTask
         private IList<GroupExtModel> Groups;
 
         /// <summary>
-        /// Задачи
+        /// Посещаемость студентов
         /// </summary>
-        private IList<TaskExtModel> Tasks;
-
-        /// <summary>
-        /// Презентер
-        /// </summary>
-        public IStudyTaskPresenter Presenter
+        public IList<StudentResultModel> StudentsRating
         {
             get;
             set;
         }
 
-        public StudyTaskView()
+        /// <summary>
+        /// Презентер
+        /// </summary>
+        public IStudentResultPresenter Presenter
+        {
+            get;
+            set;
+        }
+
+        public StudentResultView()
         {
             InitializeComponent();
+
+            ratingPanel.Visible = false;
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace UisApp.Components.StudyTask
         /// </summary>
         /// <param name="presenter"></param>
         /// <param name="requiresInitialState"></param>
-        public void AttachToPresenter(IStudyTaskPresenter presenter, bool requiresInitialState)
+        public void AttachToPresenter(IStudentResultPresenter presenter, bool requiresInitialState)
         {
             if (presenter == null)
             {
@@ -84,26 +85,26 @@ namespace UisApp.Components.StudyTask
         /// Обновить
         /// </summary>
         /// <param name="model"></param>
-        public void Update(IStudyTaskModel model)
+        public void Update(IResultModel model)
         {
-            if (model.Group.Id == Groups[groupComboBox.SelectedIndex].Id &&
+            if(model.Group.Id == Groups[groupComboBox.SelectedIndex].Id &&
                 model.Subject.Id == Subjects[subjectComboBox.SelectedIndex].Id)
             {
-                Tasks = model.Tasks;
+                StudentsRating = model.Students;
 
                 DisposeRatingPanel();
                 FillRating();
             }
         }
 
-
+        
         /// <summary>
         /// Получить предметы
         /// </summary>
         private void GetSubjects()
         {
             Subjects = LecturerProvider.GetSubjects();
-            for (int i = 0; i < Subjects.Count; i++)
+            for(int i = 0;i < Subjects.Count;i++)
             {
                 subjectComboBox.Items.Add(Subjects[i].Name);
             }
@@ -121,7 +122,6 @@ namespace UisApp.Components.StudyTask
 
             DisposeRatingPanel();
 
-            addTaskButton.Enabled = false;
             groupComboBox.Items.Clear();
 
             Presenter.SetSubject(Subjects[comboBox.SelectedIndex]);
@@ -132,7 +132,7 @@ namespace UisApp.Components.StudyTask
                 groupComboBox.Items.Add(Groups[i].Name);
             }
 
-            if (Groups.Count > 0)
+            if(Groups.Count > 0)
             {
                 groupComboBox.Enabled = true;
 
@@ -149,85 +149,46 @@ namespace UisApp.Components.StudyTask
 
             Presenter.SetGroup(Groups[comboBox.SelectedIndex]);
 
-            Tasks = TaskProvider.Get(
-                Subjects[subjectComboBox.SelectedIndex].Id,
-                Groups[comboBox.SelectedIndex].Id);
+            //StudentsRating = RatingProvider.GetRating(
+            //    Groups[comboBox.SelectedIndex].Id,
+            //    Subjects[subjectComboBox.SelectedIndex].Id);
 
             DisposeRatingPanel();
 
-            Presenter.SetTasks(Tasks);
-
-            addTaskButton.Enabled = true;
+            Presenter.SetStudents(StudentsRating);
         }
 
         private void FillRating()
         {
-            for (int i = 0; i < Tasks.Count; i++)
+            for (int i = 0; i < StudentsRating.Count; i++)
             {
-                var item = new TaskItemView();
-                item.Tag = Tasks[i];
+                var item = new StudentResultItemView();
+                item.Tag = StudentsRating[i];
+                item.StateChanged += Item_StateChanged;
                 item.Visible = true;
-                item.TaskDeleted += Item_TaskDeleted;
-                item.TaskEdited += Item_TaskEdited;
 
-                item.SetModel(Tasks[i]);
+                item.SetStudentRating(StudentsRating[i]);
 
-                taskPanel.Controls.Add(item);
+                ratingPanel.Controls.Add(item);
             }
 
-            taskPanel.Visible = true;
+            ratingPanel.Visible = true;
         }
 
         private void DisposeRatingPanel()
         {
-            taskPanel.Visible = false;
+            ratingPanel.Visible = false;
 
-            for (int i = 0; i < taskPanel.Controls.Count; i++)
+            for (int i = 0;i < ratingPanel.Controls.Count;i++)
             {
-                taskPanel.Controls[i].Dispose();
+                ratingPanel.Controls[i].Dispose();
             }
-            taskPanel.Controls.Clear();
+            ratingPanel.Controls.Clear();
         }
 
-        private void AddTaskButton_Click(object sender, EventArgs e)
+        private void Item_StateChanged(object sender, EventArgs e)
         {
-            TaskCreateForm form = new TaskCreateForm(
-                Subjects[subjectComboBox.SelectedIndex].Id,
-                Groups[groupComboBox.SelectedIndex].Id);
-            form.TaskCreated += Form_TaskCreated;
-
-            form.Show();
-        }
-
-        private void Item_TaskEdited(object sender, EventArgs e)
-        {
-            TaskCreateForm form = new TaskCreateForm(
-                sender as TaskExtModel,
-                Subjects[subjectComboBox.SelectedIndex].Id,
-                Groups[groupComboBox.SelectedIndex].Id);
-            form.TaskEdited += Form_TaskEdited; ;
-
-            form.Show();
-        }
-
-        private void Item_TaskDeleted(object sender, EventArgs e)
-        {
-            Presenter.DeleteTask(sender as TaskExtModel);
-        }
-
-        private void Form_TaskCreated(object sender, EventArgs e)
-        {
-            Presenter.AddTask(sender as TaskExtModel);
-        }
-
-        private void Form_TaskEdited(object sender, EventArgs e)
-        {
-            Presenter.EditTask(sender as TaskExtModel);
-        }
-
-        private void AddTestButton_Click(object sender, EventArgs e)
-        {
-            
+            Presenter.StudentSetGrade(sender as StudentResultModel);
         }
     }
 }
