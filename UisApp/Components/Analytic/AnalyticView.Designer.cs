@@ -62,7 +62,7 @@
             this.ratingChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.ratingChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.ratingChart.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.ratingChart.BorderlineWidth = 2;
+            this.ratingChart.BorderlineWidth = 0;
             this.ratingChart.BorderSkin.BackColor = System.Drawing.Color.White;
             this.ratingChart.BorderSkin.BorderColor = System.Drawing.Color.White;
             this.ratingChart.BorderSkin.BorderWidth = 2;
@@ -76,6 +76,9 @@
             legend2.HeaderSeparatorColor = System.Drawing.Color.White;
             legend2.ItemColumnSeparatorColor = System.Drawing.Color.White;
             legend2.Name = "Legend1";
+            legend2.Title = "Оценки";
+            legend2.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend2.TitleForeColor = System.Drawing.SystemColors.HighlightText;
             this.ratingChart.Legends.Add(legend2);
             this.ratingChart.Location = new System.Drawing.Point(7, 52);
             this.ratingChart.Name = "ratingChart";
@@ -98,7 +101,7 @@
             this.ratingChart.Series.Add(series2);
             this.ratingChart.Size = new System.Drawing.Size(358, 300);
             this.ratingChart.TabIndex = 3;
-            this.ratingChart.Text = "chart1";
+            this.ratingChart.Text = "Оценки";
             // 
             // panel1
             // 
@@ -157,7 +160,7 @@
             this.attendanceChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.attendanceChart.BackImageTransparentColor = System.Drawing.Color.Transparent;
             this.attendanceChart.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.attendanceChart.BorderlineWidth = 2;
+            this.attendanceChart.BorderlineWidth = 0;
             this.attendanceChart.BorderSkin.BackColor = System.Drawing.Color.White;
             this.attendanceChart.BorderSkin.BorderColor = System.Drawing.Color.White;
             this.attendanceChart.BorderSkin.BorderWidth = 2;
@@ -171,6 +174,10 @@
             legend1.HeaderSeparatorColor = System.Drawing.Color.White;
             legend1.ItemColumnSeparatorColor = System.Drawing.Color.White;
             legend1.Name = "Legend1";
+            legend1.Title = "Посещаемость";
+            legend1.TitleAlignment = System.Drawing.StringAlignment.Near;
+            legend1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            legend1.TitleForeColor = System.Drawing.SystemColors.HighlightText;
             this.attendanceChart.Legends.Add(legend1);
             this.attendanceChart.Location = new System.Drawing.Point(371, 52);
             this.attendanceChart.Name = "attendanceChart";
@@ -193,7 +200,7 @@
             this.attendanceChart.Series.Add(series1);
             this.attendanceChart.Size = new System.Drawing.Size(358, 300);
             this.attendanceChart.TabIndex = 4;
-            this.attendanceChart.Text = "attendanceChart";
+            this.attendanceChart.Text = "Посещаемость";
             // 
             // AnalyticView
             // 
