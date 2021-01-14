@@ -10,14 +10,6 @@ namespace UisApp.Components.StudentResult.Interfaces
     public interface IResultModel
     {
         /// <summary>
-        /// Предмет
-        /// </summary>
-        SubjectExtModel Subject
-        {
-            get;
-        }
-
-        /// <summary>
         /// Группа
         /// </summary>
         GroupExtModel Group
@@ -39,12 +31,6 @@ namespace UisApp.Components.StudentResult.Interfaces
         event EventHandler StudentsUpdated;
 
         /// <summary>
-        /// Установить предмет
-        /// </summary>
-        /// <param name="model"></param>
-        void SetSubject(SubjectExtModel model);
-
-        /// <summary>
         /// Установить группу
         /// </summary>
         /// <param name="model"></param>
@@ -55,11 +41,5 @@ namespace UisApp.Components.StudentResult.Interfaces
         /// </summary>
         /// <param name="students"></param>
         void SetStudents(IList<StudentResultModel> students);
-
-        /// <summary>
-        /// Установить оценку студенту
-        /// </summary>
-        /// <param name="student"></param>
-        void StudentSetGrade(StudentResultModel student);
     }
 }

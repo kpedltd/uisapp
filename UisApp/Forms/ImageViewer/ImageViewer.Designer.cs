@@ -37,6 +37,7 @@
             this.image.Location = new System.Drawing.Point(0, 0);
             this.image.Name = "image";
             this.image.Size = new System.Drawing.Size(637, 483);
+            this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.image.TabIndex = 0;
             this.image.TabStop = false;
             // 
@@ -44,6 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(637, 479);
             this.Controls.Add(this.image);
@@ -52,6 +54,7 @@
             this.Text = "Просмотр изображения";
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

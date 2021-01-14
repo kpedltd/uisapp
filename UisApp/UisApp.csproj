@@ -42,6 +42,8 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +73,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UriResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Analytic\AnalyticView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\Analytic\AnalyticView.Designer.cs">
+      <DependentUpon>AnalyticView.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\Attendance\AttendanceItemView.cs">
       <SubType>UserControl</SubType>
@@ -147,6 +155,7 @@
     <Compile Include="Components\StudentResult\Interfaces\IStudentResultPresenter.cs" />
     <Compile Include="Components\StudentResult\Interfaces\IStudentResultView.cs" />
     <Compile Include="Components\StudentResult\Interfaces\IStudentResultModel.cs" />
+    <Compile Include="Components\StudentResult\Interfaces\IStudentTaskModel.cs" />
     <Compile Include="Components\StudentResult\StudentResultItemView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +171,7 @@
       <DependentUpon>StudentResultView.cs</DependentUpon>
     </Compile>
     <Compile Include="Components\StudentResult\StudentResultModel.cs" />
+    <Compile Include="Components\StudentResult\StudentTaskModel.cs" />
     <Compile Include="Components\StudyTask\Interfaces\IStudyTaskModel.cs" />
     <Compile Include="Components\StudyTask\Interfaces\IStudyTaskPresenter.cs" />
     <Compile Include="Components\StudyTask\Interfaces\IStudyTaskView.cs" />
@@ -181,12 +191,6 @@
     </Compile>
     <Compile Include="Components\UisComponentsContainer.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Forms\AboutBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\AboutBox.Designer.cs">
-      <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Auth\Auth.cs">
       <SubType>Form</SubType>
@@ -211,6 +215,12 @@
     </Compile>
     <Compile Include="Forms\Main\MainFormPanel.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentGrade\StudentGradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentGrade\StudentGradeForm.Designer.cs">
+      <DependentUpon>StudentGradeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TaskCreate\TaskCreateForm.cs">
       <SubType>Form</SubType>
@@ -282,6 +292,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>UriResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\Analytic\AnalyticView.resx">
+      <DependentUpon>AnalyticView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\Attendance\AttendanceItemView.resx">
       <DependentUpon>AttendanceItemView.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,9 +328,6 @@
     <EmbeddedResource Include="Components\StudyTask\TaskItemView.resx">
       <DependentUpon>TaskItemView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\AboutBox.resx">
-      <DependentUpon>AboutBox.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Auth\Auth.resx">
       <DependentUpon>Auth.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentGrade\StudentGradeForm.resx">
+      <DependentUpon>StudentGradeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TaskCreate\TaskCreateForm.resx">
       <DependentUpon>TaskCreateForm.cs</DependentUpon>
@@ -385,6 +398,8 @@
     <None Include="Resources\Images\icons8_cancel_100px.png" />
     <None Include="Resources\Images\icons8_checked_100px.png" />
     <None Include="Resources\Images\about.png" />
+    <None Include="Resources\Images\icons8_checked_checkbox_50px.png" />
+    <None Include="Resources\Images\icons8_combo_chart_50px.png" />
     <Content Include="Resources\Images\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

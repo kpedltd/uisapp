@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UisApp.Components.Rating.Interfaces;
+﻿using Newtonsoft.Json;
 using UisApp.Components.StudentResult.Interfaces;
 using UisApp.Models;
 
@@ -12,9 +7,10 @@ namespace UisApp.Components.StudentResult
     public class StudentResultModel : IStudentResultModel
     {
         /// <summary>
-        /// Студент
+        /// Ссылка на файл с ответом на задание
         /// </summary>
-        public StudentExtModel Student
+        [JsonProperty("file")]
+        public string File
         {
             get;
             set;
@@ -23,7 +19,38 @@ namespace UisApp.Components.StudentResult
         /// <summary>
         /// Оценка
         /// </summary>
+        [JsonProperty("grade")]
         public int Grade
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Комментарий преподавателя
+        /// </summary>
+        [JsonProperty("comment")]
+        public string Comment
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Задача
+        /// </summary>
+        [JsonProperty("task")]
+        public StudentTaskModel Task
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// Студент
+        /// </summary>
+        [JsonProperty("student")]
+        public StudentExtModel Student
         {
             get;
             set;

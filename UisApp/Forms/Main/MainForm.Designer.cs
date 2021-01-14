@@ -32,43 +32,48 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.upperBorder = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.itemsPanel = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.hideButton = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.checkButton = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.taskButton = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.ratingButton = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.attendanceButton = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.scheduleButton = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.profileButton = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.compContainer = new UisApp.Components.UisComponentsContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.hideButton = new System.Windows.Forms.Button();
+            this.analyticButton = new System.Windows.Forms.Button();
+            this.checkButton = new System.Windows.Forms.Button();
+            this.taskButton = new System.Windows.Forms.Button();
+            this.ratingButton = new System.Windows.Forms.Button();
+            this.attendanceButton = new System.Windows.Forms.Button();
+            this.scheduleButton = new System.Windows.Forms.Button();
+            this.profileButton = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.upperBorder.SuspendLayout();
             this.itemsPanel.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperBorder
@@ -90,32 +95,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(585, 445);
             this.panel4.TabIndex = 5;
-            // 
-            // button8
-            // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.Location = new System.Drawing.Point(732, 0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(34, 34);
-            this.button8.TabIndex = 2;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(766, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(34, 34);
-            this.button7.TabIndex = 1;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // label1
             // 
@@ -166,21 +145,9 @@
             this.label17.TabIndex = 5;
             this.label17.Text = "Скрыть";
             // 
-            // hideButton
-            // 
-            this.hideButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_close_pane_50px_1;
-            this.hideButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.hideButton.FlatAppearance.BorderSize = 0;
-            this.hideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hideButton.Location = new System.Drawing.Point(4, 6);
-            this.hideButton.Name = "hideButton";
-            this.hideButton.Size = new System.Drawing.Size(50, 50);
-            this.hideButton.TabIndex = 4;
-            this.hideButton.UseVisualStyleBackColor = true;
-            this.hideButton.Click += new System.EventHandler(this.HideButton_Click);
-            // 
             // panel11
             // 
+            this.panel11.Controls.Add(this.panel1);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 360);
             this.panel11.Name = "panel11";
@@ -208,18 +175,6 @@
             this.label15.TabIndex = 5;
             this.label15.Text = "Проверка заданий";
             // 
-            // checkButton
-            // 
-            this.checkButton.BackgroundImage = global::UisApp.Properties.Resources.result;
-            this.checkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.checkButton.FlatAppearance.BorderSize = 0;
-            this.checkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkButton.Location = new System.Drawing.Point(4, 6);
-            this.checkButton.Name = "checkButton";
-            this.checkButton.Size = new System.Drawing.Size(50, 50);
-            this.checkButton.TabIndex = 4;
-            this.checkButton.UseVisualStyleBackColor = true;
-            // 
             // panel9
             // 
             this.panel9.Controls.Add(this.label14);
@@ -240,19 +195,6 @@
             this.label14.Size = new System.Drawing.Size(77, 24);
             this.label14.TabIndex = 5;
             this.label14.Text = "Задания";
-            // 
-            // taskButton
-            // 
-            this.taskButton.BackgroundImage = global::UisApp.Properties.Resources.task;
-            this.taskButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.taskButton.FlatAppearance.BorderSize = 0;
-            this.taskButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.taskButton.Location = new System.Drawing.Point(4, 6);
-            this.taskButton.Name = "taskButton";
-            this.taskButton.Size = new System.Drawing.Size(50, 50);
-            this.taskButton.TabIndex = 4;
-            this.taskButton.UseVisualStyleBackColor = true;
-            this.taskButton.Click += new System.EventHandler(this.TaskButton_Click);
             // 
             // panel8
             // 
@@ -275,19 +217,6 @@
             this.label13.TabIndex = 5;
             this.label13.Text = "Рейтинг";
             // 
-            // ratingButton
-            // 
-            this.ratingButton.BackgroundImage = global::UisApp.Properties.Resources.rating;
-            this.ratingButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ratingButton.FlatAppearance.BorderSize = 0;
-            this.ratingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ratingButton.Location = new System.Drawing.Point(4, 6);
-            this.ratingButton.Name = "ratingButton";
-            this.ratingButton.Size = new System.Drawing.Size(50, 50);
-            this.ratingButton.TabIndex = 4;
-            this.ratingButton.UseVisualStyleBackColor = true;
-            this.ratingButton.Click += new System.EventHandler(this.ratingButton_Click);
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.label12);
@@ -308,19 +237,6 @@
             this.label12.Size = new System.Drawing.Size(125, 24);
             this.label12.TabIndex = 5;
             this.label12.Text = "Посещаемость";
-            // 
-            // attendanceButton
-            // 
-            this.attendanceButton.BackgroundImage = global::UisApp.Properties.Resources.attendance;
-            this.attendanceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.attendanceButton.FlatAppearance.BorderSize = 0;
-            this.attendanceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.attendanceButton.Location = new System.Drawing.Point(4, 6);
-            this.attendanceButton.Name = "attendanceButton";
-            this.attendanceButton.Size = new System.Drawing.Size(50, 50);
-            this.attendanceButton.TabIndex = 4;
-            this.attendanceButton.UseVisualStyleBackColor = true;
-            this.attendanceButton.Click += new System.EventHandler(this.AttendanceButton_Click);
             // 
             // panel6
             // 
@@ -343,19 +259,6 @@
             this.label11.TabIndex = 5;
             this.label11.Text = "Расписание";
             // 
-            // scheduleButton
-            // 
-            this.scheduleButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_schedule_50px;
-            this.scheduleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.scheduleButton.FlatAppearance.BorderSize = 0;
-            this.scheduleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.scheduleButton.Location = new System.Drawing.Point(4, 6);
-            this.scheduleButton.Name = "scheduleButton";
-            this.scheduleButton.Size = new System.Drawing.Size(50, 50);
-            this.scheduleButton.TabIndex = 4;
-            this.scheduleButton.UseVisualStyleBackColor = true;
-            this.scheduleButton.Click += new System.EventHandler(this.ScheduleButton_Click);
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.label8);
@@ -377,6 +280,131 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Профиль";
             // 
+            // timer
+            // 
+            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // compContainer
+            // 
+            this.compContainer.AutoSize = true;
+            this.compContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.compContainer.Location = new System.Drawing.Point(220, 34);
+            this.compContainer.Name = "compContainer";
+            this.compContainer.Size = new System.Drawing.Size(580, 489);
+            this.compContainer.TabIndex = 27;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.analyticButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(220, 60);
+            this.panel1.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bauhaus 93", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label2.Location = new System.Drawing.Point(60, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 24);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Аналитика";
+            // 
+            // hideButton
+            // 
+            this.hideButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_close_pane_50px_1;
+            this.hideButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.hideButton.FlatAppearance.BorderSize = 0;
+            this.hideButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hideButton.Location = new System.Drawing.Point(4, 6);
+            this.hideButton.Name = "hideButton";
+            this.hideButton.Size = new System.Drawing.Size(50, 50);
+            this.hideButton.TabIndex = 4;
+            this.hideButton.UseVisualStyleBackColor = true;
+            this.hideButton.Click += new System.EventHandler(this.HideButton_Click);
+            // 
+            // analyticButton
+            // 
+            this.analyticButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_combo_chart_50px;
+            this.analyticButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.analyticButton.FlatAppearance.BorderSize = 0;
+            this.analyticButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.analyticButton.Location = new System.Drawing.Point(4, 6);
+            this.analyticButton.Name = "analyticButton";
+            this.analyticButton.Size = new System.Drawing.Size(50, 50);
+            this.analyticButton.TabIndex = 4;
+            this.analyticButton.UseVisualStyleBackColor = true;
+            this.analyticButton.Click += new System.EventHandler(this.AnalyticButton_Click);
+            // 
+            // checkButton
+            // 
+            this.checkButton.BackgroundImage = global::UisApp.Properties.Resources.result;
+            this.checkButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.checkButton.FlatAppearance.BorderSize = 0;
+            this.checkButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkButton.Location = new System.Drawing.Point(4, 6);
+            this.checkButton.Name = "checkButton";
+            this.checkButton.Size = new System.Drawing.Size(50, 50);
+            this.checkButton.TabIndex = 4;
+            this.checkButton.UseVisualStyleBackColor = true;
+            this.checkButton.Click += new System.EventHandler(this.CheckButton_Click);
+            // 
+            // taskButton
+            // 
+            this.taskButton.BackgroundImage = global::UisApp.Properties.Resources.task;
+            this.taskButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.taskButton.FlatAppearance.BorderSize = 0;
+            this.taskButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.taskButton.Location = new System.Drawing.Point(4, 6);
+            this.taskButton.Name = "taskButton";
+            this.taskButton.Size = new System.Drawing.Size(50, 50);
+            this.taskButton.TabIndex = 4;
+            this.taskButton.UseVisualStyleBackColor = true;
+            this.taskButton.Click += new System.EventHandler(this.TaskButton_Click);
+            // 
+            // ratingButton
+            // 
+            this.ratingButton.BackgroundImage = global::UisApp.Properties.Resources.rating;
+            this.ratingButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ratingButton.FlatAppearance.BorderSize = 0;
+            this.ratingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ratingButton.Location = new System.Drawing.Point(4, 6);
+            this.ratingButton.Name = "ratingButton";
+            this.ratingButton.Size = new System.Drawing.Size(50, 50);
+            this.ratingButton.TabIndex = 4;
+            this.ratingButton.UseVisualStyleBackColor = true;
+            this.ratingButton.Click += new System.EventHandler(this.ratingButton_Click);
+            // 
+            // attendanceButton
+            // 
+            this.attendanceButton.BackgroundImage = global::UisApp.Properties.Resources.attendance;
+            this.attendanceButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.attendanceButton.FlatAppearance.BorderSize = 0;
+            this.attendanceButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.attendanceButton.Location = new System.Drawing.Point(4, 6);
+            this.attendanceButton.Name = "attendanceButton";
+            this.attendanceButton.Size = new System.Drawing.Size(50, 50);
+            this.attendanceButton.TabIndex = 4;
+            this.attendanceButton.UseVisualStyleBackColor = true;
+            this.attendanceButton.Click += new System.EventHandler(this.AttendanceButton_Click);
+            // 
+            // scheduleButton
+            // 
+            this.scheduleButton.BackgroundImage = global::UisApp.Properties.Resources.icons8_schedule_50px;
+            this.scheduleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.scheduleButton.FlatAppearance.BorderSize = 0;
+            this.scheduleButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.scheduleButton.Location = new System.Drawing.Point(4, 6);
+            this.scheduleButton.Name = "scheduleButton";
+            this.scheduleButton.Size = new System.Drawing.Size(50, 50);
+            this.scheduleButton.TabIndex = 4;
+            this.scheduleButton.UseVisualStyleBackColor = true;
+            this.scheduleButton.Click += new System.EventHandler(this.ScheduleButton_Click);
+            // 
             // profileButton
             // 
             this.profileButton.BackgroundImage = global::UisApp.Properties.Resources.profile1;
@@ -390,18 +418,31 @@
             this.profileButton.UseVisualStyleBackColor = true;
             this.profileButton.Click += new System.EventHandler(this.ProfileButton_Click);
             // 
-            // timer
+            // button8
             // 
-            this.timer.Tick += new System.EventHandler(this.Timer_Tick);
+            this.button8.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.Location = new System.Drawing.Point(732, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(34, 34);
+            this.button8.TabIndex = 2;
+            this.button8.UseVisualStyleBackColor = true;
             // 
-            // compContainer
+            // button7
             // 
-            this.compContainer.AutoSize = true;
-            this.compContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.compContainer.Location = new System.Drawing.Point(220, 34);
-            this.compContainer.Name = "compContainer";
-            this.compContainer.Size = new System.Drawing.Size(580, 489);
-            this.compContainer.TabIndex = 27;
+            this.button7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.Location = new System.Drawing.Point(766, 0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(34, 34);
+            this.button7.TabIndex = 1;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // MainForm
             // 
@@ -421,6 +462,7 @@
             this.itemsPanel.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -433,6 +475,8 @@
             this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +514,8 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Timer timer;
         private Components.UisComponentsContainer compContainer;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button analyticButton;
     }
 }

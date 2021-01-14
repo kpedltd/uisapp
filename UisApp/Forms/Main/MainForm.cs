@@ -61,10 +61,12 @@ namespace UisApp
             compContainer.SwitchTo(targerView);
         }
 
-        private void AboutButton_Click(object sender, EventArgs e)
+        private void CheckButton_Click(object sender, EventArgs e)
         {
-            AboutBox aboutBox = new AboutBox();
-            aboutBox.Show();
+            Button button = (Button)sender;
+            var targerView = (IUisComponent)button.Tag;
+
+            compContainer.SwitchTo(targerView);
         }
 
         private void HideButton_Click(object sender, EventArgs e)
@@ -90,6 +92,13 @@ namespace UisApp
                 FormDragLogic.Move(Handle);
             }
         }
-   
+
+        private void AnalyticButton_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            var targerView = (IUisComponent)button.Tag;
+
+            compContainer.SwitchTo(targerView);
+        }
     }
 }

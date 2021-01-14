@@ -26,20 +26,10 @@ namespace UisApp.Models
         }
 
         /// <summary>
-        /// Студент
+        /// Комментарий преподавателя
         /// </summary>
-        [JsonProperty("studentId")]
-        int StudentId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Задание
-        /// </summary>
-        [JsonProperty("taskId")]
-        int TaskId
+        [JsonProperty("comment")]
+        string Comment
         {
             get;
             set;

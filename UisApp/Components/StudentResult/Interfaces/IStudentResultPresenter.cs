@@ -11,12 +11,6 @@ namespace UisApp.Components.StudentResult.Interfaces
     public interface IStudentResultPresenter : IPresenter<IStudentResultPresenter, IStudentResultView>
     {
         /// <summary>
-        /// Установить предмет
-        /// </summary>
-        /// <param name="model"></param>
-        void SetSubject(SubjectExtModel model);
-
-        /// <summary>
         /// Установить группу
         /// </summary>
         /// <param name="model"></param>
@@ -27,11 +21,5 @@ namespace UisApp.Components.StudentResult.Interfaces
         /// </summary>
         /// <param name="students"></param>
         void SetStudents(IList<StudentResultModel> students);
-
-        /// <summary>
-        /// Установить оценку студенту
-        /// </summary>
-        /// <param name="student"></param>
-        void StudentSetGrade(StudentResultModel student);
     }
 }

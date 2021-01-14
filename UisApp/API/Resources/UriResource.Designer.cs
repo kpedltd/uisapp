@@ -106,6 +106,15 @@ namespace UisApp.API.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на /task_result/grade_student.
+        /// </summary>
+        internal static string grade_student {
+            get {
+                return ResourceManager.GetString("grade_student", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на /schedule/lecturer.
         /// </summary>
         internal static string lecturer_schedule {
@@ -219,6 +228,15 @@ namespace UisApp.API.Resources {
         internal static string task_photo {
             get {
                 return ResourceManager.GetString("task_photo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на /task_result/new_tasks.
+        /// </summary>
+        internal static string task_result_new {
+            get {
+                return ResourceManager.GetString("task_result_new", resourceCulture);
             }
         }
         

@@ -24,7 +24,7 @@ namespace UisApp.Components.StudentResult
         /// <summary>
         /// Посещаемость студентов
         /// </summary>
-        public IList<StudentResultModel> StudentsRating
+        public IList<StudentResultModel> StudentResults
         {
             get;
             set;
@@ -87,14 +87,10 @@ namespace UisApp.Components.StudentResult
         /// <param name="model"></param>
         public void Update(IResultModel model)
         {
-            if(model.Group.Id == Groups[groupComboBox.SelectedIndex].Id &&
-                model.Subject.Id == Subjects[subjectComboBox.SelectedIndex].Id)
-            {
-                StudentsRating = model.Students;
+            StudentResults = model.Students;
 
-                DisposeRatingPanel();
-                FillRating();
-            }
+            DisposeRatingPanel();
+            FillRating();
         }
 
         
@@ -112,7 +108,6 @@ namespace UisApp.Components.StudentResult
             if (Subjects.Count > 0)
             {
                 subjectComboBox.SelectedIndex = 0;
-                Presenter.SetSubject(Subjects[subjectComboBox.SelectedIndex]);
             }
         }
 
@@ -123,8 +118,6 @@ namespace UisApp.Components.StudentResult
             DisposeRatingPanel();
 
             groupComboBox.Items.Clear();
-
-            Presenter.SetSubject(Subjects[comboBox.SelectedIndex]);
 
             Groups = SubjectProvider.GetGroups(Subjects[comboBox.SelectedIndex].Id);
             for (int i = 0; i < Groups.Count; i++)
@@ -149,25 +142,25 @@ namespace UisApp.Components.StudentResult
 
             Presenter.SetGroup(Groups[comboBox.SelectedIndex]);
 
-            //StudentsRating = RatingProvider.GetRating(
-            //    Groups[comboBox.SelectedIndex].Id,
-            //    Subjects[subjectComboBox.SelectedIndex].Id);
+            StudentResults = TaskResultProvider.GetResults(
+                Groups[comboBox.SelectedIndex].Id,
+                Subjects[subjectComboBox.SelectedIndex].Id);
 
             DisposeRatingPanel();
 
-            Presenter.SetStudents(StudentsRating);
+            Presenter.SetStudents(StudentResults);
         }
 
         private void FillRating()
         {
-            for (int i = 0; i < StudentsRating.Count; i++)
+            for (int i = 0; i < StudentResults.Count; i++)
             {
                 var item = new StudentResultItemView();
-                item.Tag = StudentsRating[i];
-                item.StateChanged += Item_StateChanged;
+                item.Tag = StudentResults[i];
+                //item.StateChanged += Item_StateChanged;
                 item.Visible = true;
 
-                item.SetStudentRating(StudentsRating[i]);
+                item.SetStudentResult(StudentResults[i]);
 
                 ratingPanel.Controls.Add(item);
             }
@@ -184,11 +177,6 @@ namespace UisApp.Components.StudentResult
                 ratingPanel.Controls[i].Dispose();
             }
             ratingPanel.Controls.Clear();
-        }
-
-        private void Item_StateChanged(object sender, EventArgs e)
-        {
-            Presenter.StudentSetGrade(sender as StudentResultModel);
         }
     }
 }

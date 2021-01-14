@@ -22,15 +22,6 @@ namespace UisApp.Components.StudentResult
         }
 
         /// <summary>
-        /// Установить предмет
-        /// </summary>
-        /// <param name="model"></param>
-        public void SetSubject(SubjectExtModel model)
-        {
-            Model.SetSubject(model);
-        }
-
-        /// <summary>
         /// Установить группу
         /// </summary>
         /// <param name="model"></param>
@@ -46,15 +37,6 @@ namespace UisApp.Components.StudentResult
         public void SetStudents(IList<StudentResultModel> students)
         {
             Model.SetStudents(students);
-        }
-
-        /// <summary>
-        /// Установить оценку студенту
-        /// </summary>
-        /// <param name="student"></param>
-        public void StudentSetGrade(StudentResultModel student)
-        {
-            Model.StudentSetGrade(student);
         }
 
         protected override void RefreshView(IStudentResultView viewInstance)

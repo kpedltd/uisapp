@@ -153,9 +153,29 @@ namespace UisApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_checked_checkbox_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_checked_checkbox_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_close_pane_50px_1 {
             get {
                 object obj = ResourceManager.GetObject("icons8_close_pane_50px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_combo_chart_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_combo_chart_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

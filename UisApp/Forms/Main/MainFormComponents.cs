@@ -1,9 +1,11 @@
 ﻿using System.Windows.Forms;
 using UisApp.API.Providers;
+using UisApp.Components.Analytic;
 using UisApp.Components.Attendance;
 using UisApp.Components.Profile;
 using UisApp.Components.Rating;
 using UisApp.Components.ScheduleTable;
+using UisApp.Components.StudentResult;
 using UisApp.Components.StudyTask;
 
 namespace UisApp
@@ -17,6 +19,8 @@ namespace UisApp
             InitializeAttendanceLog();
             InitializeRatingLog();
             InitializeStudyTask();
+            InitializeStudentResult();
+            InitializeAnalytics();
         }
 
         private void InitializeProfile()
@@ -82,6 +86,27 @@ namespace UisApp
             studyTaskView.AttachToPresenter(presenter, true);
 
             taskButton.Tag = studyTaskView;
+        }
+
+        private void InitializeStudentResult()
+        {
+            var resultModel = new ResultModel();
+            StudentResultPresenter presenter = new StudentResultPresenter(resultModel);
+
+            var studentResultView = new StudentResultView();
+            compContainer.AttachView(studentResultView);
+
+            studentResultView.AttachToPresenter(presenter, true);
+
+            checkButton.Tag = studentResultView;
+        }
+
+        private void InitializeAnalytics()
+        {
+            var analyticView = new AnalyticView();
+            compContainer.AttachView(analyticView);
+
+            analyticButton.Tag = analyticView;
         }
     }
 }
